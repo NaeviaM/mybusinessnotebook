@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 52" role="img" aria-label="My Business Notebook">
+  <!-- mark -->
+  <g>
+    <rect x="2" y="8" width="36" height="36" rx="8" fill="#1b43c0"/>
+    <rect x="10" y="14" width="18" height="24" rx="2" fill="#ffffff"/>
+    <rect x="10" y="14" width="4" height="24" rx="1.6" fill="#122e86"/>
+    <rect x="17" y="19" width="8.5" height="2" rx="1" fill="#151a24"/>
+    <rect x="17" y="24" width="8.5" height="2" rx="1" fill="#151a24"/>
+    <rect x="17" y="29" width="6" height="2" rx="1" fill="#151a24"/>
+    <path d="M23 6 h4.4 v8.5 l-2.2 -1.9 -2.2 1.9 Z" fill="#e11d2a"/>
+  </g>
+  <!-- wordmark (Georgia = fallback largement dispo) -->
+  <text x="50" y="27" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="600" fill="#151a24">My Business</text>
+  <text x="50" y="45" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="600" fill="#e11d2a">Notebook</text>
+</svg>

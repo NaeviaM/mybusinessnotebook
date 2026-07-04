@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculateur : combien vous coûte vraiment votre caisse ? | My Business Notebook</title>
+<meta name="description" content="Estimez en 30 secondes le coût réel de votre caisse enregistreuse, commissions sur paiements comprises. Calculateur gratuit pour commerçants et restaurateurs.">
+<link rel="canonical" href="https://mybusinessnotebook.com/calculateur-cout-caisse">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Combien vous coûte vraiment votre caisse ?">
+<meta property="og:description" content="Calculateur gratuit du coût réel d'une caisse, commissions comprises.">
+<meta property="og:locale" content="fr_FR">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="dot"></span> My Business Notebook</a>
+    <nav class="nav-links">
+      <a href="attirer-plus-de-clients-commerce.html">Clients &amp; marketing</a>
+      <a href="comparatif-logiciels-caisse-gratuits-2026.html">Encaissement</a>
+      <a href="caisse-enregistreuse-restaurant.html">Restauration</a>
+      <a href="calculateur-cout-caisse.html">Outils</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article class="container">
+  <div class="breadcrumb"><a href="index.html">Accueil</a> › Calculateur</div>
+
+  <span class="pill">Outil gratuit</span>
+  <h1>Combien vous coûte vraiment votre caisse&nbsp;?</h1>
+  <p class="lead">La plupart des commerçants sous-estiment ce que leur caisse leur coûte, parce que les <strong>commissions sur les paiements par carte</strong> sont invisibles au quotidien. Faites le test en 30 secondes.</p>
+
+  <figure class="hero-img"><img src="img/calculateur-cout-caisse.jpg" alt="Calculateur du coût réel d'une caisse enregistreuse, commissions sur paiements comprises"></figure>
+
+  <div class="calc">
+    <label>Chiffre d'affaires encaissé par carte / mois : <span class="val" id="caVal">10 000 €</span></label>
+    <input type="range" id="ca" min="1000" max="60000" step="500" value="10000">
+
+    <label>Commission de votre solution actuelle : <span class="val" id="commVal">1,75 %</span></label>
+    <input type="range" id="comm" min="0" max="3" step="0.05" value="1.75">
+
+    <label>Abonnement mensuel du logiciel : <span class="val" id="aboVal">0 €</span></label>
+    <input type="range" id="abo" min="0" max="150" step="5" value="0">
+
+    <div class="result">
+      <div>Coût estimé sur <strong>12 mois</strong></div>
+      <div class="big" id="total">2 100 €</div>
+      <div id="detail" style="font-size:.9rem;color:var(--ink-soft);margin-top:.4rem"></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Le saviez-vous ?</strong> Une caisse <strong>sans commission imposée</strong> sur les encaissements vous laisse garder 100 % de votre chiffre d'affaires carte. Sur l'année, l'écart se chiffre souvent en centaines, voire en milliers d'euros.
+  </div>
+
+  <div class="cta-box">
+    <h3>Et si vous gardiez tout&nbsp;?</h3>
+    <p>digabloPos propose un plan gratuit à vie, sans commission imposée. Faites le calcul, puis testez.</p>
+    <a class="btn" href="https://digablopos.fr/fr" target="_blank" rel="noopener">Essayer digabloPos gratuitement</a>
+  </div>
+
+  <p style="font-size:.82rem;color:#8a8f99">Estimation indicative à titre informatif. Les taux de commission et abonnements réels varient selon les prestataires et votre contrat.</p>
+
+  <hr>
+  <p>Pour aller plus loin : consultez notre <a href="comparatif-logiciels-caisse-gratuits-2026.html">comparatif des caisses gratuites 2026</a> ou notre guide <a href="comment-choisir-caisse-enregistreuse.html">pour bien choisir sa caisse</a>.</p>
+
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>© 2026 My Business Notebook — Comparatifs indépendants pour commerçants.</div>
+    <p class="disclosure">Outil informatif. Vérifiez vos coûts réels auprès de vos prestataires.</p>
+  </div>
+</footer>
+
+<script>
+  const fmt = n => n.toLocaleString('fr-FR', {maximumFractionDigits:0}) + ' €';
+  const ca = document.getElementById('ca');
+  const comm = document.getElementById('comm');
+  const abo = document.getElementById('abo');
+  function update(){
+    const caN = +ca.value, commN = +comm.value, aboN = +abo.value;
+    document.getElementById('caVal').textContent = fmt(caN);
+    document.getElementById('commVal').textContent = commN.toLocaleString('fr-FR',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' %';
+    document.getElementById('aboVal').textContent = fmt(aboN);
+    const commissionAn = caN * (commN/100) * 12;
+    const aboAn = aboN * 12;
+    const total = commissionAn + aboAn;
+    document.getElementById('total').textContent = fmt(total);
+    document.getElementById('detail').textContent =
+      'dont ' + fmt(commissionAn) + ' de commissions + ' + fmt(aboAn) + ' d\'abonnement';
+  }
+  [ca, comm, abo].forEach(el => el.addEventListener('input', update));
+  update();
+</script>
+
+</body>
+</html>

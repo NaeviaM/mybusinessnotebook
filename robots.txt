@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Remplace exemple.fr par ton vrai domaine
+Sitemap: https://mybusinessnotebook.com/sitemap.xml

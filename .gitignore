@@ -1,0 +1,12 @@
+.vercel/
+.DS_Store
+node_modules/
+*.log
+.env.local
+.env
+
+# Docs internes (hors dépôt public)
+CONTENT-AGENT-BRIEF.md
+AUTOMATION-SYSTEM.md
+A-VERIFIER.md
+PROMPTS-IMAGES.md
