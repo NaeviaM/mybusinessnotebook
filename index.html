@@ -189,6 +189,6 @@
   })();
 </script>
 
-<script>(function(){var m=document.cookie.match(/(?:^|;\s*)mbn_geo=([A-Z]{2})/);var c=m?m[1]:"";var AFR=["CI","SN","CD","CG","CM","ML","BF","NE","TG","BJ","GA","MG","TD","GN","RW","BI","DJ","KM","MR","SC"];if(AFR.indexOf(c)>=0){document.querySelectorAll(".geo-africa").forEach(function(e){e.style.display="";});}})();</script>
+<script>(function(){try{var tz=(Intl.DateTimeFormat().resolvedOptions().timeZone||"");if(/^Africa\//.test(tz)){document.querySelectorAll(".geo-africa").forEach(function(e){e.style.display="";});}}catch(e){}})();</script>
 </body>
 </html>
