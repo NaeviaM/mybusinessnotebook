@@ -11,3 +11,7 @@ CONTENT-AGENT-BRIEF.md
 AUTOMATION-SYSTEM.md
 A-VERIFIER.md
 PROMPTS-IMAGES.md
+
+# Outillage local (jamais publie)
+.claude/
+skills-lock.json
