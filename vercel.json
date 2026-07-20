@@ -5,6 +5,16 @@
       "has": [{ "type": "host", "value": "le-carnet-du-commercant.vercel.app" }],
       "destination": "https://mybusinessnotebook.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/:lang(en|es|pt|sw)/:slug((?!.*\\.)[^/]+)",
+      "destination": "/:lang/:slug.html",
+      "permanent": true
+    },
+    {
+      "source": "/:slug((?!.*\\.)(?!en$)(?!es$)(?!pt$)(?!sw$)(?!img$)[^/]+)",
+      "destination": "/:slug.html",
+      "permanent": true
     }
   ]
 }
