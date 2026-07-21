@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<title>Payment Fees Calculator: What Do Card &amp; Mobile Money Really Cost You a Year? | My Business Notebook</title>
+<meta name="description" content="Card, M-Pesa, Airtel, OPay, cash: work out in 30 seconds what your payment fees really cost your shop over a year. Free calculator for small business owners.">
+<link rel="canonical" href="https://mybusinessnotebook.com/en/payment-fees-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="What do your payment fees really cost you a year?">
+<meta property="og:description" content="Card, mobile money, cash: the true yearly cost of taking payments. Free calculator.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mybusinessnotebook.com/en/img/payment-fees-calculator.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mybusinessnotebook.com/en/img/payment-fees-calculator.jpg">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mybusinessnotebook.com/en/"},{"@type":"ListItem","position":2,"name":"Payment fees calculator","item":"https://mybusinessnotebook.com/en/payment-fees-calculator.html"}]}</script>
+<link rel="alternate" hreflang="en" href="https://mybusinessnotebook.com/en/payment-fees-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://mybusinessnotebook.com/en/payment-fees-calculator.html">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#1b43c0"/><rect x="8.5" y="7" width="15" height="18" rx="1.6" fill="#fff"/><rect x="8.5" y="7" width="3.2" height="18" rx="1.2" fill="#122e86"/><rect x="14" y="11" width="7" height="1.7" rx=".85" fill="#151a24"/><rect x="14" y="15" width="7" height="1.7" rx=".85" fill="#151a24"/><rect x="14" y="19" width="5" height="1.7" rx=".85" fill="#151a24"/><path d="M18.4 5 h3.4 v6.4 l-1.7 -1.5 -1.7 1.5 Z" fill="#e11d2a"/></svg>
+      </span>
+      <span>My Business <span class="accent">Notebook</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="best-pos-system-small-business.html">Guides</a>
+      <a href="best-free-pos-system-2026.html">Comparison</a>
+      <a href="payment-fees-calculator.html">Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article class="container">
+  <div class="breadcrumb"><a href="index.html">Home</a> › Payment fees calculator</div>
+
+  <span class="pill">Free tool</span>
+  <h1>What do your payment fees really cost you a year?</h1>
+  <p class="lead">Card, M-Pesa, Airtel Money, OPay, cash: every way of getting paid has a cost, and it is almost always higher than you think. Run the numbers in 30 seconds, using your own figures.</p>
+
+  <figure class="hero-img"><img src="img/payment-fees-calculator.webp" alt="Payment fees calculator for a small shop, card and mobile money included"></figure>
+
+  <div class="calc">
+    <label>Currency
+      <select id="cur" style="margin-left:.5rem;padding:.3rem .5rem;font-size:1rem">
+        <option value="KES" selected>KES</option>
+        <option value="NGN">NGN</option>
+        <option value="GHS">GHS</option>
+        <option value="USD">USD</option>
+      </select>
+    </label>
+
+    <label style="margin-top:1rem">Total you take in per month, all methods together: <span class="val" id="caVal"></span></label>
+    <input type="range" id="ca" min="50000" max="5000000" step="25000" value="600000">
+
+    <label style="margin-top:1rem">Share taken by <strong>card</strong>: <span class="val" id="pCardVal">25 %</span></label>
+    <input type="range" id="pCard" min="0" max="100" step="5" value="25">
+    <label>Fee your card provider charges you: <span class="val" id="fCardVal">2.50 %</span></label>
+    <input type="range" id="fCard" min="0" max="4" step="0.05" value="2.5">
+
+    <label style="margin-top:1rem">Share taken by <strong>mobile money</strong> (M-Pesa, Airtel, OPay, MoMo…): <span class="val" id="pMmVal">45 %</span></label>
+    <input type="range" id="pMm" min="0" max="100" step="5" value="45">
+    <label>Fee your mobile money provider charges you: <span class="val" id="fMmVal">1.50 %</span></label>
+    <input type="range" id="fMm" min="0" max="4" step="0.05" value="1.5">
+
+    <p style="font-size:.85rem;color:var(--ink-soft);margin:.6rem 0 0">The rest is treated as cash (no fee). Put in the rates <strong>your own</strong> provider actually charges you: they change from one contract and one country to the next.</p>
+
+    <div class="result">
+      <div>What your payment fees cost you over <strong>12 months</strong></div>
+      <div class="big" id="total"></div>
+      <div id="detail" style="font-size:.9rem;color:var(--ink-soft);margin-top:.4rem"></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Worth knowing:</strong> a POS that forces <strong>no commission and no payment processor</strong> on you leaves you free to take payment through the cheapest channel (often mobile money or cash) and keep that money. Over a year, the gap quickly runs into tens of thousands.
+  </div>
+
+  <div class="cta-box">
+    <h3>What if you kept that money?</h3>
+    <p>digabloPos has a free-forever plan, with no forced commission on your sales and no obligatory payment processor. You take payment however you like, and track every payment method inside your till.</p>
+    <a class="btn" href="https://digablopos.fr/en?s=mybusinessnotebook" target="_blank" rel="noopener">Try digabloPos for free</a>
+  </div>
+
+  <p style="font-size:.82rem;color:#8a8f99">Indicative estimate for information only. Real fee rates vary by provider, country and contract: check them on your own statements.</p>
+
+  <hr>
+  <p>Go further: <a href="hidden-pos-fees.html">the hidden fees of POS software</a>, our <a href="best-free-pos-system-2026.html">best free POS comparison for 2026</a>, or the <a href="cash-flow-management-small-business.html">cash flow guide for small business</a>.</p>
+
+<section class="related-block">
+  <h2>Read next</h2>
+  <div class="grid">
+      <a class="post-card" href="hidden-pos-fees.html"><span class="pc-media" style="background-image:url('img/hidden-pos-fees-sm.webp')"></span><span class="pc-body"><span class="tag">Read next</span><h3>The hidden fees of POS software</h3><p>Bundled commission, hardware leasing, "must-have" add-ons: what really inflates the bill.</p></span></a>
+      <a class="post-card" href="cash-flow-management-small-business.html"><span class="pc-media" style="background-image:url('img/cash-flow-management-small-business-sm.webp')"></span><span class="pc-body"><span class="tag">Read next</span><h3>Cash flow for small business</h3><p>Simple habits to keep money moving and avoid the end-of-month squeeze.</p></span></a>
+      <a class="post-card" href="best-pos-system-small-business.html"><span class="pc-media" style="background-image:url('img/best-pos-system-small-business-sm.webp')"></span><span class="pc-body"><span class="tag">Buyer's guide</span><h3>Best POS for small business</h3><p>How to choose, key features, real costs and mistakes to avoid.</p></span></a>
+  </div>
+</section>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>© 2026 My Business Notebook, Independent guides for merchants.</div>
+    <p class="disclosure">Informational tool. Check your real fees with your own providers.</p>
+  </div>
+</footer>
+
+<script>
+  const ca = document.getElementById('ca');
+  const pCard = document.getElementById('pCard'), fCard = document.getElementById('fCard');
+  const pMm = document.getElementById('pMm'), fMm = document.getElementById('fMm');
+  const cur = document.getElementById('cur');
+  const pct = (n, d) => n.toLocaleString('en-US', {minimumFractionDigits:d, maximumFractionDigits:d}) + ' %';
+  function money(n){
+    return Math.round(n).toLocaleString('en-US') + ' ' + cur.value;
+  }
+  function update(){
+    const caN = +ca.value, pC = +pCard.value, fC = +fCard.value, pM = +pMm.value, fM = +fMm.value;
+    let partCard = pC, partMm = pM;
+    if (partCard + partMm > 100){ partMm = 100 - partCard; if (partMm < 0){ partMm = 0; partCard = 100; } pMm.value = partMm; }
+    document.getElementById('caVal').textContent = money(caN);
+    document.getElementById('pCardVal').textContent = partCard + ' %';
+    document.getElementById('fCardVal').textContent = pct(fC, 2);
+    document.getElementById('pMmVal').textContent = partMm + ' %';
+    document.getElementById('fMmVal').textContent = pct(fM, 2);
+    const cardAn = caN * (partCard/100) * (fC/100) * 12;
+    const mmAn   = caN * (partMm/100) * (fM/100) * 12;
+    const total = cardAn + mmAn;
+    const partCash = Math.max(0, 100 - partCard - partMm);
+    document.getElementById('total').textContent = money(total);
+    document.getElementById('detail').textContent =
+      'of which ' + money(cardAn) + ' in card fees + ' + money(mmAn) + ' in mobile money fees · ' + partCash + ' % taken in cash (no fee)';
+  }
+  [ca, pCard, fCard, pMm, fMm, cur].forEach(el => el.addEventListener('input', update));
+  cur.addEventListener('change', update);
+  update();
+</script>
+
+</body>
+</html>
