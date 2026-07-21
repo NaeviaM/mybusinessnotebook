@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<title>Calculateur : combien te coûtent tes frais d'encaissement par an ? | My Business Notebook</title>
+<meta name="description" content="Carte, Wave, Orange Money, MTN, espèces : estime en 30 secondes ce que tes frais d'encaissement te coûtent vraiment sur un an. Calculateur gratuit pour commerçants.">
+<link rel="canonical" href="https://mybusinessnotebook.com/calculateur-frais-encaissement.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Combien te coûtent tes frais d'encaissement par an ?">
+<meta property="og:description" content="Carte, mobile money, espèces : le vrai coût de tes encaissements sur un an. Calculateur gratuit.">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:image" content="https://mybusinessnotebook.com/img/calculateur-frais-encaissement.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mybusinessnotebook.com/img/calculateur-frais-encaissement.jpg">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://mybusinessnotebook.com/"},{"@type":"ListItem","position":2,"name":"Calculateur de frais d'encaissement","item":"https://mybusinessnotebook.com/calculateur-frais-encaissement.html"}]}</script>
+<link rel="alternate" hreflang="fr" href="https://mybusinessnotebook.com/calculateur-frais-encaissement.html">
+<link rel="alternate" hreflang="x-default" href="https://mybusinessnotebook.com/calculateur-frais-encaissement.html">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#1b43c0"/><rect x="8.5" y="7" width="15" height="18" rx="1.6" fill="#fff"/><rect x="8.5" y="7" width="3.2" height="18" rx="1.2" fill="#122e86"/><rect x="14" y="11" width="7" height="1.7" rx=".85" fill="#151a24"/><rect x="14" y="15" width="7" height="1.7" rx=".85" fill="#151a24"/><rect x="14" y="19" width="5" height="1.7" rx=".85" fill="#151a24"/><path d="M18.4 5 h3.4 v6.4 l-1.7 -1.5 -1.7 1.5 Z" fill="#e11d2a"/></svg>
+      </span>
+      <span>My Business <span class="accent">Notebook</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="attirer-plus-de-clients-commerce.html">Clients &amp; marketing</a>
+      <a href="comparatif-logiciels-caisse-gratuits-2026.html">Encaissement</a>
+      <a href="calculateur-cout-caisse.html">Coût d'une caisse</a>
+      <a href="calculateur-frais-encaissement.html">Frais d'encaissement</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article class="container">
+  <div class="breadcrumb"><a href="index.html">Accueil</a> › Calculateur de frais d'encaissement</div>
+
+  <span class="pill">Outil gratuit</span>
+  <h1>Combien te coûtent tes frais d'encaissement par an&nbsp;?</h1>
+  <p class="lead">Carte, Wave, Orange Money, MTN, espèces : chaque façon d'encaisser a son coût, et il est presque toujours plus élevé qu'on ne le croit. Fais le test en 30 secondes, avec tes propres chiffres.</p>
+
+  <figure class="hero-img"><img src="img/calculateur-frais-encaissement.webp" alt="Calculateur des frais d'encaissement d'un commerce, carte et mobile money compris"></figure>
+
+  <div class="calc">
+    <label>Monnaie
+      <select id="cur" style="margin-left:.5rem;padding:.3rem .5rem;font-size:1rem">
+        <option value="FCFA" selected>FCFA</option>
+        <option value="€">€</option>
+      </select>
+    </label>
+
+    <label style="margin-top:1rem">Total encaissé par mois, toutes façons confondues : <span class="val" id="caVal"></span></label>
+    <input type="range" id="ca" min="100000" max="10000000" step="50000" value="1500000">
+
+    <label style="margin-top:1rem">Part encaissée par <strong>carte</strong> : <span class="val" id="pCardVal">30 %</span></label>
+    <input type="range" id="pCard" min="0" max="100" step="5" value="30">
+    <label>Frais que ton prestataire carte te prend : <span class="val" id="fCardVal">1,80 %</span></label>
+    <input type="range" id="fCard" min="0" max="4" step="0.05" value="1.8">
+
+    <label style="margin-top:1rem">Part encaissée par <strong>mobile money</strong> (Wave, Orange Money, MTN…) : <span class="val" id="pMmVal">40 %</span></label>
+    <input type="range" id="pMm" min="0" max="100" step="5" value="40">
+    <label>Frais que ton prestataire mobile money te prend : <span class="val" id="fMmVal">1,00 %</span></label>
+    <input type="range" id="fMm" min="0" max="4" step="0.05" value="1">
+
+    <p style="font-size:.85rem;color:var(--ink-soft);margin:.6rem 0 0">Le reste est considéré comme des espèces (sans frais). Mets les taux que <strong>ton</strong> prestataire te prend vraiment : ils changent d'un contrat et d'un pays à l'autre.</p>
+
+    <div class="result">
+      <div>Ce que tes frais d'encaissement te coûtent sur <strong>12 mois</strong></div>
+      <div class="big" id="total"></div>
+      <div id="detail" style="font-size:.9rem;color:var(--ink-soft);margin-top:.4rem"></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>À retenir :</strong> une caisse qui ne t'impose <strong>ni commission ni prestataire de paiement</strong> te laisse libre d'encaisser par le canal le moins cher (souvent le mobile money ou les espèces) et de garder cet argent. Sur l'année, l'écart se compte vite en dizaines, voire en centaines de milliers de FCFA.
+  </div>
+
+  <div class="cta-box">
+    <h3>Et si tu gardais cet argent&nbsp;?</h3>
+    <p>digabloPos propose un plan gratuit à vie, sans commission imposée sur tes ventes et sans prestataire de paiement obligatoire. Tu encaisses comme tu veux, tu suis chaque mode de paiement dans ta caisse.</p>
+    <a class="btn" href="https://digablopos.fr/fr?s=mybusinessnotebook" target="_blank" rel="noopener">Essayer digabloPos gratuitement</a>
+  </div>
+
+  <p style="font-size:.82rem;color:#8a8f99">Estimation indicative à titre informatif. Les taux de frais réels varient selon les prestataires, les pays et votre contrat : vérifiez-les sur vos relevés.</p>
+
+  <hr>
+  <p>Pour aller plus loin : <a href="frais-caches-logiciel-caisse.html">les frais cachés des logiciels de caisse</a>, notre <a href="comparatif-logiciels-caisse-gratuits-2026.html">comparatif des caisses gratuites 2026</a>, ou le <a href="calculateur-cout-caisse.html">calculateur du coût d'une caisse</a>.</p>
+
+<section class="related-block">
+  <h2>À lire aussi</h2>
+  <div class="grid">
+      <a class="post-card" href="frais-caches-logiciel-caisse.html"><span class="pc-media" style="background-image:url('img/frais-caches-logiciel-caisse-sm.webp')"></span><span class="pc-body"><span class="tag">À lire aussi</span><h3>Frais cachés des logiciels de caisse : le vrai coût</h3><p>Commission « bundlée », leasing du matériel, modules « indispensables » : tout ce qui gonfle la facture.</p></span></a>
+      <a class="post-card" href="calculateur-cout-caisse.html"><span class="pc-media" style="background-image:url('img/calculateur-cout-caisse-sm.webp')"></span><span class="pc-body"><span class="tag">Outil gratuit</span><h3>Combien te coûte vraiment ta caisse ?</h3><p>Estime le coût réel de ta caisse, commissions comprises, en 30 secondes.</p></span></a>
+      <a class="post-card" href="attirer-plus-de-clients-commerce.html"><span class="pc-media" style="background-image:url('img/attirer-plus-de-clients-commerce-sm.webp')"></span><span class="pc-body"><span class="tag">À lire aussi</span><h3>9 façons d'attirer plus de clients</h3><p>Des tactiques simples et gratuites pour faire venir, et revenir, du monde.</p></span></a>
+  </div>
+</section>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>© 2026 My Business Notebook, Comparatifs indépendants pour commerçants.</div>
+    <p class="disclosure">Outil informatif. Vérifiez vos frais réels auprès de vos prestataires.</p>
+  </div>
+</footer>
+
+<script>
+  const ca = document.getElementById('ca');
+  const pCard = document.getElementById('pCard'), fCard = document.getElementById('fCard');
+  const pMm = document.getElementById('pMm'), fMm = document.getElementById('fMm');
+  const cur = document.getElementById('cur');
+  const pct = (n, d) => n.toLocaleString('fr-FR', {minimumFractionDigits:d, maximumFractionDigits:d}) + ' %';
+  function money(n){
+    const unit = cur.value;
+    const v = Math.round(n).toLocaleString('fr-FR');
+    return unit === '€' ? v + ' €' : v + ' FCFA';
+  }
+  function update(){
+    const caN = +ca.value, pC = +pCard.value, fC = +fCard.value, pM = +pMm.value, fM = +fMm.value;
+    // les parts carte + mobile money ne peuvent pas depasser 100 %
+    let partCard = pC, partMm = pM;
+    if (partCard + partMm > 100){ partMm = 100 - partCard; if (partMm < 0){ partMm = 0; partCard = 100; } pMm.value = partMm; }
+    document.getElementById('caVal').textContent = money(caN);
+    document.getElementById('pCardVal').textContent = partCard + ' %';
+    document.getElementById('fCardVal').textContent = pct(fC, 2);
+    document.getElementById('pMmVal').textContent = partMm + ' %';
+    document.getElementById('fMmVal').textContent = pct(fM, 2);
+    const cardAn = caN * (partCard/100) * (fC/100) * 12;
+    const mmAn   = caN * (partMm/100) * (fM/100) * 12;
+    const total = cardAn + mmAn;
+    const partCash = Math.max(0, 100 - partCard - partMm);
+    document.getElementById('total').textContent = money(total);
+    document.getElementById('detail').textContent =
+      'dont ' + money(cardAn) + ' de frais carte + ' + money(mmAn) + ' de frais mobile money · ' + partCash + ' % encaissé en espèces (sans frais)';
+  }
+  [ca, pCard, fCard, pMm, fMm, cur].forEach(el => el.addEventListener('input', update));
+  cur.addEventListener('change', update);
+  update();
+</script>
+
+</body>
+</html>
