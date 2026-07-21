@@ -1,23 +1,14 @@
 {
-  "run": 8,
+  "run": 9,
   "next_market_index": 4,
   "next_type": "comparison",
   "recent_markets": [
     "Portugal/pt",
-    "Portugal/pt",
-    "Brazil/pt"
+    "Brazil/pt",
+    "Emerging markets/en"
   ],
   "last_type": "advice",
-  "priority_topics": [
-    {
-      "market": "Emerging markets/en",
-      "market_index": 8,
-      "lang": "en",
-      "type": "advice",
-      "topic": "The two POS features almost nobody documents: letting a trusted customer leave owing money (a real customer tab or credit book, not prepaid store credit), and capping how much discount each employee can give. A buyer's guide for shop and restaurant owners in emerging markets (Philippines utang, Kenya, Nigeria, and by extension fiado in Brazil and the ardoise in francophone Africa): why these two things decide whether your margin survives, and exactly how to check them before you sign.",
-      "constraint": "HARD RULES. (1) NEVER state or imply that a named competitor lacks a feature. Absence of public documentation is NOT absence of the feature. If your research finds nothing, write only a dated, sourced observation such as 'as of <month year>, X's public documentation and help centre do not describe a per-employee discount limit; ask their sales team to demonstrate it', and say where you looked. Never write 'no POS offers this' or 'none of them can do it'. (2) The backbone of the article is a distinction the reader must grasp: STORE CREDIT (the customer prepays or holds a voucher, the shop owes the customer) is the OPPOSITE of a CUSTOMER TAB or credit book (the customer leaves owing the shop money). An open table or running bill during service is NOT a customer tab either, because it closes before the customer leaves. Many products advertise 'credit' meaning the first one. (3) digabloPos confirmed facts you may state here, and nothing beyond: it manages customer credit/tabs (money owed to the shop), and it lets you cap the discount an employee can give, with permissions per employee/role. Do not claim it is a bank, an acquirer, or that it handles any local payment scheme. (4) Give the reader a practical verification method: the exact questions to ask a vendor, and what to test during a free trial, so the article is useful even to someone who chooses a competitor. Neutral buyer's guide tone, not a sales page."
-    }
-  ],
+  "priority_topics": [],
   "published": [
     "staff-scheduling-small-business",
     "comparatif-sumup-zettle-tiller-addition",
@@ -26,6 +17,7 @@
     "controle-estoque-pequenos-negocios-brasil",
     "pdv-para-restauracao-portugal",
     "reduzir-taxas-cartao-comercio-portugal",
-    "pix-para-comerciantes-brasil"
+    "pix-para-comerciantes-brasil",
+    "customer-tabs-and-staff-discount-limits"
   ]
 }
