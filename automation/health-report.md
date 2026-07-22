@@ -1,4 +1,4 @@
-# Rapport de santé — 2026-07-21
+# Rapport de santé — 2026-07-22
 
 VERIF LIVE : IMPOSSIBLE (reseau sortant bloque)
 
@@ -8,10 +8,10 @@ VERIF LIVE : IMPOSSIBLE (reseau sortant bloque)
 
 Aucune action requise aujourd'hui.
 
-- **Vérification live impossible depuis cet environnement.** Le proxy sortant du bac à sable a refusé la connexion HTTPS vers `mybusinessnotebook.com` (WebFetch → `403 Forbidden` ; `curl` → `CONNECT tunnel failed, response 403` ; statut du proxy : `connect_rejected` / "gateway answered 403 to CONNECT (policy denial or upstream failure)"). Ce n'est pas un défaut du site, c'est une restriction de cet environnement d'exécution — les sections A (disponibilité live) et B (balayage live du sitemap, ~82 URLs) n'ont pas pu être exécutées aujourd'hui.
+- **Vérification live impossible depuis cet environnement.** Le proxy sortant du bac à sable a refusé la connexion HTTPS vers `mybusinessnotebook.com` (WebFetch → `403 Forbidden` ; `curl` → `CONNECT tunnel failed, response 403` ; statut du proxy : `connect_rejected` / "gateway answered 403 to CONNECT (policy denial or upstream failure)"). Ce n'est pas un défaut du site, c'est une restriction de cet environnement d'exécution — les sections A (disponibilité live) et B (balayage live du sitemap, 82 URLs) n'ont pas pu être exécutées aujourd'hui.
 - **DNS : aucun problème.** Résolution via `python3 socket.getaddrinfo` (ne passe pas par le proxy HTTPS bloqué) :
   - `mybusinessnotebook.com` → `216.198.79.1` (plage Vercel)
-  - `www.mybusinessnotebook.com` → `66.33.60.35` / `76.76.21.123` (plages Vercel)
+  - `www.mybusinessnotebook.com` → `66.33.60.130` / `76.76.21.61` (plages Vercel)
   - Pas d'IP de parking Namecheap, pas de nameserver `failed-whois-verification`. DNS correctement pointé vers Vercel.
 
 ## CRITIQUE
