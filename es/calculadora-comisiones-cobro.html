@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<title>Calculadora: ¿cuánto te cuestan las comisiones de cobro al año? | My Business Notebook</title>
+<meta name="description" content="Tarjeta, pagos digitales, efectivo: estima en 30 segundos lo que te cuestan de verdad las comisiones de cobro en un año. Calculadora gratis para comercios.">
+<link rel="canonical" href="https://mybusinessnotebook.com/es/calculadora-comisiones-cobro.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="¿Cuánto te cuestan las comisiones de cobro al año?">
+<meta property="og:description" content="Tarjeta, pagos digitales, efectivo: el coste real de tus cobros en un año. Calculadora gratis.">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://mybusinessnotebook.com/es/img/mejorar-flujo-caja-pequenos-negocios-mexico.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mybusinessnotebook.com/es/img/mejorar-flujo-caja-pequenos-negocios-mexico.jpg">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://mybusinessnotebook.com/es/"},{"@type":"ListItem","position":2,"name":"Calculadora de comisiones de cobro","item":"https://mybusinessnotebook.com/es/calculadora-comisiones-cobro.html"}]}</script>
+<link rel="alternate" hreflang="es" href="https://mybusinessnotebook.com/es/calculadora-comisiones-cobro.html">
+<link rel="alternate" hreflang="x-default" href="https://mybusinessnotebook.com/es/calculadora-comisiones-cobro.html">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#1b43c0"/><rect x="8.5" y="7" width="15" height="18" rx="1.6" fill="#fff"/><rect x="8.5" y="7" width="3.2" height="18" rx="1.2" fill="#122e86"/><rect x="14" y="11" width="7" height="1.7" rx=".85" fill="#151a24"/><rect x="14" y="15" width="7" height="1.7" rx=".85" fill="#151a24"/><rect x="14" y="19" width="5" height="1.7" rx=".85" fill="#151a24"/><path d="M18.4 5 h3.4 v6.4 l-1.7 -1.5 -1.7 1.5 Z" fill="#e11d2a"/></svg>
+      </span>
+      <span>My Business <span class="accent">Notebook</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="tpv-para-bar.html">TPV para bar</a>
+      <a href="sistema-pos-cfdi-mexico.html">POS y CFDI</a>
+      <a href="calculadora-comisiones-cobro.html">Comisiones</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article class="container">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › Calculadora de comisiones de cobro</div>
+
+  <span class="pill">Herramienta gratuita</span>
+  <h1>¿Cuánto te cuestan las comisiones de cobro al año?</h1>
+  <p class="lead">Tarjeta, pagos digitales, efectivo: cada forma de cobrar tiene un coste, y casi siempre es más alto de lo que uno cree. Haz la prueba en 30 segundos, con tus propias cifras.</p>
+
+  <div class="calc">
+    <label>Moneda
+      <select id="cur" style="margin-left:.5rem;padding:.3rem .5rem;font-size:1rem">
+        <option value="MXN" selected>MXN</option>
+        <option value="€">€</option>
+      </select>
+    </label>
+
+    <label style="margin-top:1rem">Total cobrado al mes, sumando todas las formas: <span class="val" id="caVal"></span></label>
+    <input type="range" id="ca" min="10000" max="1000000" step="5000" value="150000">
+
+    <label style="margin-top:1rem">Parte cobrada con <strong>tarjeta</strong>: <span class="val" id="pCardVal">40 %</span></label>
+    <input type="range" id="pCard" min="0" max="100" step="5" value="40">
+    <label>Comisión que te cobra tu proveedor de tarjeta: <span class="val" id="fCardVal">2,50 %</span></label>
+    <input type="range" id="fCard" min="0" max="5" step="0.05" value="2.5">
+
+    <label style="margin-top:1rem">Parte cobrada con <strong>pagos digitales</strong> (transferencia, TPV móvil, Mercado Pago…): <span class="val" id="pMmVal">20 %</span></label>
+    <input type="range" id="pMm" min="0" max="100" step="5" value="20">
+    <label>Comisión que te cobra ese proveedor: <span class="val" id="fMmVal">1,50 %</span></label>
+    <input type="range" id="fMm" min="0" max="5" step="0.05" value="1.5">
+
+    <p style="font-size:.85rem;color:var(--ink-soft);margin:.6rem 0 0">El resto se cuenta como efectivo (sin comisión). Pon las tasas que <strong>tu</strong> proveedor te cobra de verdad: cambian según el contrato y el país.</p>
+
+    <div class="result">
+      <div>Lo que te cuestan tus comisiones de cobro en <strong>12 meses</strong></div>
+      <div class="big" id="total"></div>
+      <div id="detail" style="font-size:.9rem;color:var(--ink-soft);margin-top:.4rem"></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Para recordar:</strong> un sistema de cobro que no te impone <strong>ni comisión ni proveedor de pago</strong> te deja libre para cobrar por el canal más barato y quedarte con ese dinero. En un año, la diferencia se cuenta rápido en miles.
+  </div>
+
+  <div class="cta-box">
+    <h3>¿Y si te quedaras con ese dinero?</h3>
+    <p>digabloPos ofrece un plan gratis para siempre, sin comisión impuesta sobre tus ventas y sin proveedor de pago obligatorio. Cobras como quieras y sigues cada forma de pago desde tu caja.</p>
+    <a class="btn" href="https://digablopos.fr/es?s=mybusinessnotebook" target="_blank" rel="noopener">Probar digabloPos gratis</a>
+  </div>
+
+  <p style="font-size:.82rem;color:#8a8f99">Estimación orientativa, con fines informativos. Las comisiones reales varían según el proveedor, el país y tu contrato: compruébalas en tus liquidaciones.</p>
+
+<section class="related-block">
+  <h2>Para seguir leyendo</h2>
+  <div class="grid">
+      <a class="post-card" href="mejorar-flujo-caja-pequenos-negocios-mexico.html"><span class="pc-media" style="background-image:url('img/mejorar-flujo-caja-pequenos-negocios-mexico-sm.webp')"></span><span class="pc-body"><span class="tag">Para seguir leyendo</span><h3>Mejorar el flujo de caja de tu negocio</h3><p>Ideas prácticas para que no te falte dinero a fin de mes.</p></span></a>
+      <a class="post-card" href="sistema-pos-cfdi-mexico.html"><span class="pc-media" style="background-image:url('img/sistema-pos-cfdi-mexico-sm.webp')"></span><span class="pc-body"><span class="tag">Para seguir leyendo</span><h3>Sistema POS y CFDI en México</h3><p>Cómo elegir una caja que facture CFDI sin complicarte.</p></span></a>
+      <a class="post-card" href="tpv-para-tienda-abarrotes.html"><span class="pc-media" style="background-image:url('img/tpv-para-tienda-abarrotes-sm.webp')"></span><span class="pc-body"><span class="tag">Para seguir leyendo</span><h3>TPV para tienda de abarrotes</h3><p>Lo que de verdad necesitas para controlar ventas y stock.</p></span></a>
+  </div>
+</section>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+      <div class="lang-switch" style="margin:0 0 .9rem;justify-content:center">
+        <span style="color:#8a8478;font-size:.74rem">Idioma:</span>
+        <a href="?lang=fr">FR</a>
+        <a href="?lang=en">EN</a>
+        <a href="?lang=es" aria-current="true">ES</a>
+        <a href="?lang=pt">PT</a>
+      </div>
+    <div>© 2026 My Business Notebook, Comparativas independientes para comercios.</div>
+    <p class="disclosure">Herramienta informativa. Comprueba tus comisiones reales con tus proveedores.</p>
+  </div>
+</footer>
+
+<script>
+  const ca = document.getElementById('ca');
+  const pCard = document.getElementById('pCard'), fCard = document.getElementById('fCard');
+  const pMm = document.getElementById('pMm'), fMm = document.getElementById('fMm');
+  const cur = document.getElementById('cur');
+  const pct = (n, d) => n.toLocaleString('es-MX', {minimumFractionDigits:d, maximumFractionDigits:d}) + ' %';
+  function money(n){
+    const unit = cur.value;
+    const v = Math.round(n).toLocaleString('es-MX');
+    return unit === '€' ? v + ' €' : v + ' MXN';
+  }
+  function update(){
+    const caN = +ca.value, pC = +pCard.value, fC = +fCard.value, pM = +pMm.value, fM = +fMm.value;
+    let partCard = pC, partMm = pM;
+    if (partCard + partMm > 100){ partMm = 100 - partCard; if (partMm < 0){ partMm = 0; partCard = 100; } pMm.value = partMm; }
+    document.getElementById('caVal').textContent = money(caN);
+    document.getElementById('pCardVal').textContent = partCard + ' %';
+    document.getElementById('fCardVal').textContent = pct(fC, 2);
+    document.getElementById('pMmVal').textContent = partMm + ' %';
+    document.getElementById('fMmVal').textContent = pct(fM, 2);
+    const cardAn = caN * (partCard/100) * (fC/100) * 12;
+    const mmAn   = caN * (partMm/100) * (fM/100) * 12;
+    const total = cardAn + mmAn;
+    const partCash = Math.max(0, 100 - partCard - partMm);
+    document.getElementById('total').textContent = money(total);
+    document.getElementById('detail').textContent =
+      'de los cuales ' + money(cardAn) + ' en comisiones de tarjeta + ' + money(mmAn) + ' en pagos digitales · ' + partCash + ' % cobrado en efectivo (sin comisión)';
+  }
+  [ca, pCard, fCard, pMm, fMm, cur].forEach(el => el.addEventListener('input', update));
+  cur.addEventListener('change', update);
+  update();
+</script>
+
+</body>
+</html>
