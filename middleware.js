@@ -1,8 +1,17 @@
-// Vercel Edge Middleware, auto-langue selon le pays (IP) du visiteur.
-// FR est servi à la racine "/"; EN/ES/PT dans /en /es /pt.
-// Override manuel via ?lang=xx (mémorisé en cookie 1 an).
+// Vercel Edge Middleware.
+// - Langue AUTOMATIQUE selon le pays (IP) du visiteur, uniquement sur l'accueil.
+//   FR est servi à la racine "/"; EN/ES/PT dans /en /es /pt.
+// - Bouton de langue : ?lang=xx fonctionne DÉSORMAIS sur TOUTES les pages
+//   (accueil, /index.html, /en//es//pt/, et les articles), mémorisé en cookie 1 an.
+//   La plupart des articles n'existent que dans une langue : changer de langue
+//   depuis un article renvoie donc vers l'accueil de la langue choisie.
 
-export const config = { matcher: '/' };
+export const config = {
+  // On exécute le middleware sur les PAGES, jamais sur les fichiers statiques
+  // (images, css, js, xml, txt…) — sinon on gaspille des invocations et on
+  // risquerait de rediriger un asset. NB : les .html RESTENT couverts.
+  matcher: '/((?!.*\\.(?:css|js|mjs|png|jpe?g|webp|gif|svg|ico|xml|txt|json|webmanifest|woff2?|map)).*)',
+};
 
 const LANG_BY_COUNTRY = {
   // Français (servi à la racine)
@@ -19,24 +28,38 @@ const LANG_BY_COUNTRY = {
   GH:'en', ZA:'en', IN:'en', SG:'en', MY:'en', TZ:'en', UG:'en', ZM:'en', ZW:'en'
 };
 
+const LANGS = ['fr', 'en', 'es', 'pt'];
+const home = (lang) => (lang === 'fr' ? '/' : '/' + lang + '/');
+
 export default function middleware(request) {
   const url = new URL(request.url);
+  const path = url.pathname;
   const override = (url.searchParams.get('lang') || '').toLowerCase();
+
+  // 1) Choix MANUEL via le bouton de langue : valable PARTOUT.
+  //    On mémorise le choix en cookie et on envoie vers l'accueil de la langue.
+  if (LANGS.includes(override)) {
+    return new Response(null, {
+      status: 307,
+      headers: {
+        Location: home(override),
+        'Set-Cookie': 'site_lang=' + override + '; Path=/; Max-Age=31536000; SameSite=Lax',
+      },
+    });
+  }
+
+  // 2) Sans choix manuel : on n'auto-oriente QUE la page d'accueil.
+  //    On ne touche jamais aux articles ni aux accueils de langue (évite de
+  //    casser les URLs et toute boucle de redirection).
+  if (path !== '/' && path !== '/index.html') return;
+
   const cookie = request.headers.get('cookie') || '';
   const cookieLang = (/(?:^|;\s*)site_lang=([a-z]{2})/.exec(cookie) || [])[1];
   const country = (request.headers.get('x-vercel-ip-country') || '').toUpperCase();
 
-  let lang = override || cookieLang || LANG_BY_COUNTRY[country] || 'en';
-  if (!['fr', 'en', 'es', 'pt'].includes(lang)) lang = 'en';
+  let lang = cookieLang || LANG_BY_COUNTRY[country] || 'en';
+  if (!LANGS.includes(lang)) lang = 'en';
 
-  const dest = lang === 'fr' ? '/' : '/' + lang + '/';
-
-  // Déjà au bon endroit (racine FR), aucun override : on sert tel quel.
-  if (dest === '/' && !override) return;
-
-  const headers = { Location: dest };
-  if (override) {
-    headers['Set-Cookie'] = 'site_lang=' + lang + '; Path=/; Max-Age=31536000; SameSite=Lax';
-  }
-  return new Response(null, { status: 307, headers });
+  if (lang === 'fr') return; // FR est servi à la racine, rien à faire.
+  return new Response(null, { status: 307, headers: { Location: home(lang) } });
 }
