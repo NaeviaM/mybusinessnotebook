@@ -1,13 +1,13 @@
 {
-  "run": 10,
-  "next_market_index": 5,
-  "next_type": "advice",
+  "run": 11,
+  "next_market_index": 6,
+  "next_type": "comparison",
   "recent_markets": [
-    "Brazil/pt",
     "Emerging markets/en",
-    "Kenya/en"
+    "Kenya/en",
+    "Mexico/es"
   ],
-  "last_type": "comparison",
+  "last_type": "advice",
   "priority_topics": [],
   "published": [
     "staff-scheduling-small-business",
@@ -19,6 +19,7 @@
     "reduzir-taxas-cartao-comercio-portugal",
     "pix-para-comerciantes-brasil",
     "customer-tabs-and-staff-discount-limits",
-    "best-pos-system-kenya-duka-2026"
+    "best-pos-system-kenya-duka-2026",
+    "control-fiado-clientes-tienda-mexico"
   ]
 }
