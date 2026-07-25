@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<title>Calculadora: quanto o seu PDV custa de verdade por ano? | My Business Notebook</title>
+<meta name="description" content="Calcule em 30 segundos quanto o seu caixa custa de verdade em um ano, taxas de cartão incluídas. Calculadora grátis para o comércio e restaurantes.">
+<link rel="canonical" href="https://mybusinessnotebook.com/pt/calculadora-custo-pdv.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quanto o seu PDV custa de verdade por ano?">
+<meta property="og:description" content="Calculadora grátis do custo real de um caixa, taxas incluídas.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://mybusinessnotebook.com/pt/img/sistema-pdv-nfce-brasil.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mybusinessnotebook.com/pt/img/sistema-pdv-nfce-brasil.jpg">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://mybusinessnotebook.com/pt/"},{"@type":"ListItem","position":2,"name":"Calculadora de custo do PDV","item":"https://mybusinessnotebook.com/pt/calculadora-custo-pdv.html"}]}</script>
+<link rel="alternate" hreflang="pt" href="https://mybusinessnotebook.com/pt/calculadora-custo-pdv.html">
+<link rel="alternate" hreflang="x-default" href="https://mybusinessnotebook.com/pt/calculadora-custo-pdv.html">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#1b43c0"/><rect x="8.5" y="7" width="15" height="18" rx="1.6" fill="#fff"/><rect x="8.5" y="7" width="3.2" height="18" rx="1.2" fill="#122e86"/><rect x="14" y="11" width="7" height="1.7" rx=".85" fill="#151a24"/><rect x="14" y="15" width="7" height="1.7" rx=".85" fill="#151a24"/><rect x="14" y="19" width="5" height="1.7" rx=".85" fill="#151a24"/><path d="M18.4 5 h3.4 v6.4 l-1.7 -1.5 -1.7 1.5 Z" fill="#e11d2a"/></svg>
+      </span>
+      <span>My Business <span class="accent">Notebook</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="pdv-para-bar.html">PDV para bar</a>
+      <a href="calculadora-taxas-recebimento.html">Taxas</a>
+      <a href="calculadora-custo-pdv.html">Custo do PDV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article class="container">
+  <div class="breadcrumb"><a href="index.html">Início</a> › Calculadora de custo do PDV</div>
+
+  <span class="pill">Ferramenta gratuita</span>
+  <h1>Quanto o seu PDV custa de verdade por ano?</h1>
+  <p class="lead">A maioria dos lojistas subestima quanto o caixa custa, porque as <strong>taxas do cartão</strong> passam despercebidas no dia a dia. Faça o teste em 30 segundos, com os seus próprios números.</p>
+
+  <div class="calc">
+    <label>Moeda
+      <select id="cur" style="margin-left:.5rem;padding:.3rem .5rem;font-size:1rem">
+        <option value="R$" data-loc="pt-BR" selected>R$</option>
+        <option value="€" data-loc="pt-PT">€</option>
+      </select>
+    </label>
+
+    <label style="margin-top:1rem">Vendas recebidas no cartão por mês: <span class="val" id="caVal"></span></label>
+    <input type="range" id="ca" min="1000" max="150000" step="1000" value="20000">
+
+    <label style="margin-top:1rem">Taxa que a sua maquininha cobra: <span class="val" id="commVal">2,50 %</span></label>
+    <input type="range" id="comm" min="0" max="6" step="0.05" value="2.5">
+
+    <label style="margin-top:1rem">Mensalidade do software: <span class="val" id="aboVal"></span></label>
+    <input type="range" id="abo" min="0" max="500" step="10" value="0">
+
+    <p style="font-size:.85rem;color:var(--ink-soft);margin:.6rem 0 0">Coloque a taxa que a <strong>sua</strong> maquininha cobra de verdade: ela muda conforme o contrato e o país.</p>
+
+    <div class="result">
+      <div>Custo estimado em <strong>12 meses</strong></div>
+      <div class="big" id="total"></div>
+      <div id="detail" style="font-size:.9rem;color:var(--ink-soft);margin-top:.4rem"></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Você sabia?</strong> Um caixa <strong>sem taxa imposta</strong> sobre os recebimentos deixa você ficar com 100 % das suas vendas no cartão. No ano, a diferença chega a centenas, às vezes milhares.
+  </div>
+
+  <div class="cta-box">
+    <h3>E se você ficasse com tudo?</h3>
+    <p>O digabloPos tem um plano grátis para sempre, sem taxa imposta e sem recebedor de pagamento obrigatório. Faça a conta e teste.</p>
+    <a class="btn" href="https://digablopos.fr/pt?s=mybusinessnotebook" target="_blank" rel="noopener">Testar o digabloPos grátis</a>
+  </div>
+
+  <p style="font-size:.82rem;color:#8a8f99">Estimativa indicativa, para fins informativos. As taxas e mensalidades reais variam conforme o recebedor, o país e o seu contrato.</p>
+
+<section class="related-block">
+  <h2>Leia também</h2>
+  <div class="grid">
+      <a class="post-card" href="calculadora-taxas-recebimento.html"><span class="pc-media" style="background-image:url('img/reduzir-taxas-cartao-comercio-portugal-sm.webp')"></span><span class="pc-body"><span class="tag">Ferramenta gratuita</span><h3>Calculadora de taxas de recebimento</h3><p>Quanto o cartão e o Pix custam por ano.</p></span></a>
+      <a class="post-card" href="comparativo-stone-pagbank-mercado-pago.html"><span class="pc-media" style="background-image:url('img/comparativo-stone-pagbank-mercado-pago-sm.webp')"></span><span class="pc-body"><span class="tag">Leia também</span><h3>Stone, PagBank ou Mercado Pago?</h3><p>Comparativo das maquininhas mais usadas.</p></span></a>
+      <a class="post-card" href="sistema-pdv-nfce-brasil.html"><span class="pc-media" style="background-image:url('img/sistema-pdv-nfce-brasil-sm.webp')"></span><span class="pc-body"><span class="tag">Leia também</span><h3>PDV e NFC-e no Brasil</h3><p>Como escolher um caixa que emite NFC-e sem dor de cabeça.</p></span></a>
+  </div>
+</section>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+      <div class="lang-switch" style="margin:0 0 .9rem;justify-content:center">
+        <span style="color:#8a8478;font-size:.74rem">Idioma:</span>
+        <a href="?lang=fr">FR</a>
+        <a href="?lang=en">EN</a>
+        <a href="?lang=es">ES</a>
+        <a href="?lang=pt" aria-current="true">PT</a>
+      </div>
+    <div>© 2026 My Business Notebook, Comparativos independentes para o comércio.</div>
+    <p class="disclosure">Ferramenta informativa. Confira os seus custos reais com os seus recebedores.</p>
+  </div>
+</footer>
+
+<script>
+  const ca = document.getElementById('ca'), comm = document.getElementById('comm'), abo = document.getElementById('abo');
+  const cur = document.getElementById('cur');
+  function loc(){ return cur.options[cur.selectedIndex].getAttribute('data-loc'); }
+  function money(n){
+    const v = Math.round(n).toLocaleString(loc());
+    return cur.value === '€' ? v + ' €' : 'R$ ' + v;
+  }
+  function update(){
+    const caN = +ca.value, commN = +comm.value, aboN = +abo.value;
+    document.getElementById('caVal').textContent = money(caN);
+    document.getElementById('commVal').textContent = commN.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' %';
+    document.getElementById('aboVal').textContent = money(aboN);
+    const commissionAn = caN * (commN/100) * 12;
+    const aboAn = aboN * 12;
+    const total = commissionAn + aboAn;
+    document.getElementById('total').textContent = money(total);
+    document.getElementById('detail').textContent =
+      'sendo ' + money(commissionAn) + ' de taxas + ' + money(aboAn) + ' de mensalidade';
+  }
+  [ca, comm, abo, cur].forEach(el => el.addEventListener('input', update));
+  cur.addEventListener('change', update);
+  update();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<title>Calculadora: ¿cuánto te cuesta de verdad tu TPV al año? | My Business Notebook</title>
+<meta name="description" content="Calcula en 30 segundos lo que tu caja te cuesta de verdad en un año, comisiones de pago incluidas. Calculadora gratis para comercios y restaurantes.">
+<link rel="canonical" href="https://mybusinessnotebook.com/es/calculadora-coste-tpv.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="¿Cuánto te cuesta de verdad tu TPV al año?">
+<meta property="og:description" content="Calculadora gratis del coste real de una caja, comisiones incluidas.">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://mybusinessnotebook.com/es/img/sistema-tpv-verifactu-espana.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mybusinessnotebook.com/es/img/sistema-tpv-verifactu-espana.jpg">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://mybusinessnotebook.com/es/"},{"@type":"ListItem","position":2,"name":"Calculadora de coste del TPV","item":"https://mybusinessnotebook.com/es/calculadora-coste-tpv.html"}]}</script>
+<link rel="alternate" hreflang="es" href="https://mybusinessnotebook.com/es/calculadora-coste-tpv.html">
+<link rel="alternate" hreflang="x-default" href="https://mybusinessnotebook.com/es/calculadora-coste-tpv.html">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#1b43c0"/><rect x="8.5" y="7" width="15" height="18" rx="1.6" fill="#fff"/><rect x="8.5" y="7" width="3.2" height="18" rx="1.2" fill="#122e86"/><rect x="14" y="11" width="7" height="1.7" rx=".85" fill="#151a24"/><rect x="14" y="15" width="7" height="1.7" rx=".85" fill="#151a24"/><rect x="14" y="19" width="5" height="1.7" rx=".85" fill="#151a24"/><path d="M18.4 5 h3.4 v6.4 l-1.7 -1.5 -1.7 1.5 Z" fill="#e11d2a"/></svg>
+      </span>
+      <span>My Business <span class="accent">Notebook</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="tpv-para-bar.html">TPV para bar</a>
+      <a href="calculadora-comisiones-cobro.html">Comisiones</a>
+      <a href="calculadora-coste-tpv.html">Coste del TPV</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article class="container">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> › Calculadora de coste del TPV</div>
+
+  <span class="pill">Herramienta gratuita</span>
+  <h1>¿Cuánto te cuesta de verdad tu TPV al año?</h1>
+  <p class="lead">La mayoría de los comercios subestima lo que le cuesta su caja, porque las <strong>comisiones de las tarjetas</strong> pasan desapercibidas en el día a día. Haz la prueba en 30 segundos, con tus propias cifras.</p>
+
+  <div class="calc">
+    <label>Moneda
+      <select id="cur" style="margin-left:.5rem;padding:.3rem .5rem;font-size:1rem">
+        <option value="€" data-loc="es-ES" data-suf="1" selected>€</option>
+        <option value="MXN" data-loc="es-MX" data-suf="1">MXN</option>
+      </select>
+    </label>
+
+    <label style="margin-top:1rem">Ventas cobradas con tarjeta al mes: <span class="val" id="caVal"></span></label>
+    <input type="range" id="ca" min="1000" max="200000" step="1000" value="15000">
+
+    <label style="margin-top:1rem">Comisión que te cobra tu proveedor actual: <span class="val" id="commVal">1,75 %</span></label>
+    <input type="range" id="comm" min="0" max="4" step="0.05" value="1.75">
+
+    <label style="margin-top:1rem">Cuota mensual del software: <span class="val" id="aboVal"></span></label>
+    <input type="range" id="abo" min="0" max="200" step="5" value="0">
+
+    <p style="font-size:.85rem;color:var(--ink-soft);margin:.6rem 0 0">Pon la tasa que <strong>tu</strong> proveedor te cobra de verdad: cambia según el contrato y el país.</p>
+
+    <div class="result">
+      <div>Coste estimado en <strong>12 meses</strong></div>
+      <div class="big" id="total"></div>
+      <div id="detail" style="font-size:.9rem;color:var(--ink-soft);margin-top:.4rem"></div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>¿Lo sabías?</strong> Una caja <strong>sin comisión impuesta</strong> sobre los cobros te deja quedarte con el 100 % de tus ventas con tarjeta. En un año, la diferencia se cuenta en cientos, a veces miles.
+  </div>
+
+  <div class="cta-box">
+    <h3>¿Y si te lo quedaras todo?</h3>
+    <p>digabloPos ofrece un plan gratis para siempre, sin comisión impuesta y sin proveedor de pago obligatorio. Haz el cálculo y pruébalo.</p>
+    <a class="btn" href="https://digablopos.fr/es?s=mybusinessnotebook" target="_blank" rel="noopener">Probar digabloPos gratis</a>
+  </div>
+
+  <p style="font-size:.82rem;color:#8a8f99">Estimación orientativa, con fines informativos. Las comisiones y cuotas reales varían según el proveedor, el país y tu contrato.</p>
+
+<section class="related-block">
+  <h2>Para seguir leyendo</h2>
+  <div class="grid">
+      <a class="post-card" href="calculadora-comisiones-cobro.html"><span class="pc-media" style="background-image:url('img/mejorar-flujo-caja-pequenos-negocios-mexico-sm.webp')"></span><span class="pc-body"><span class="tag">Herramienta gratuita</span><h3>Calculadora de comisiones de cobro</h3><p>Cuánto te cuestan la tarjeta y los pagos digitales al año.</p></span></a>
+      <a class="post-card" href="sistema-tpv-verifactu-espana.html"><span class="pc-media" style="background-image:url('img/sistema-tpv-verifactu-espana-sm.webp')"></span><span class="pc-body"><span class="tag">Para seguir leyendo</span><h3>TPV y Verifactu en España</h3><p>Qué mirar para elegir una caja lista para la nueva normativa.</p></span></a>
+      <a class="post-card" href="tpv-para-tienda-abarrotes.html"><span class="pc-media" style="background-image:url('img/tpv-para-tienda-abarrotes-sm.webp')"></span><span class="pc-body"><span class="tag">Para seguir leyendo</span><h3>TPV para tienda de abarrotes</h3><p>Lo que de verdad necesitas para controlar ventas y stock.</p></span></a>
+  </div>
+</section>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+      <div class="lang-switch" style="margin:0 0 .9rem;justify-content:center">
+        <span style="color:#8a8478;font-size:.74rem">Idioma:</span>
+        <a href="?lang=fr">FR</a>
+        <a href="?lang=en">EN</a>
+        <a href="?lang=es" aria-current="true">ES</a>
+        <a href="?lang=pt">PT</a>
+      </div>
+    <div>© 2026 My Business Notebook, Comparativas independientes para comercios.</div>
+    <p class="disclosure">Herramienta informativa. Comprueba tus costes reales con tus proveedores.</p>
+  </div>
+</footer>
+
+<script>
+  const ca = document.getElementById('ca'), comm = document.getElementById('comm'), abo = document.getElementById('abo');
+  const cur = document.getElementById('cur');
+  function loc(){ return cur.options[cur.selectedIndex].getAttribute('data-loc'); }
+  function money(n){
+    const v = Math.round(n).toLocaleString(loc());
+    return cur.value === '€' ? v + ' €' : v + ' MXN';
+  }
+  function update(){
+    const caN = +ca.value, commN = +comm.value, aboN = +abo.value;
+    document.getElementById('caVal').textContent = money(caN);
+    document.getElementById('commVal').textContent = commN.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' %';
+    document.getElementById('aboVal').textContent = money(aboN);
+    const commissionAn = caN * (commN/100) * 12;
+    const aboAn = aboN * 12;
+    const total = commissionAn + aboAn;
+    document.getElementById('total').textContent = money(total);
+    document.getElementById('detail').textContent =
+      'de los cuales ' + money(commissionAn) + ' en comisiones + ' + money(aboAn) + ' en cuota';
+  }
+  [ca, comm, abo, cur].forEach(el => el.addEventListener('input', update));
+  cur.addEventListener('change', update);
+  update();
+</script>
+
+</body>
+</html>
