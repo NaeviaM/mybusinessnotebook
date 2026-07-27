@@ -1,13 +1,13 @@
 {
-  "run": 11,
-  "next_market_index": 6,
-  "next_type": "comparison",
+  "run": 12,
+  "next_market_index": 7,
+  "next_type": "advice",
   "recent_markets": [
-    "Emerging markets/en",
     "Kenya/en",
-    "Mexico/es"
+    "Mexico/es",
+    "DR Congo/fr"
   ],
-  "last_type": "advice",
+  "last_type": "comparison",
   "priority_topics": [],
   "published": [
     "staff-scheduling-small-business",
@@ -20,6 +20,7 @@
     "pix-para-comerciantes-brasil",
     "customer-tabs-and-staff-discount-limits",
     "best-pos-system-kenya-duka-2026",
-    "control-fiado-clientes-tienda-mexico"
+    "control-fiado-clientes-tienda-mexico",
+    "logiciel-caisse-rdc-kinshasa"
   ]
 }
