@@ -1,4 +1,4 @@
-# Rapport de santé — 2026-07-27
+# Rapport de santé — 2026-07-28
 
 VERIF LIVE : IMPOSSIBLE (reseau sortant bloque)
 
@@ -21,12 +21,12 @@ Aucun problème critique. Sections C, D, E, F (toutes sur disque) exécutées in
 ## MOYEN
 
 Aucun problème trouvé :
-- **Intégrité des liens internes (disque)** : 91 fichiers `.html` passés en revue (hors `/sw/`, dont 90 pages de contenu + 1 fichier de vérification Google), tous les `href`, `src` d'image et `background-image: url(...)` internes vérifiés (liens root-relatifs, relatifs et absolus sur le domaine) — 0 lien cassé, 0 image manquante.
+- **Intégrité des liens internes (disque)** : 91 fichiers `.html` passés en revue (hors `/sw/`, dont 90 pages de contenu + 1 fichier de vérification Google), tous les `href`, `src` d'image et `background-image: url(...)` internes vérifiés (liens root-relatifs, relatifs et absolus sur le domaine, plus les liens `?lang=xx` du sélecteur de langue confirmés gérés par `middleware.js`, hors périmètre du contrôle de fichiers) — 0 lien cassé, 0 image manquante.
 - **Piège des URLs sans extension** : 0 URL absolue interne (href) vers un article sans `.html`.
 - **Cohérence sitemap.xml** : 90 entrées `<loc>`, correspondance exacte 1:1 avec les 90 pages de contenu sur disque (4 pages d'accueil FR/EN/ES/PT + 86 articles). 0 entrée pointant vers un fichier manquant, 0 page présente sur disque et absente du sitemap.
 - **Balises d'en-tête** : les 90 pages de contenu ont toutes un `title`, une `meta description`, un `canonical`, une `meta robots`, un `og:image`, un `viewport`, et exactement un seul `h1`. 0 page en défaut. 0 `canonical`/`og:url` utilisant `www`.
 
-Répartition par langue : FR 25 pages (dont l'accueil), EN 24, ES 19, PT 22 (total 90 pages de contenu + 1 fichier de vérification Google, hors `/sw/`).
+Répartition par langue : FR 25 pages (dont l'accueil, 24 articles), EN 24 (23 articles), ES 19 (18 articles), PT 22 (21 articles) — total 90 pages de contenu + 1 fichier de vérification Google, hors `/sw/`.
 
 ## COSMETIQUE
 
