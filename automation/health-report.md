@@ -1,4 +1,4 @@
-# Rapport de santé — 2026-07-29
+# Rapport de santé — 2026-07-30
 
 VERIF LIVE : IMPOSSIBLE (reseau sortant bloque)
 
@@ -8,10 +8,10 @@ VERIF LIVE : IMPOSSIBLE (reseau sortant bloque)
 
 Aucune action requise aujourd'hui.
 
-- **Vérification live impossible depuis cet environnement.** `curl` → `CONNECT tunnel failed, response 403` (proxy sortant du bac à sable) sur `https://mybusinessnotebook.com/`. Ce n'est pas un défaut du site, c'est une restriction de cet environnement d'exécution — les sections A (disponibilité live) et B (balayage live du sitemap, 91 URLs) n'ont pas pu être exécutées aujourd'hui.
+- **Vérification live impossible depuis cet environnement.** `curl` → `CONNECT tunnel failed, response 403` (proxy sortant du bac à sable) sur `https://mybusinessnotebook.com/`, confirmé aussi via l'outil WebFetch (403 Forbidden). Ce n'est pas un défaut du site, c'est une restriction de cet environnement d'exécution — les sections A (disponibilité live) et B (balayage live du sitemap, 91 URLs) n'ont pas pu être exécutées aujourd'hui.
 - **DNS : aucun problème.** Résolution via `python3 socket.getaddrinfo` (ne passe pas par le proxy HTTPS bloqué) :
   - `mybusinessnotebook.com` → `216.198.79.1` (plage Vercel)
-  - `www.mybusinessnotebook.com` → `66.33.60.67` / `76.76.21.98` (plages Vercel)
+  - `www.mybusinessnotebook.com` → `66.33.60.194` / `76.76.21.93` (plages Vercel)
   - Pas d'IP de parking Namecheap, pas de nameserver `failed-whois-verification`. DNS correctement pointé vers Vercel.
 
 ## CRITIQUE
@@ -21,10 +21,10 @@ Aucun problème critique. Sections C, D, E, F (toutes sur disque) exécutées in
 ## MOYEN
 
 Aucun problème trouvé :
-- **Intégrité des liens internes (disque)** : 92 fichiers `.html` passés en revue (hors `/sw/`, dont 91 pages de contenu + 1 fichier de vérification Google), tous les `href`, `src` d'image et `background-image: url(...)` internes vérifiés (liens root-relatifs, relatifs et absolus sur le domaine) — 0 lien cassé, 0 image manquante.
-- **Piège des URLs sans extension** : 0 URL absolue interne (href/canonical/og:url) vers un article sans `.html`.
-- **Cohérence sitemap.xml** : 91 entrées `<loc>`, correspondance exacte 1:1 avec les 91 pages de contenu sur disque (4 pages d'accueil FR/EN/ES/PT + 87 articles). 0 entrée pointant vers un fichier manquant, 0 page présente sur disque et absente du sitemap. 0 doublon de `<loc>`.
-- **Balises d'en-tête** : les 91 pages de contenu ont toutes un `title`, une `meta description`, un `canonical`, une `meta robots`, un `og:image`, un `viewport`, et exactement un seul `h1`. 0 page en défaut. 0 `canonical`/`og:url` utilisant `www`.
+- **Intégrité des liens internes (disque)** : 92 fichiers `.html` passés en revue (hors `/sw/`, dont 91 pages de contenu + 1 fichier de vérification Google), tous les `href`, `src` d'image et `background-image: url(...)` internes vérifiés (liens root-relatifs, relatifs et absolus sur le domaine, y compris JSON-LD et hreflang) — 0 lien cassé, 0 image manquante. Les liens `?lang=xx` (sélecteur de langue géré par `middleware.js`) ne sont pas des cibles de fichier et ont été exclus à juste titre.
+- **Piège des URLs sans extension** : 0 URL absolue interne (href/canonical/og:url/hreflang/JSON-LD) vers un article sans `.html`.
+- **Cohérence sitemap.xml** : 91 entrées `<loc>`, correspondance exacte 1:1 avec les 91 pages de contenu sur disque (4 pages d'accueil FR/EN/ES/PT + 87 articles). 0 entrée pointant vers un fichier manquant, 0 page présente sur disque et absente du sitemap.
+- **Balises d'en-tête** : les 91 pages de contenu ont toutes un `title`, une `meta description`, un `canonical`, une `meta robots`, un `og:image`, un `viewport`, et exactement un seul `h1`. 0 page en défaut. 0 `canonical`/`og:url`/`hreflang` utilisant `www`.
 
 Répartition par langue (hors `/sw/`) : FR 25 pages (accueil + 24 articles), EN 24 (accueil + 23 articles), ES 19 (accueil + 18 articles), PT 23 (accueil + 22 articles) — total 91 pages de contenu + 1 fichier de vérification Google.
 
