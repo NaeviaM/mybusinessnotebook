@@ -1,13 +1,13 @@
 {
-  "run": 14,
-  "next_market_index": 9,
-  "next_type": "advice",
+  "run": 15,
+  "next_market_index": 10,
+  "next_type": "comparison",
   "recent_markets": [
-    "DR Congo/fr",
     "Brazil/pt",
-    "Senegal/fr"
+    "Senegal/fr",
+    "UK/en"
   ],
-  "last_type": "comparison",
+  "last_type": "advice",
   "priority_topics": [],
   "published": [
     "staff-scheduling-small-business",
@@ -23,6 +23,7 @@
     "control-fiado-clientes-tienda-mexico",
     "logiciel-caisse-rdc-kinshasa",
     "controle-fiado-pequenos-negocios-brasil",
-    "logiciel-caisse-boutique-senegal"
+    "logiciel-caisse-boutique-senegal",
+    "vat-threshold-uk-shop-owners"
   ]
 }
