@@ -8,7 +8,16 @@
     "Spain/es"
   ],
   "last_type": "comparison",
-  "priority_topics": [],
+  "priority_topics": [
+    {
+      "market": "USA",
+      "market_index": 1,
+      "lang": "en",
+      "type": "comparison",
+      "topic": "A dedicated buyer's guide to choosing a POS system for a CHOCOLATE SHOP / chocolatier (not a general candy shop). Slug must be exactly chocolate-shop-pos-system.",
+      "constraint": "1) A separate English page for chocolate already has demand, but en/candy-store-pos-system.html currently absorbs it, so this article MUST be clearly different from that one or it will cannibalise it. Anchor it on what is specific to chocolate and not to sweets in general: temperature-controlled display and stock that degrades fast, short shelf life and batch/date tracking, selling the SAME product three ways (per piece, by weight, and in a mixed assortment box priced from its contents), building a gift box from individual pieces at the counter, corporate and wholesale gifting orders with deposits, and the extreme seasonal peaks of Christmas, Valentine's Day, Easter and Mother's Day. 2) Use the real wording buyers type, naturally, in the title, the H2s and the FAQ: 'chocolate shop POS software', 'chocolate store POS', 'POS system for a chocolate shop', 'chocolatier POS'. Do not stuff, use each once where it reads naturally. 3) You MUST add a contextual text link inside the body of en/candy-store-pos-system.html pointing to the new page, with the anchor text 'chocolate shop POS software', placed where it makes sense in an existing sentence, and a reciprocal link back from the new article to the candy guide. Change nothing else in the candy article. 4) US byline pool (Sarah Mitchell / Priya Nair), US competitors (Square, Toast, Clover, Loyverse) verified on their official sites, no claim that any of them lacks a feature. 5) Photo: no chocolate photo exists yet in en/img/, so reuse en/img/candy-store-pos-system.jpg copied to en/img/chocolate-shop-pos-system.jpg and generate the two WebP variants as usual; a dedicated photo will replace it later."
+    }
+  ],
   "published": [
     "staff-scheduling-small-business",
     "comparatif-sumup-zettle-tiller-addition",
