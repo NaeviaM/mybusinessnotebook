@@ -512,3 +512,23 @@ body::before{
   .section-head{ margin:2.2rem 0 1rem; }
   .cta-box{ padding:1.8rem 1.2rem; }
 }
+
+/* ---------- Cartes outils (calculateurs, sans photo) ---------- */
+.tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.4rem; margin-top: 1.4rem; }
+.tool-card {
+  display: flex; gap: 1rem; align-items: flex-start;
+  background: var(--card); border: 1px solid var(--line); border-top: 3px solid var(--green);
+  border-radius: var(--radius); padding: 1.2rem 1.3rem;
+  text-decoration: none; color: inherit;
+  transition: transform .35s var(--ease), border-color .35s var(--ease), box-shadow .35s var(--ease);
+}
+.tool-card:hover { transform: translateY(-4px); border-top-color: var(--claret); box-shadow: var(--shadow); }
+.tool-ico { flex: 0 0 auto; width: 42px; height: 42px; display: grid; place-items: center;
+  background: var(--green-soft); border-radius: 9px; }
+.tool-ico svg { width: 21px; height: 21px; display: block; }
+.tool-card .tag { font-family: var(--sans); font-weight: 700; font-size: .7rem;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--claret-deep); }
+.tool-card h3 { margin: .3rem 0 .35rem; font-size: 1.1rem; line-height: 1.25; }
+.tool-card:hover h3 { color: var(--green-deep); }
+.tool-card p { font-size: .9rem; color: var(--ink-soft); margin: 0; }
+@media (max-width: 560px) { .tool-card { padding: 1rem 1.05rem; } }
