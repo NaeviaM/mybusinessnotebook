@@ -56,12 +56,12 @@ body {
   font-size: .7rem;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--claret);
+  color: var(--claret-deep);
   background: none;
   padding: 0;
 }
 .pill { margin-bottom: .9rem; }
-.pill::before { content: "— "; color: var(--claret); }
+.pill::before { content: "— "; color: var(--claret-deep); }
 
 /* ---------- En-tête / masthead ---------- */
 .site-header {
@@ -181,7 +181,7 @@ thead th {
 }
 tbody tr:last-child td { border-bottom: 1px solid var(--ink); }
 td.yes { color: var(--green); font-weight: 700; }
-td.no { color: var(--claret); }
+td.no { color: var(--claret-deep); }
 .col-featured { background: var(--green-soft); }
 th.col-featured { background: var(--green); color: #fff; }
 
@@ -306,7 +306,7 @@ th.col-featured { background: var(--green); color: #fff; }
 .site-footer .wrap { max-width: var(--wide); margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1.4rem; justify-content: space-between; align-items: start; }
 .site-footer a { color: var(--ink-soft); }
 .site-footer a:hover { color: var(--claret); }
-.disclosure { font-size: .78rem; color: #8a8478; max-width: 520px; line-height: 1.6; }
+.disclosure { font-size: .78rem; color: #6b6659; max-width: 520px; line-height: 1.6; }
 
 /* Sélecteur de langue */
 .lang-switch { display: flex; gap: .9rem; align-items: center; font-size: .8rem; }
@@ -395,7 +395,7 @@ body::before{
 }
 .nl-form input[type=email]:focus-visible{ outline:none; border-color:var(--green); box-shadow:0 0 0 3px var(--green-soft); }
 .nl-form button{ border:none; cursor:pointer; }
-.nl-note{ font-size:.74rem; color:#8a8478; margin-top:.7rem; flex-basis:100%; }
+.nl-note{ font-size:.74rem; color:#6b6659; margin-top:.7rem; flex-basis:100%; }
 
 /* ===========================================================
    🗞️ REFONTE MAGAZINE VIVANT — ticker, hero image, vignettes

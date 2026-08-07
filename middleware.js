@@ -28,10 +28,23 @@ const LANG_BY_COUNTRY = {
   GH:'en', ZA:'en', IN:'en', SG:'en', MY:'en', TZ:'en', UG:'en', ZM:'en', ZW:'en'
 };
 
+// Robots d'indexation et d'aperçu. Ils doivent recevoir la page telle quelle,
+// jamais une redirection par pays : Googlebot explore depuis des IP américaines,
+// donc l'accueil FR servi à "/" lui était invisible (307 vers /en/).
+const BOT_UA = /bot|crawler|spider|slurp|bingpreview|facebookexternalhit|whatsapp|telegram|discord|embedly|lighthouse|pagespeed|gptbot|oai-searchbot|chatgpt-user|perplexity|claudebot|anthropic|google-extended|applebot|duckduckbot|yandex|baiduspider|ia_archiver|semrush|ahrefs/i;
+
+function isBot(request) {
+  return BOT_UA.test(request.headers.get('user-agent') || '');
+}
+
 const LANGS = ['fr', 'en', 'es', 'pt'];
 const home = (lang) => (lang === 'fr' ? '/' : '/' + lang + '/');
 
 export default function middleware(request) {
+  // 0) Un robot ne doit jamais être redirigé : il doit pouvoir indexer
+  //    chaque URL avec le contenu que sa balise canonique annonce.
+  if (isBot(request)) return;
+
   const url = new URL(request.url);
   const path = url.pathname;
   const override = (url.searchParams.get('lang') || '').toLowerCase();
