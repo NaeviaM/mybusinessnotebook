@@ -85,14 +85,28 @@
       <span>My Business <span class="accent">Notebook</span></span>
     </a>
     <nav class="nav-links">
-      <a href="attirer-plus-de-clients-commerce.html">Clients &amp; marketing</a>
-      <a href="comparatif-logiciels-caisse-gratuits-2026.html">Encaissement</a>
-      <a href="bien-gerer-ses-stocks-petit-commerce.html">Stocks</a>
-      <a href="calculateur-cout-caisse.html">Outils</a>
+      <a href="comparatif-logiciels-caisse-gratuits-2026.html">Le comparatif</a>
+      <a href="index.html#metiers">Par métier</a>
+      <a href="index.html#alaune">À la une</a>
+      <a href="attirer-plus-de-clients-commerce.html">Conseils</a>
     </nav>
   </div>
 </header>
 
+<div class="ticker">
+  <div class="wrap-wide tk-inner">
+    <span class="tk-label"><span class="tk-lead">À la une · </span><span id="tk-date" class="tk-date-full">aujourd'hui</span><span id="tk-date-short" class="tk-date-short"></span></span>
+    <div class="tk-track">
+      <div class="tk-move" id="tk-move">
+        <a href="comparatif-logiciels-caisse-gratuits-2026.html">Les meilleurs logiciels de caisse gratuits 2026</a><span class="sep">◆</span>
+        <a href="frais-caches-logiciel-caisse.html">Les frais cachés qui plombent votre caisse</a><span class="sep">◆</span>
+        <a href="contrat-logiciel-caisse-pieges.html">Contrats de caisse : les pièges de l'engagement</a><span class="sep">◆</span>
+        <a href="attirer-plus-de-clients-commerce.html">9 façons d'attirer plus de clients</a><span class="sep">◆</span>
+        <a href="caisse-enregistreuse-restaurant.html">La caisse idéale pour un restaurant</a><span class="sep">◆</span>
+      </div>
+    </div>
+  </div>
+</div>
 <main>
 <article class="container">
   <div class="breadcrumb"><a href="index.html">Accueil</a> › Logiciel de caisse pour pharmacie</div>
@@ -284,6 +298,23 @@
     <p class="disclosure">Transparence : ce guide est édité à titre informatif. Certains liens mènent vers des solutions que nous recommandons. Les fonctionnalités et la conformité réglementaire varient selon les pays ; vérifiez toujours les tarifs, fonctionnalités et obligations locales sur les sites officiels avant tout choix.</p>
   </div>
 </footer>
+
+<script>
+  // Date du jour (locale FR) dans le bandeau ticker, s'actualise à chaque visite.
+  (function(){
+    try{
+      var d = new Date();
+      var s = d.toLocaleDateString('fr-FR', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+      var el = document.getElementById('tk-date');
+      if(el){ el.textContent = s.charAt(0).toUpperCase() + s.slice(1); }
+      var elS = document.getElementById('tk-date-short');
+      if(elS){ elS.textContent = d.toLocaleDateString('fr-FR', { day:'numeric', month:'short' }); }
+      // duplique les titres pour un défilement continu et sans couture
+      var mv = document.getElementById('tk-move');
+      if(mv){ mv.innerHTML += mv.innerHTML; }
+    }catch(e){}
+  })();
+</script>
 
 </body>
 </html>

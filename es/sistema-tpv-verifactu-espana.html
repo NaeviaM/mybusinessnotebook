@@ -48,11 +48,28 @@
       <span>My Business <span class="accent">Notebook</span></span>
     </a>
     <nav class="nav-links">
-      <a href="sistema-tpv-verifactu-espana.html">TPV y Veri*factu</a>
+      <a href="sistema-tpv-verifactu-espana.html">El TPV</a>
+      <a href="index.html#sectores">Por sector</a>
+      <a href="index.html#ultimo">Lo último</a>
+      <a href="tpv-para-tienda-abarrotes.html">Guías</a>
     </nav>
   </div>
 </header>
 
+<div class="ticker">
+  <div class="wrap-wide tk-inner">
+    <span class="tk-label"><span class="tk-lead">Lo último · </span><span id="tk-date" class="tk-date-full">hoy</span><span id="tk-date-short" class="tk-date-short"></span></span>
+    <div class="tk-track">
+      <div class="tk-move" id="tk-move">
+        <a href="mejorar-flujo-caja-pequenos-negocios-mexico.html">Cómo mejorar el flujo de caja de tu negocio</a><span class="sep">◆</span>
+        <a href="sistema-tpv-verifactu-espana.html">TPV Veri*factu: cómo cumplir en España</a><span class="sep">◆</span>
+        <a href="sistema-pos-cfdi-mexico.html">Punto de venta con CFDI (SAT) en México</a><span class="sep">◆</span>
+        <a href="alta-sat-resico-pequenos-negocios.html">Cómo darse de alta en el SAT (RESICO)</a><span class="sep">◆</span>
+        <a href="tpv-para-farmacia.html">Elegir un TPV para tu farmacia</a><span class="sep">◆</span>
+      </div>
+    </div>
+  </div>
+</div>
 <main>
 <article class="container">
   <div class="breadcrumb"><a href="index.html">Inicio</a> › TPV y Veri*factu</div>
@@ -255,6 +272,18 @@
     <p class="disclosure">Transparencia: esta guía es informativa y no constituye asesoramiento fiscal ni jurídico. Algunos enlaces apuntan a herramientas que recomendamos. Verifica siempre la normativa vigente con la AEAT o la Hacienda Foral y consulta a tu asesor antes de decidir.</p>
   </div>
 </footer>
+
+<script>
+  (function(){
+    try{
+      var d = new Date();
+      var s = d.toLocaleDateString('es-ES', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+      var el = document.getElementById('tk-date'); if(el){ el.textContent = s.charAt(0).toUpperCase() + s.slice(1); }
+      var elS = document.getElementById('tk-date-short'); if(elS){ elS.textContent = d.toLocaleDateString('es-ES', { day:'numeric', month:'short' }); }
+      var mv = document.getElementById('tk-move'); if(mv){ mv.innerHTML += mv.innerHTML; }
+    }catch(e){}
+  })();
+</script>
 
 </body>
 </html>

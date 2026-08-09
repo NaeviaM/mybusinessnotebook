@@ -49,11 +49,28 @@
       <span>My Business <span class="accent">Notebook</span></span>
     </a>
     <nav class="nav-links">
-      <a href="best-free-pos-system-2026.html">POS comparison</a>
+      <a href="best-free-pos-system-2026.html">The comparison</a>
+      <a href="index.html#types">By type</a>
+      <a href="index.html#latest">Latest</a>
+      <a href="best-pos-system-small-business.html">Guides</a>
     </nav>
   </div>
 </header>
 
+<div class="ticker">
+  <div class="wrap-wide tk-inner">
+    <span class="tk-label"><span class="tk-lead">Latest · </span><span id="tk-date" class="tk-date-full">today</span><span id="tk-date-short" class="tk-date-short"></span></span>
+    <div class="tk-track">
+      <div class="tk-move" id="tk-move">
+        <a href="best-free-pos-system-2026.html">Best free POS systems in 2026</a><span class="sep">◆</span>
+        <a href="hidden-pos-fees.html">The hidden fees a "free" POS won't tell you</a><span class="sep">◆</span>
+        <a href="pos-contract-lock-in.html">POS contracts &amp; lock-in: what to check</a><span class="sep">◆</span>
+        <a href="best-pos-system-small-business.html">Best POS system for small business</a><span class="sep">◆</span>
+        <a href="pharmacy-pos-system.html">Choosing a POS for your pharmacy</a><span class="sep">◆</span>
+      </div>
+    </div>
+  </div>
+</div>
 <main>
 <article class="container">
   <div class="breadcrumb"><a href="index.html">Home</a> › BIR-accredited POS</div>
@@ -224,6 +241,18 @@
     <p class="disclosure">Transparency: this guide is informational and not legal or tax advice. Some links point to tools we recommend. BIR rules, fees and deadlines change, always verify with your RDO, the official BIR website, and a licensed tax professional before deciding.</p>
   </div>
 </footer>
+
+<script>
+  (function(){
+    try{
+      var d = new Date();
+      var s = d.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
+      var el = document.getElementById('tk-date'); if(el){ el.textContent = s; }
+      var elS = document.getElementById('tk-date-short'); if(elS){ elS.textContent = d.toLocaleDateString('en-US', { month:'short', day:'numeric' }); }
+      var mv = document.getElementById('tk-move'); if(mv){ mv.innerHTML += mv.innerHTML; }
+    }catch(e){}
+  })();
+</script>
 
 </body>
 </html>

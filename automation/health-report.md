@@ -1,4 +1,4 @@
-# Rapport de sante, 2026-08-09 18:47 UTC
+# Rapport de sante, 2026-08-09 19:11 UTC
 
 VERIF LIVE : EFFECTUEE
 
@@ -19,7 +19,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## B. Balayage du sitemap en direct
 
-- 97 URLs testees, 0 en echec
+- 98 URLs testees, 0 en echec
 
 ## C. Liens et images sur disque
 

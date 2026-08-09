@@ -15,3 +15,6 @@ PROMPTS-IMAGES.md
 # Outillage local (jamais publie)
 .claude/
 skills-lock.json
+
+# le PAT n a pas le scope workflow, ce dossier casse le push
+.github/

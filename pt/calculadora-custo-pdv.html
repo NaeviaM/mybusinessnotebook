@@ -39,13 +39,27 @@
       <span>My Business <span class="accent">Notebook</span></span>
     </a>
     <nav class="nav-links">
-      <a href="pdv-para-bar.html">PDV para bar</a>
-      <a href="calculadora-taxas-recebimento.html">Taxas</a>
-      <a href="calculadora-custo-pdv.html">Custo do PDV</a>
+      <a href="sistema-pdv-nfce-brasil.html">O PDV</a>
+      <a href="index.html#setores">Por setor</a>
+      <a href="index.html#ultimos">Últimos</a>
+      <a href="pdv-para-mercadinho.html">Guias</a>
     </nav>
   </div>
 </header>
 
+<div class="ticker">
+  <div class="wrap-wide tk-inner">
+    <span class="tk-label"><span class="tk-lead">Últimos · </span><span id="tk-date" class="tk-date-full">hoje</span><span id="tk-date-short" class="tk-date-short"></span></span>
+    <div class="tk-track">
+      <div class="tk-move" id="tk-move">
+        <a href="sistema-pdv-nfce-brasil.html">Sistema PDV com NFC-e: como cumprir a SEFAZ</a><span class="sep">◆</span>
+        <a href="software-faturacao-certificada-portugal.html">Faturação certificada AT (Portugal)</a><span class="sep">◆</span>
+        <a href="mei-ou-simples-nacional-guia.html">MEI ou Simples Nacional?</a><span class="sep">◆</span>
+        <a href="pdv-para-farmacia.html">Escolher um PDV para a sua farmácia</a><span class="sep">◆</span>
+      </div>
+    </div>
+  </div>
+</div>
 <main>
 <article class="container">
   <div class="breadcrumb"><a href="index.html">Início</a> › Calculadora de custo do PDV</div>
@@ -140,6 +154,18 @@
   [ca, comm, abo, cur].forEach(el => el.addEventListener('input', update));
   cur.addEventListener('change', update);
   update();
+</script>
+
+<script>
+  (function(){
+    try{
+      var d = new Date();
+      var s = d.toLocaleDateString('pt-BR', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+      var el = document.getElementById('tk-date'); if(el){ el.textContent = s.charAt(0).toUpperCase() + s.slice(1); }
+      var elS = document.getElementById('tk-date-short'); if(elS){ elS.textContent = d.toLocaleDateString('pt-BR', { day:'numeric', month:'short' }); }
+      var mv = document.getElementById('tk-move'); if(mv){ mv.innerHTML += mv.innerHTML; }
+    }catch(e){}
+  })();
 </script>
 
 </body>
