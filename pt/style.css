@@ -164,7 +164,9 @@ blockquote {
 /* ---------- Image d'en-tête (hero article) ---------- */
 .hero-img { margin: 0 0 2.4rem; }
 .hero-img img {
-  width: 100%; aspect-ratio: 16/9; object-fit: cover;
+  /* height:auto est indispensable : sans lui, l'attribut height="781" du HTML
+     fige la hauteur et ecrase aspect-ratio, la photo devient verticale. */
+  width: 100%; height: auto; aspect-ratio: 16/9; object-fit: cover;
   border-radius: var(--radius); display: block;
   background: linear-gradient(120deg, var(--green-soft), var(--paper-2));
   box-shadow: var(--shadow);
