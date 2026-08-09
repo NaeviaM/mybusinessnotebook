@@ -1,8 +1,8 @@
-# Rapport de sante, 2026-08-09 02:21 UTC
+# Rapport de sante, 2026-08-09 18:47 UTC
 
 VERIF LIVE : EFFECTUEE
 
-**STATUT GLOBAL : CRITIQUE**
+**STATUT GLOBAL : OK**
 
 Controle deterministe, sans modele de langage. Remplace l'agent cloud tombe en panne le 04/08/2026. Declenche par `.github/workflows/health-check.yml` une fois ce fichier present sur le depot, sinon lance a la main.
 
@@ -19,15 +19,15 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## B. Balayage du sitemap en direct
 
-- 96 URLs testees, 3 en echec
+- 97 URLs testees, 0 en echec
 
 ## C. Liens et images sur disque
 
-- 97 pages controlees, 0 probleme(s)
+- 98 pages controlees, 0 probleme(s)
 
 ## D. Coherence du sitemap
 
-- 97 entrees, 97 pages sur disque, 0 manquante(s), 0 orpheline(s)
+- 98 entrees, 98 pages sur disque, 0 manquante(s), 0 orpheline(s)
 
 ## E. Balises d'en-tete
 
@@ -39,9 +39,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## CRITIQUE
 
-- URL du sitemap en erreur `0` : https://mybusinessnotebook.com/es/calculadora-coste-tpv.html
-- URL du sitemap en erreur `0` : https://mybusinessnotebook.com/pt/calculadora-custo-pdv.html
-- URL du sitemap en erreur `0` : https://mybusinessnotebook.com/en/vat-threshold-uk-shop-owners.html
+Aucun probleme trouve.
 
 ## MOYEN
 
