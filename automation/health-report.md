@@ -1,10 +1,10 @@
-# Rapport de sante, 2026-08-09 19:29 UTC
+# Rapport de sante, 2026-08-09 23:45 UTC
 
 VERIF LIVE : EFFECTUEE
 
 **STATUT GLOBAL : OK**
 
-Controle deterministe, sans modele de langage. Remplace l'agent cloud tombe en panne le 04/08/2026. Declenche par `.github/workflows/health-check.yml` une fois ce fichier present sur le depot, sinon lance a la main.
+Controle deterministe, sans modele de langage. Remplace l'agent cloud tombe en panne le 04/08/2026. Declenche chaque jour par la tache planifiee Windows `MBN - controle de sante` (voir C:\Users\dell\mbn-automation).
 
 NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un article encore non deploye. La section D, elle, controle le disque.
 
