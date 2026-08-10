@@ -159,9 +159,17 @@ def section_f():
 
 
 def main():
+    # --disk-only : saute les deux sections qui sortent sur le reseau. Sert au
+    # publieur local, qui doit pouvoir valider un article meme si la machine est
+    # hors ligne ou si le site repond mal au moment ou il tourne.
+    disk_only = "--disk-only" in sys.argv
     maintenant = datetime.now(timezone.utc)
-    a = section_a()
-    b, _ = section_b()
+    if disk_only:
+        a = ["- Sautee (mode --disk-only)."]
+        b = ["- Sautee (mode --disk-only)."]
+    else:
+        a = section_a()
+        b, _ = section_b()
     c, d, e, f = section_c(), section_d(), section_e(), section_f()
 
     statut = "CRITIQUE" if critique else ("DEGRADE" if moyen else "OK")
@@ -174,11 +182,11 @@ def main():
 
     rapport = (
         f"# Rapport de sante, {maintenant:%Y-%m-%d %H:%M} UTC\n\n"
-        f"VERIF LIVE : EFFECTUEE\n\n"
+        f"VERIF LIVE : {'IMPOSSIBLE (mode --disk-only)' if disk_only else 'EFFECTUEE'}\n\n"
         f"**STATUT GLOBAL : {statut}**\n\n"
         f"Controle deterministe, sans modele de langage. Remplace l'agent cloud "
-        f"tombe en panne le 04/08/2026. Declenche par `.github/workflows/health-check.yml` "
-        f"une fois ce fichier present sur le depot, sinon lance a la main.\n\n"
+        f"tombe en panne le 04/08/2026. Declenche chaque jour par la tache planifiee "
+        f"Windows `MBN - controle de sante` (voir C:\\Users\\dell\\mbn-automation).\n\n"
         f"NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas "
         f"un article encore non deploye. La section D, elle, controle le disque.\n\n"
         f"## A. Disponibilite en direct\n\n" + "\n".join(a) + "\n\n"

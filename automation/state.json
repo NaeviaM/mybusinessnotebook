@@ -1,13 +1,13 @@
 {
-  "run": 16,
-  "next_market_index": 11,
-  "next_type": "advice",
+  "run": 17,
+  "next_market_index": 0,
+  "next_type": "comparison",
   "recent_markets": [
-    "Senegal/fr",
     "UK/en",
-    "Spain/es"
+    "Spain/es",
+    "Philippines/en"
   ],
-  "last_type": "comparison",
+  "last_type": "advice",
   "priority_topics": [],
   "published": [
     "staff-scheduling-small-business",
@@ -28,6 +28,7 @@
     "tpv-para-tienda-de-ropa",
     "logiciel-caisse-hors-ligne-coupure-internet",
     "offline-pos-system-power-cuts",
-    "chocolate-shop-pos-system"
+    "chocolate-shop-pos-system",
+    "sari-sari-store-stock-shrinkage"
   ]
 }
