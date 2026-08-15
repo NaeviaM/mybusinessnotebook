@@ -1,13 +1,13 @@
 {
-  "run": 18,
+  "run": 22,
   "next_market_index": 1,
-  "next_type": "advice",
+  "next_type": "comparison",
   "recent_markets": [
-    "Spain/es",
+    "Cote d'Ivoire/fr",
     "Philippines/en",
-    "Cote d'Ivoire/fr"
+    "Venezuela/es"
   ],
-  "last_type": "comparison",
+  "last_type": "advice",
   "priority_topics": [],
   "published": [
     "staff-scheduling-small-business",
@@ -30,6 +30,10 @@
     "offline-pos-system-power-cuts",
     "chocolate-shop-pos-system",
     "sari-sari-store-stock-shrinkage",
-    "logiciel-caisse-boutique-cote-ivoire"
+    "logiciel-caisse-boutique-cote-ivoire",
+    "logiciel-caisse-pharmacie-afrique-ouest",
+    "pharmacy-pos-system-southeast-asia",
+    "dual-currency-pos-zimbabwe",
+    "tpv-multimoneda-venezuela"
   ]
 }

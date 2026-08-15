@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<title>Pharmacy POS in Southeast Asia: the generic-name rule most tills ignore</title>
+<meta name="description" content="Philippine law obliges a drug outlet to tell the buyer about every product with the same generic name and its price. Most POS systems cannot answer that question. Here is what a pharmacy in Southeast Asia actually needs from its software.">
+<link rel="canonical" href="https://mybusinessnotebook.com/en/pharmacy-pos-system-southeast-asia.html">
+<link rel="alternate" hreflang="en" href="https://mybusinessnotebook.com/en/pharmacy-pos-system-southeast-asia.html">
+<link rel="alternate" hreflang="x-default" href="https://mybusinessnotebook.com/en/pharmacy-pos-system-southeast-asia.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pharmacy POS in Southeast Asia: the generic-name rule most tills ignore">
+<meta property="og:site_name" content="My Business Notebook">
+<meta property="og:description" content="Searching by molecule, batch numbers and expiry dates, patient records and working through a blackout: what a drugstore in the Philippines and the wider region needs from its POS.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mybusinessnotebook.com/en/img/pharmacy-pos-system-southeast-asia.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mybusinessnotebook.com/en/img/pharmacy-pos-system-southeast-asia.jpg">
+<link rel="preload" as="image" href="img/pharmacy-pos-system-southeast-asia.webp" fetchpriority="high">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Pharmacy POS in Southeast Asia: the generic-name rule most tills ignore",
+  "description": "What a drugstore in the Philippines and the wider region needs from its POS: search by molecule, batch and expiry tracking on FEFO, patient records, offline selling, and a clean base for BIR reporting.",
+  "inLanguage": "en",
+  "datePublished": "2026-08-15",
+  "dateModified": "2026-08-15",
+  "author":{"@type":"Person","name":"Priya Nair"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Philippine law really require me to mention cheaper generics?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Under Section 6 of Republic Act 6675, the Generics Act of 1988, drug outlets including drugstores and non-traditional outlets such as supermarkets shall inform any buyer about any and all other drug products having the same generic name, together with their corresponding prices, so the buyer can exercise the option. The same section also requires outlets to post a list of drug products with the same generic name and their prices in a conspicuous place. Read the text yourself and confirm the current implementing rules with the FDA and your professional board." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a generic name or INN, exactly?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It is the name of the active substance itself, assigned by the World Health Organization through its International Nonproprietary Names programme. WHO describes each INN as a unique name that is globally recognised and is public property. Paracetamol is an INN. The brand names it is sold under are not. Because the INN belongs to no one, it is the only name that reliably tells you two different boxes hold the same molecule." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the penalties under the Generics Act?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Section 12 sets a graduated scale for violations of Section 6 by individuals: a reprimand for the first offence, a fine of P2,000 to P5,000 for the second, P5,000 to P10,000 plus a 30-day suspension for the third, and P10,000 or more with a one-year suspension for the fourth and later offences. Organisations face fines and possible suspension or revocation of licence. Amounts and enforcement practice change, so verify the current position before relying on these figures." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can't my current POS search by molecule?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Because most POS systems are built for general retail, where a product is a name, a barcode and a price. A pharmacy needs a third layer: the active substance, its strength and its form. If that layer is not in the product catalogue, no amount of clever searching will surface an equivalent. Ask any vendor to show you a search by molecule on your own stock, not on their demo data." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is FIFO good enough for medicines?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. FIFO releases what arrived first. FEFO releases what expires first, which is not the same thing, because a box received this month can easily expire before one received last year. FEFO only works if the system stores an expiry date per batch rather than a single quantity per product." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I still need BIR registration for my POS?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Machine registration and the documents required have changed several times in recent years, and the rules differ for a standalone till, a cloud POS and a computerised accounting system. Treat it as a separate exercise from choosing your software, confirm the current requirement directly with the BIR, and make sure whatever you buy can produce the reports and invoice formats they ask for." }
+    }
+  ]
+}
+</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mybusinessnotebook.com/en/"},{"@type":"ListItem","position":2,"name":"Pharmacy POS in Southeast Asia: the generic-name rule most tills ignore","item":"https://mybusinessnotebook.com/en/pharmacy-pos-system-southeast-asia.html"}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#1b43c0"/><rect x="8.5" y="7" width="15" height="18" rx="1.6" fill="#fff"/><rect x="8.5" y="7" width="3.2" height="18" rx="1.2" fill="#122e86"/><rect x="14" y="11" width="7" height="1.7" rx=".85" fill="#151a24"/><rect x="14" y="15" width="7" height="1.7" rx=".85" fill="#151a24"/><rect x="14" y="19" width="5" height="1.7" rx=".85" fill="#151a24"/><path d="M18.4 5 h3.4 v6.4 l-1.7 -1.5 -1.7 1.5 Z" fill="#e11d2a"/></svg>
+      </span>
+      <span>My Business <span class="accent">Notebook</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="best-free-pos-system-2026.html">The comparison</a>
+      <a href="index.html#types">By type</a>
+      <a href="index.html#latest">Latest</a>
+      <a href="best-pos-system-small-business.html">Guides</a>
+    </nav>
+  </div>
+</header>
+
+<div class="ticker">
+  <div class="wrap-wide tk-inner">
+    <span class="tk-label"><span class="tk-lead">Latest · </span><span id="tk-date" class="tk-date-full">today</span><span id="tk-date-short" class="tk-date-short"></span></span>
+    <div class="tk-track">
+      <div class="tk-move" id="tk-move">
+        <a href="best-free-pos-system-2026.html">Best free POS systems in 2026</a><span class="sep">◆</span>
+        <a href="hidden-pos-fees.html">The hidden fees a "free" POS won't tell you</a><span class="sep">◆</span>
+        <a href="pos-contract-lock-in.html">POS contracts &amp; lock-in: what to check</a><span class="sep">◆</span>
+        <a href="best-pos-system-small-business.html">Best POS system for small business</a><span class="sep">◆</span>
+        <a href="pharmacy-pos-system.html">Choosing a POS for your pharmacy</a><span class="sep">◆</span>
+      </div>
+    </div>
+  </div>
+</div>
+<main>
+<article class="container">
+  <div class="breadcrumb"><a href="index.html">Home</a> › Pharmacy, Southeast Asia</div>
+
+  <span class="pill">Trade guide 2026</span>
+  <h1>Pharmacy POS in Southeast Asia: the generic-name rule most tills ignore</h1>
+  <p class="article-meta">By Priya Nair · Updated August 15, 2026 · 11 min read · Practical guide · Southeast Asia</p>
+
+  <p class="lead">A customer puts a prescription on your counter. You know the brand, you know you are out of it, and you are fairly sure there is something on the shelf with the same active substance under a different name at a different price. In the Philippines, telling them about it is not a courtesy. It is written into the Generics Act. And here is the awkward part: the till in front of you almost certainly cannot answer the question. This guide walks through what a drugstore in the region actually needs from its software, starting with the one thing the brochures never mention.</p>
+
+  <figure class="hero-img"><img src="img/pharmacy-pos-system-southeast-asia.webp" alt="Pharmacist scanning a medicine box at the counter of a community drugstore" width="1400" height="781" fetchpriority="high" decoding="async"></figure>
+
+  <div class="callout">
+    <strong>One thing before we start.</strong> Nothing here replaces professional judgement. Software shows you what you hold, under which name, in which batch and until what date. Dispensing stays your call, with your licence behind it. Treat any vendor that suggests otherwise as a warning sign.
+  </div>
+
+  <div class="toc">
+    <strong>What's inside</strong>
+    <a href="#law">What the law actually asks of a drug outlet</a>
+    <a href="#inn">Generic name, INN: the only name you can trust</a>
+    <a href="#search">Why your till can't answer "what else has this molecule?"</a>
+    <a href="#batches">Batches and expiry: FEFO, not FIFO</a>
+    <a href="#catalogue">The product catalogue question</a>
+    <a href="#counter">The rest of the counter: patients, staff, blackouts</a>
+    <a href="#bir">Where the tax side fits</a>
+    <a href="#options">The options on the table</a>
+    <a href="#faq">Frequently asked questions</a>
+    <a href="#sources">Official sources</a>
+  </div>
+
+  <h2 id="law">What the law actually asks of a drug outlet</h2>
+  <p>Start with the text, because it is more demanding than most owners remember. Section 6 of Republic Act 6675, the Generics Act of 1988, says that drug outlets, "including drugstores, hospital and non-hospital pharmacies and non-traditional outlets such as supermarkets and stores, shall inform any buyer about any and all other drug products having the same generic name, together with their corresponding prices so that the buyer may adequately exercise, his option".</p>
+  <p>Read that again. Not "may mention". Not "if asked". Any and all other products with the same generic name, with their prices. The same section adds a second duty that is easy to forget: outlets must post, in a conspicuous place in the establishment, a list of drug products carrying the same generic name together with their corresponding prices.</p>
+  <p>Section 12 puts teeth behind it. For individuals, violations of Section 6 run from a reprimand for a first offence, to a fine of P2,000 to P5,000 for a second, P5,000 to P10,000 plus a 30-day suspension for a third, and P10,000 or more with a one-year suspension after that. Organisations face fines and the possible suspension or revocation of their licence. You can <a href="https://lawphil.net/statutes/repacts/ra1988/ra_6675_1988.html" target="_blank" rel="noopener">read the full text of RA 6675</a> yourself, and you should, because enforcement practice and implementing rules move even when the statute does not.</p>
+  <p>The same logic exists in different forms elsewhere in the region, where generic prescribing and price transparency have been policy priorities for years. The wording differs country by country, so check your own regulator rather than assuming the Philippine rule travels.</p>
+
+  <h2 id="inn">Generic name, INN: the only name you can trust</h2>
+  <p>The generic name is not a marketing category. It is the name of the active substance, assigned by the World Health Organization through its International Nonproprietary Names programme. WHO puts it plainly: each INN is <a href="https://www.who.int/teams/health-product-and-policy-standards/inn" target="_blank" rel="noopener">a unique name that is globally recognised and is public property</a>.</p>
+  <p>That last part is what makes it useful behind a counter. Because the name belongs to nobody, it is the same in Manila, Jakarta and Hanoi, on a local box and an imported one. Two products with wildly different packaging and a threefold price gap can carry the same INN. Brand names cannot tell you that. Barcodes cannot tell you that. Only the molecule can.</p>
+
+  <h2 id="search">Why your till can't answer "what else has this molecule?"</h2>
+  <p>General retail software models a product as three things: a name, a barcode and a price. That is enough for a hardware store. A pharmacy needs a fourth and fifth: the active substance, and its strength and form. If those fields do not exist in the catalogue, no search box will ever surface an equivalent, however good the interface looks.</p>
+  <p>So the question to put to any vendor is narrow and easy to test. On my own stock, not your demo data: can you type a molecule and show me everything I hold under it, with strength, form, quantity on hand and price, side by side? Everything else in the demo can wait until they have answered that.</p>
+  <p>What good looks like at the counter:</p>
+  <ol>
+    <li><strong>Search by molecule as easily as by brand.</strong> One field, both work.</li>
+    <li><strong>Equivalents surfacing on their own</strong> when the requested item hits zero, with real quantity on hand.</li>
+    <li><strong>Strength and form shown</strong>, because 500 mg tablets and 125 mg syrup are not interchangeable answers to one prescription.</li>
+    <li><strong>Prices side by side</strong>, which is both what the buyer wants and, in the Philippines, what Section 6 asks you to provide.</li>
+  </ol>
+
+  <h2 id="batches">Batches and expiry: FEFO, not FIFO</h2>
+  <p>Plenty of stock tools do FIFO: first in, first out. For medicines that is not enough. What matters is FEFO, first expired, first out. The difference sounds academic until you destroy a box received eight months ago while an older box with a longer shelf life sits quietly beside it.</p>
+  <p>FEFO needs the system to think in batches, not just products. Every goods-in records a batch number and an expiry date, every sale proposes the batch closest to expiry first, and alerts arrive early enough that you can still sell the stock rather than write it off.</p>
+  <p>The practical bottleneck is data entry. Most medicine packs now carry a two-dimensional Data Matrix code holding the product identifier, the batch number and the expiry date together. Software that reads all three in one scan spares your staff the manual batch entry that everybody quietly skips once a queue forms. And a batch entered wrongly makes FEFO worthless.</p>
+  <blockquote>Stock that only knows quantities tells you what is left. Stock that knows batches tells you what you are about to lose, and when.</blockquote>
+
+  <h2 id="catalogue">The product catalogue question</h2>
+  <p>Ask early where the product database comes from. If you have to create every reference yourself, with its molecule, strength and form, you will not do it. Nobody does. Three weeks in, the catalogue is half empty, molecule search returns nothing, and everyone goes back to walking the shelves from memory.</p>
+  <p>Software that ships with a medicine catalogue already built on public drug databases starts out knowing the molecules. That is the difference between a feature you use on day one and a feature you plan to configure some day. Ask each vendor which databases their catalogue is built on, how many references it holds, and how often it is refreshed.</p>
+
+  <h2 id="counter">The rest of the counter: patients, staff, blackouts</h2>
+  <p>A community drugstore runs on relationships. Patient records keep the dispensing history that makes refills quick and awkward questions unnecessary. Customer credit lets you record a sale as owed rather than keeping a separate notebook, which matters in neighbourhoods where people settle up on payday.</p>
+  <p>Staff controls matter for a different reason. Individual PIN access rather than one shared login tells you who did what, and a cap on the discount an assistant can give without approval prevents the slow leak that nobody notices until the margin review. We cover that pattern in detail in our guide to <a href="customer-tabs-and-staff-discount-limits.html">customer tabs and staff discount limits</a>.</p>
+  <p>Then there is power and connectivity. In much of the region a brownout is a scheduling matter, not a surprise. Most cloud tills keep selling offline, which is table stakes. The real question is what else survives: can you still look up stock, search a molecule, see batches and dates? Test it before you buy. Turn off mobile data and Wi-Fi, then try a sale, a name search, a molecule search, a stock lookup and a receipt print. Whatever fails in that five-minute test will fail on the day it counts.</p>
+
+  <h2 id="bir">Where the tax side fits</h2>
+  <p>Registering a till with the Bureau of Internal Revenue is a separate exercise from choosing your software, and the requirements have changed more than once in recent years. Do not let a vendor blur the two. What your software owes you is a clean, exportable sales base and the invoice and report formats the tax office expects. The compliance step itself is yours, and the only reliable answer comes from the BIR. We walk through the current landscape in our guide to a <a href="bir-accredited-pos-philippines.html">BIR-accredited POS in the Philippines</a>.</p>
+  <p>Two more licences sit behind the counter and have nothing to do with software, but they gate everything else: the FDA licence to operate for the outlet, and a pharmacist licensed by the <a href="https://www.prc.gov.ph/" target="_blank" rel="noopener">Professional Regulation Commission</a>. Without the second, the first is academic.</p>
+
+  <h2 id="options">The options on the table</h2>
+  <p>Broadly you are choosing between three families: purpose-built pharmacy software, a general cloud POS, and something that tries to cover both. Here is how we rank them for a community drugstore, with the caveat that features and prices move and every claim below deserves a live demo on your own stock.</p>
+
+  <!-- 1 -->
+  <div class="card winner">
+    <span class="rank">🥇 No.1, our pick</span>
+    <h3 style="margin-top:.3rem">digabloPos</h3>
+    <div class="stars">★★★★★ <span style="color:var(--ink-soft);font-size:.9rem">4.8/5</span></div>
+    <p>It answers the Section 6 problem directly. Its barcode scan identifies the <strong>molecule (INN/DCI)</strong> alongside the <strong>batch number and expiry date</strong>, which feeds <strong>FEFO</strong> stock release and <strong>automatic expiry alerts</strong>. When a reference runs out, <strong>equivalents by molecule</strong> are surfaced. The vendor states a catalogue of roughly <strong>370,000 references</strong> built from public drug databases, so you are not starting from an empty product list. Add <strong>patient records</strong>, <strong>customer credit</strong>, <strong>per-employee permissions with a discount cap</strong>, and a <strong>fully offline mode with no feature switched off</strong> that syncs when the connection returns. The base plan is free and imposes <strong>no payment commission and no payment processor</strong>, so you keep your choice of how to get paid. Pricing tiers change, so check the current offer with the vendor.</p>
+    <div class="pros-cons">
+      <div class="pros">
+        <h4>👍 Strengths</h4>
+        <ul>
+          <li>Molecule search and equivalents, which general POS software does not model</li>
+          <li>One scan captures product, batch and expiry</li>
+          <li>FEFO release with automatic expiry alerts</li>
+          <li>Medicine catalogue supplied rather than built by you</li>
+          <li>Patient records and customer credit included</li>
+          <li>Full offline mode, stock lookup included</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h4>👎 Check for yourself</h4>
+        <ul>
+          <li>Still a young brand in the region, judge it in a live demo</li>
+          <li>Modules beyond the core till are paid</li>
+          <li>No local fiscal accreditation is claimed outside France, confirm BIR requirements yourself</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:1rem"><a class="btn-ghost" href="https://digablopos.fr/en?s=mybusinessnotebook" target="_blank" rel="noopener">See digabloPos →</a></p>
+  </div>
+
+  <!-- 2 -->
+  <div class="card">
+    <span class="rank">🥈 No.2</span>
+    <h3 style="margin-top:.3rem">Dedicated pharmacy software</h3>
+    <div class="stars">★★★★☆ <span style="color:var(--ink-soft);font-size:.9rem">4.0/5</span></div>
+    <p>A number of vendors in the region sell software written for drugstores rather than adapted from retail, and several advertise BIR processing assistance as part of onboarding, which is genuinely useful if paperwork is not your strong suit. Their public material typically covers batch and expiry tracking, prescription handling and pharmacy-shaped reporting.</p>
+    <p>What to make them demonstrate rather than assume: molecule search with equivalents and prices on screen, the size and source of the catalogue they supply, exactly what remains usable when the connection drops, and the full cost once hardware, per-branch fees and modules are added.</p>
+    <div class="pros-cons">
+      <div class="pros"><h4>👍 Strengths</h4><ul><li>Built for pharmacy workflow, not retrofitted</li><li>Local support, and often help with tax paperwork</li></ul></div>
+      <div class="cons"><h4>👎 Check for yourself</h4><ul><li>Molecule search and supplied catalogue vary a lot, demand a demo</li><li>Total cost with hardware and per-device fees needs pinning down</li></ul></div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="card">
+    <span class="rank">🥉 No.3</span>
+    <h3 style="margin-top:.3rem">A general cloud POS (Loyverse and similar)</h3>
+    <div class="stars">★★★☆☆ <span style="color:var(--ink-soft);font-size:.9rem">3.2/5</span></div>
+    <p>General cloud tills sell well, handle staff and products cleanly, and often cost nothing on a base plan. For the front-of-shop lines, vitamins, personal care, baby goods, that is a perfectly reasonable choice. For the medicine side the gap is not quality, it is vocabulary: active substance, batch with expiry date and patient history are not concepts these products are built around, because they are made for general retail. You can still use one, as long as you accept that batches and equivalents will live in a spreadsheet beside the till.</p>
+    <div class="pros-cons">
+      <div class="pros"><h4>👍 Strengths</h4><ul><li>Free to start, quick to learn</li><li>Fine for non-medicine lines</li></ul></div>
+      <div class="cons"><h4>👎 Limits</h4><ul><li>Not modelled around molecules, batches or expiry dates</li><li>Section 6 price comparison stays a manual job</li></ul></div>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h3>Test it on three boxes from your own shelf</h3>
+    <p>The base plan is free. Scan three packs and see whether the batch, the expiry date and the molecule come back correctly.</p>
+    <a class="btn" href="https://digablopos.fr/en?s=mybusinessnotebook" target="_blank" rel="noopener">Try digabloPos free</a>
+  </div>
+
+  <h2 id="table">At a glance</h2>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>What a drugstore needs</th>
+          <th class="col-featured">digabloPos</th>
+          <th>Pharmacy software</th>
+          <th>General POS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Search by molecule (INN)</td><td class="col-featured yes">Yes</td><td>Ask for a demo</td><td>Not modelled</td></tr>
+        <tr><td>Equivalents shown when out of stock</td><td class="col-featured yes">Yes</td><td>Ask for a demo</td><td>Not modelled</td></tr>
+        <tr><td>Batch and expiry in one scan</td><td class="col-featured yes">Yes</td><td>Often</td><td>Not modelled</td></tr>
+        <tr><td>FEFO release and expiry alerts</td><td class="col-featured yes">Yes</td><td>Often</td><td>Rarely</td></tr>
+        <tr><td>Medicine catalogue supplied</td><td class="col-featured yes">Yes</td><td>Varies</td><td>No</td></tr>
+        <tr><td>Stock visible offline</td><td class="col-featured yes">Yes</td><td>Varies</td><td>Varies</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:.82rem;color:#6a7180">Compiled from public vendor documentation reviewed in August 2026 and features confirmed by the vendors. "Ask for a demo" does not mean absent: it means we could not confirm it publicly and you should have it shown to you. Verify on your own catalogue before committing.</p>
+
+  <div class="callout">
+    <strong>Our advice.</strong> Skip the feature list. Take three packs off your shelf, including one you are chronically out of, and ask every vendor to do four things in front of you: scan the pack, show the batch and expiry, search the molecule, and list what you hold under it with prices. The one that does it without changing the subject has answered the only question that matters, and it is why we put <a href="https://digablopos.fr/en?s=mybusinessnotebook" target="_blank" rel="noopener">digabloPos</a> first for a community drugstore.
+  </div>
+
+  <h2 id="faq">Frequently asked questions</h2>
+  <div class="faq">
+    <details><summary>Does Philippine law really require me to mention cheaper generics?</summary>
+      <p>Under Section 6 of Republic Act 6675, the Generics Act of 1988, drug outlets including drugstores and non-traditional outlets such as supermarkets shall inform any buyer about any and all other drug products having the same generic name, together with their corresponding prices, so the buyer can exercise the option. The same section also requires outlets to post a list of drug products with the same generic name and their prices in a conspicuous place. Read the text yourself and confirm the current implementing rules with the FDA and your professional board.</p>
+    </details>
+    <details><summary>What is a generic name or INN, exactly?</summary>
+      <p>It is the name of the active substance itself, assigned by the World Health Organization through its International Nonproprietary Names programme. WHO describes each INN as a unique name that is globally recognised and is public property. Paracetamol is an INN. The brand names it is sold under are not. Because the INN belongs to no one, it is the only name that reliably tells you two different boxes hold the same molecule.</p>
+    </details>
+    <details><summary>What are the penalties under the Generics Act?</summary>
+      <p>Section 12 sets a graduated scale for violations of Section 6 by individuals: a reprimand for the first offence, a fine of P2,000 to P5,000 for the second, P5,000 to P10,000 plus a 30-day suspension for the third, and P10,000 or more with a one-year suspension for the fourth and later offences. Organisations face fines and possible suspension or revocation of licence. Amounts and enforcement practice change, so verify the current position before relying on these figures.</p>
+    </details>
+    <details><summary>Why can't my current POS search by molecule?</summary>
+      <p>Because most POS systems are built for general retail, where a product is a name, a barcode and a price. A pharmacy needs a third layer: the active substance, its strength and its form. If that layer is not in the product catalogue, no amount of clever searching will surface an equivalent. Ask any vendor to show you a search by molecule on your own stock, not on their demo data.</p>
+    </details>
+    <details><summary>Is FIFO good enough for medicines?</summary>
+      <p>No. FIFO releases what arrived first. FEFO releases what expires first, which is not the same thing, because a box received this month can easily expire before one received last year. FEFO only works if the system stores an expiry date per batch rather than a single quantity per product.</p>
+    </details>
+    <details><summary>Do I still need BIR registration for my POS?</summary>
+      <p>Machine registration and the documents required have changed several times in recent years, and the rules differ for a standalone till, a cloud POS and a computerised accounting system. Treat it as a separate exercise from choosing your software, confirm the current requirement directly with the BIR, and make sure whatever you buy can produce the reports and invoice formats they ask for.</p>
+    </details>
+  </div>
+
+  <div class="cta-box">
+    <h3>Stop losing the sale to an out-of-stock brand</h3>
+    <p>Seeing everything you hold under the same molecule, with batch and expiry, changes how a counter runs.</p>
+    <a class="btn" href="https://digablopos.fr/en?s=mybusinessnotebook" target="_blank" rel="noopener">Set up a free till</a>
+  </div>
+
+  <h2 id="sources">Official sources</h2>
+  <p>This is regulated ground, so check it yourself rather than taking our word for it.</p>
+  <ul>
+      <li><a href="https://lawphil.net/statutes/repacts/ra1988/ra_6675_1988.html" target="_blank" rel="noopener">Republic Act No. 6675, the Generics Act of 1988</a>: full statutory text, including the Section 6 duties of drug outlets and the Section 12 penalties.</li>
+      <li><a href="https://www.who.int/teams/health-product-and-policy-standards/inn" target="_blank" rel="noopener">World Health Organization, International Nonproprietary Names programme</a>: what an INN is, who assigns it and why it is public property.</li>
+      <li><a href="https://www.prc.gov.ph/" target="_blank" rel="noopener">Professional Regulation Commission</a>: licensing of pharmacists in the Philippines.</li>
+  </ul>
+
+<section class="related-block">
+  <h2>Read next</h2>
+  <div class="grid">
+      <a class="post-card" href="pharmacy-pos-system.html"><span class="pc-media" style="background-image:url('img/pharmacy-pos-system-sm.webp')"></span><span class="pc-body"><span class="tag">Read next</span><h3>How to choose a pharmacy POS</h3><p>The general buying guide: criteria, traps and the questions to ask before you sign.</p></span></a>
+      <a class="post-card" href="bir-accredited-pos-philippines.html"><span class="pc-media" style="background-image:url('img/bir-accredited-pos-philippines-sm.webp')"></span><span class="pc-body"><span class="tag">Read next</span><h3>BIR-accredited POS in the Philippines</h3><p>What registration actually involves, and what your software has to produce.</p></span></a>
+      <a class="post-card" href="sari-sari-store-stock-shrinkage.html"><span class="pc-media" style="background-image:url('img/sari-sari-store-stock-shrinkage-sm.webp')"></span><span class="pc-body"><span class="tag">Read next</span><h3>Stock shrinkage in a sari-sari store</h3><p>Where the stock quietly goes, and the counting habits that stop it.</p></span></a>
+  </div>
+</section>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+      <div class="lang-switch" style="margin:0 0 .9rem;justify-content:center">
+        <span style="color:#6b6659;font-size:.74rem">Language:</span>
+        <a href="?lang=fr" rel="nofollow">FR</a>
+        <a href="?lang=en" rel="nofollow" aria-current="true">EN</a>
+        <a href="?lang=es" rel="nofollow">ES</a>
+        <a href="?lang=pt" rel="nofollow">PT</a>
+      </div>
+    <div>© 2026 My Business Notebook, Buying guides for merchants.</div>
+    <p class="disclosure">Transparency: this guide is informational and general in nature, and is not medical, tax or legal advice. Some links point to tools we recommend. Laws, app features and pricing change over time, verify current details with the relevant authority and vendor before relying on them.</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    try{
+      var d = new Date();
+      var s = d.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
+      var el = document.getElementById('tk-date'); if(el){ el.textContent = s; }
+      var elS = document.getElementById('tk-date-short'); if(elS){ elS.textContent = d.toLocaleDateString('en-US', { month:'short', day:'numeric' }); }
+      var mv = document.getElementById('tk-move'); if(mv){ mv.innerHTML += mv.innerHTML; }
+    }catch(e){}
+  })();
+</script>
+
+</body>
+</html>
