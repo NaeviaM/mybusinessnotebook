@@ -258,12 +258,20 @@
   // explicitement d'un AUTRE pays. Si aucun article ne correspond a son pays,
   // on ne touche a rien : l'ordre reste celui de la langue.
   //
+  // La decision se prend sur la PAGE ENTIERE, pas grille par grille. Sinon un
+  // visiteur americain voyait bien son comparatif remonter dans la premiere
+  // grille, mais gardait les Philippines, le Kenya et le Zimbabwe au milieu de
+  // la deuxieme, faute d'article americain dans celle-la.
+  //
   // Rien n'est jamais supprime ni masque. Les robots d'indexation ne jouent pas
   // ce script et recoivent la page dans son ordre par defaut, tous liens
   // presents : le classement est un confort de lecture, pas un filtre.
   (function () {
     function classer(pays) {
-      if (!pays) return;
+      if (!pays || !/^[A-Z]{2}$/.test(pays)) return;
+      // Un seul article pour son pays, ou qu'il soit sur la page, suffit a
+      // declencher le classement partout.
+      if (!document.querySelector('[data-geo~="' + pays + '"]')) return;
       var grilles = document.querySelectorAll('.grid');
       for (var g = 0; g < grilles.length; g++) {
         var grille = grilles[g];
@@ -275,7 +283,7 @@
           else if ((' ' + tag + ' ').indexOf(' ' + pays + ' ') > -1) sien.push(cartes[i]);
           else ailleurs.push(cartes[i]);
         }
-        if (!sien.length) continue;   // rien pour son pays : on garde l'ordre de la langue
+        if (!sien.length && !ailleurs.length) continue;  // grille sans marquage
         var ordre = sien.concat(partout, ailleurs);
         for (var j = 0; j < ordre.length; j++) grille.appendChild(ordre[j]);
       }
