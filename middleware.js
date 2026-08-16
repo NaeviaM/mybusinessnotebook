@@ -56,7 +56,10 @@ export default function middleware(request) {
   //    Les robots ne lisent pas ce point d'accès et ne jouent pas le script :
   //    ils reçoivent la page dans son ordre par défaut, avec TOUS les liens.
   //    Rien n'est masqué à l'indexation, contrairement à l'ancien mécanisme.
-  if (url0.pathname === '/geo') {
+  // On accepte les deux écritures : vercel.json ajoute « .html » à toute URL
+  // sans extension, et cette règle exclut désormais /geo, mais on garde la
+  // variante par sécurité si la configuration change.
+  if (url0.pathname === '/geo' || url0.pathname === '/geo.html') {
     const c = (request.headers.get('x-vercel-ip-country') || '').toUpperCase();
     return new Response(JSON.stringify({ country: /^[A-Z]{2}$/.test(c) ? c : null }), {
       headers: {

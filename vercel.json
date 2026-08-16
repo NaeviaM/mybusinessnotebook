@@ -12,7 +12,7 @@
       "permanent": true
     },
     {
-      "source": "/:slug((?!.*\\.)(?!en$)(?!es$)(?!pt$)(?!sw$)(?!img$)[^/]+)",
+      "source": "/:slug((?!.*\\.)(?!en$)(?!es$)(?!pt$)(?!sw$)(?!img$)(?!geo$)[^/]+)",
       "destination": "/:slug.html",
       "permanent": true
     }
