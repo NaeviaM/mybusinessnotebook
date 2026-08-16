@@ -1,13 +1,13 @@
 {
-  "run": 22,
-  "next_market_index": 1,
-  "next_type": "comparison",
+  "run": 23,
+  "next_market_index": 2,
+  "next_type": "advice",
   "recent_markets": [
-    "Cote d'Ivoire/fr",
     "Philippines/en",
-    "Venezuela/es"
+    "Venezuela/es",
+    "USA/en"
   ],
-  "last_type": "advice",
+  "last_type": "comparison",
   "priority_topics": [],
   "published": [
     "staff-scheduling-small-business",
@@ -34,6 +34,7 @@
     "logiciel-caisse-pharmacie-afrique-ouest",
     "pharmacy-pos-system-southeast-asia",
     "dual-currency-pos-zimbabwe",
-    "tpv-multimoneda-venezuela"
+    "tpv-multimoneda-venezuela",
+    "square-toast-clover-loyverse-comparison"
   ]
 }
