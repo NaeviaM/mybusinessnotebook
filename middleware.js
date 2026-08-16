@@ -41,11 +41,36 @@ const LANGS = ['fr', 'en', 'es', 'pt'];
 const home = (lang) => (lang === 'fr' ? '/' : '/' + lang + '/');
 
 export default function middleware(request) {
+  const url0 = new URL(request.url);
+
+  // 0 bis) Point d'accès qui renvoie le pays du visiteur, déduit de son adresse
+  //    IP par Vercel. La page d'accueil l'interroge en JavaScript pour remonter
+  //    les articles qui concernent ce pays et repousser ceux d'un autre pays.
+  //
+  //    Pourquoi un appel séparé plutôt qu'un cookie posé ici : poser un cookie
+  //    depuis le middleware oblige à rediriger, et sur l'accueil français, qui
+  //    est déjà servi à la racine, cette redirection pointerait vers elle-même,
+  //    donc boucle infinie dès que le navigateur refuse le cookie. Un point
+  //    d'accès en lecture seule ne peut rien casser.
+  //
+  //    Les robots ne lisent pas ce point d'accès et ne jouent pas le script :
+  //    ils reçoivent la page dans son ordre par défaut, avec TOUS les liens.
+  //    Rien n'est masqué à l'indexation, contrairement à l'ancien mécanisme.
+  if (url0.pathname === '/geo') {
+    const c = (request.headers.get('x-vercel-ip-country') || '').toUpperCase();
+    return new Response(JSON.stringify({ country: /^[A-Z]{2}$/.test(c) ? c : null }), {
+      headers: {
+        'content-type': 'application/json; charset=utf-8',
+        'cache-control': 'no-store',
+      },
+    });
+  }
+
   // 0) Un robot ne doit jamais être redirigé : il doit pouvoir indexer
   //    chaque URL avec le contenu que sa balise canonique annonce.
   if (isBot(request)) return;
 
-  const url = new URL(request.url);
+  const url = url0;
   const path = url.pathname;
   const override = (url.searchParams.get('lang') || '').toLowerCase();
 

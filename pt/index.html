@@ -22,6 +22,9 @@
 <meta property="og:image:height" content="675">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://mybusinessnotebook.com/pt/img/pdv-para-mercadinho.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"My Business Notebook","url":"https://mybusinessnotebook.com/pt/","inLanguage":"pt","description":"Comparativos e guias para escolher um PDV, receber sem taxas ocultas e gerir o seu comércio.","publisher":{"@type":"Organization","name":"My Business Notebook"}}
@@ -95,35 +98,35 @@
     </a>
 
     <div class="grid">
-      <a class="post-card" href="controle-fiado-pequenos-negocios-brasil.html">
+      <a class="post-card" data-geo="BR" href="controle-fiado-pequenos-negocios-brasil.html">
         <span class="pc-media" style="background-image:url('img/controle-fiado-pequenos-negocios-brasil-sm.webp')"></span>
         <span class="pc-body"><span class="tag">Brasil · Gestão</span><h3>Fiado no comércio: como controlar</h3><p>Erros que viram prejuízo, caderno x app x PDV, limite por cliente e como cobrar sem brigar.</p></span>
       </a>
-      <a class="post-card" href="sistema-pdv-nfce-brasil.html">
+      <a class="post-card" data-geo="BR" href="sistema-pdv-nfce-brasil.html">
         <span class="pc-media" style="background-image:url('img/sistema-pdv-nfce-brasil-sm.webp')"></span>
         <span class="pc-body"><span class="tag">Brasil</span><h3>Sistema PDV com NFC-e</h3><p>Como escolher um PDV que emite NFC-e e cumpre a SEFAZ, sem taxas ocultas.</p></span>
       </a>
-      <a class="post-card" href="software-faturacao-certificada-portugal.html">
+      <a class="post-card" data-geo="PT" href="software-faturacao-certificada-portugal.html">
         <span class="pc-media" style="background-image:url('img/software-faturacao-certificada-portugal-sm.webp')"></span>
         <span class="pc-body"><span class="tag">Portugal</span><h3>Faturação certificada pela AT</h3><p>O que a lei exige e como escolher um POS certificado em Portugal.</p></span>
       </a>
-      <a class="post-card" href="mei-ou-simples-nacional-guia.html">
+      <a class="post-card" data-geo="BR" href="mei-ou-simples-nacional-guia.html">
         <span class="pc-media" style="background-image:url('img/mei-ou-simples-nacional-guia-sm.webp')"></span>
         <span class="pc-body"><span class="tag">Brasil · Fiscal</span><h3>MEI ou Simples Nacional?</h3><p>Qual é o melhor para o seu comércio em 2026, guia comparativo.</p></span>
       </a>
-      <a class="post-card" href="comparativo-stone-pagbank-mercado-pago.html">
+      <a class="post-card" data-geo="BR" href="comparativo-stone-pagbank-mercado-pago.html">
         <span class="pc-media" style="background-image:url('img/comparativo-stone-pagbank-mercado-pago-sm.webp')"></span>
         <span class="pc-body"><span class="tag">Brasil · Comparativo</span><h3>Stone x PagBank x Mercado Pago</h3><p>Taxas, NFC-e e o risco de ficar preso a uma única maquininha.</p></span>
       </a>
-      <a class="post-card" href="controle-estoque-pequenos-negocios-brasil.html">
+      <a class="post-card" data-geo="BR" href="controle-estoque-pequenos-negocios-brasil.html">
         <span class="pc-media" style="background-image:url('img/controle-estoque-pequenos-negocios-brasil-sm.webp')"></span>
         <span class="pc-body"><span class="tag">Brasil · Gestão</span><h3>Controle de estoque no pequeno negócio</h3><p>Curva ABC, giro de estoque e como parar de perder dinheiro na prateleira.</p></span>
       </a>
-      <a class="post-card" href="pdv-para-restauracao-portugal.html">
+      <a class="post-card" data-geo="PT" href="pdv-para-restauracao-portugal.html">
         <span class="pc-media" style="background-image:url('img/pdv-para-restauracao-portugal-sm.webp')"></span>
         <span class="pc-body"><span class="tag">Portugal · Comparativo</span><h3>SumUp x Moloni x Vendus</h3><p>Qual PDV escolher para o seu restaurante ou café em Portugal, sem enganos.</p></span>
       </a>
-      <a class="post-card" href="reduzir-taxas-cartao-comercio-portugal.html">
+      <a class="post-card" data-geo="PT" href="reduzir-taxas-cartao-comercio-portugal.html">
         <span class="pc-media" style="background-image:url('img/reduzir-taxas-cartao-comercio-portugal-sm.webp')"></span>
         <span class="pc-body"><span class="tag">Portugal · Pagamentos</span><h3>Reduzir as taxas de cartão</h3><p>TPA do banco, SumUp ou Viva Wallet: o que custa mesmo aceitar cartão e como pagar menos.</p></span>
       </a>
@@ -234,5 +237,45 @@
   })();
 </script>
 
+
+<script>
+  // Classement des articles selon le pays du visiteur (deduit de son adresse IP
+  // par Vercel, via le point d'acces /geo).
+  //
+  // Regle voulue : on remonte d'abord ce qui concerne SON pays, on laisse au
+  // milieu ce qui vaut partout, et on repousse en fin de grille ce qui parle
+  // explicitement d'un AUTRE pays. Si aucun article ne correspond a son pays,
+  // on ne touche a rien : l'ordre reste celui de la langue.
+  //
+  // Rien n'est jamais supprime ni masque. Les robots d'indexation ne jouent pas
+  // ce script et recoivent la page dans son ordre par defaut, tous liens
+  // presents : le classement est un confort de lecture, pas un filtre.
+  (function () {
+    function classer(pays) {
+      if (!pays) return;
+      var grilles = document.querySelectorAll('.grid');
+      for (var g = 0; g < grilles.length; g++) {
+        var grille = grilles[g];
+        var cartes = [].slice.call(grille.children);
+        var sien = [], partout = [], ailleurs = [];
+        for (var i = 0; i < cartes.length; i++) {
+          var tag = cartes[i].getAttribute('data-geo');
+          if (!tag) partout.push(cartes[i]);
+          else if ((' ' + tag + ' ').indexOf(' ' + pays + ' ') > -1) sien.push(cartes[i]);
+          else ailleurs.push(cartes[i]);
+        }
+        if (!sien.length) continue;   // rien pour son pays : on garde l'ordre de la langue
+        var ordre = sien.concat(partout, ailleurs);
+        for (var j = 0; j < ordre.length; j++) grille.appendChild(ordre[j]);
+      }
+    }
+    try {
+      fetch('/geo', { credentials: 'omit' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) { if (d) classer(d.country); })
+        .catch(function () {});
+    } catch (e) {}
+  })();
+</script>
 </body>
 </html>

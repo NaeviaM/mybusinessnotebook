@@ -22,6 +22,9 @@
 <meta property="og:image:height" content="675">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://mybusinessnotebook.com/es/img/tpv-para-tienda-abarrotes.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"My Business Notebook","url":"https://mybusinessnotebook.com/es/","inLanguage":"es","description":"Comparativas y guías para elegir un TPV, cobrar sin comisiones ocultas y gestionar tu comercio.","publisher":{"@type":"Organization","name":"My Business Notebook"}}
@@ -96,23 +99,23 @@
     </a>
 
     <div class="grid">
-      <a class="post-card" href="mejorar-flujo-caja-pequenos-negocios-mexico.html">
+      <a class="post-card" data-geo="MX" href="mejorar-flujo-caja-pequenos-negocios-mexico.html">
         <span class="pc-media" style="background-image:url('img/mejorar-flujo-caja-pequenos-negocios-mexico-sm.webp')"></span>
         <span class="pc-body"><span class="tag">México · Gestión</span><h3>Mejorar el flujo de caja</h3><p>Dónde se te escapa el efectivo, el fiado, las comisiones y tu fondo de reserva.</p></span>
       </a>
-      <a class="post-card" href="sistema-tpv-verifactu-espana.html">
+      <a class="post-card" data-geo="ES" href="sistema-tpv-verifactu-espana.html">
         <span class="pc-media" style="background-image:url('img/sistema-tpv-verifactu-espana-sm.webp')"></span>
         <span class="pc-body"><span class="tag">España</span><h3>TPV Veri*factu</h3><p>Cómo elegir un TPV conforme a la ley antifraude en España.</p></span>
       </a>
-      <a class="post-card" href="alta-sat-resico-pequenos-negocios.html">
+      <a class="post-card" data-geo="MX" href="alta-sat-resico-pequenos-negocios.html">
         <span class="pc-media" style="background-image:url('img/alta-sat-resico-pequenos-negocios-sm.webp')"></span>
         <span class="pc-body"><span class="tag">México · Fiscal</span><h3>Darse de alta en el SAT (RESICO)</h3><p>Guía para pequeños negocios: requisitos, régimen y obligaciones.</p></span>
       </a>
-      <a class="post-card" href="control-fiado-clientes-tienda-mexico.html">
+      <a class="post-card" data-geo="MX" href="control-fiado-clientes-tienda-mexico.html">
         <span class="pc-media" style="background-image:url('img/control-fiado-clientes-tienda-mexico-sm.webp')"></span>
         <span class="pc-body"><span class="tag">México · Gestión</span><h3>Controlar el fiado sin perder dinero</h3><p>A quién fiarle, cuánto, cómo cobrar sin pelear y cómo dejar la libreta.</p></span>
       </a>
-      <a class="post-card" href="tpv-multimoneda-venezuela.html">
+      <a class="post-card" data-geo="VE" href="tpv-multimoneda-venezuela.html">
         <span class="pc-media" style="background-image:url('img/tpv-multimoneda-venezuela-sm.webp')"></span>
         <span class="pc-body"><span class="tag">Venezuela · Gestión</span><h3>Cobrar en bolívares y en dólares</h3><p>La tasa, el pago mixto, el vuelto que no tienes y el cierre que nunca cuadra.</p></span>
       </a>
@@ -139,7 +142,7 @@
         <a class="post-card" href="tpv-para-chocolateria.html"><span class="pc-media" style="background-image:url('img/tpv-para-chocolateria-sm.webp')"></span><span class="pc-body"><span class="tag">Sector</span><h3>Chocolatería</h3><p>Venta al peso/pieza, picos estacionales, cajas de regalo.</p></span></a>
         <a class="post-card" href="tpv-para-vinoteca.html"><span class="pc-media" style="background-image:url('img/tpv-para-vinoteca-sm.webp')"></span><span class="pc-body"><span class="tag">Sector</span><h3>Vinoteca y licorería</h3><p>Referencias y añadas, stock preciso, venta por unidad/caja.</p></span></a>
         <a class="post-card" href="tpv-para-farmacia.html"><span class="pc-media" style="background-image:url('img/tpv-para-farmacia-sm.webp')"></span><span class="pc-body"><span class="tag">Sector</span><h3>Farmacia</h3><p>FEFO, lotes y caducidad, código de barras a la molécula, alertas.</p></span></a>
-        <a class="post-card" href="tpv-para-tienda-de-ropa.html"><span class="pc-media" style="background-image:url('img/tpv-para-tienda-de-ropa-sm.webp')"></span><span class="pc-body"><span class="tag">Sector</span><h3>Tienda de ropa y calzado</h3><p>Tallas y colores, cambios y devoluciones, control de descuentos del personal.</p></span></a>
+        <a class="post-card" data-geo="ES" href="tpv-para-tienda-de-ropa.html"><span class="pc-media" style="background-image:url('img/tpv-para-tienda-de-ropa-sm.webp')"></span><span class="pc-body"><span class="tag">Sector</span><h3>Tienda de ropa y calzado</h3><p>Tallas y colores, cambios y devoluciones, control de descuentos del personal.</p></span></a>
       </div>
     </div>
   </section>
@@ -224,5 +227,45 @@
   })();
 </script>
 
+
+<script>
+  // Classement des articles selon le pays du visiteur (deduit de son adresse IP
+  // par Vercel, via le point d'acces /geo).
+  //
+  // Regle voulue : on remonte d'abord ce qui concerne SON pays, on laisse au
+  // milieu ce qui vaut partout, et on repousse en fin de grille ce qui parle
+  // explicitement d'un AUTRE pays. Si aucun article ne correspond a son pays,
+  // on ne touche a rien : l'ordre reste celui de la langue.
+  //
+  // Rien n'est jamais supprime ni masque. Les robots d'indexation ne jouent pas
+  // ce script et recoivent la page dans son ordre par defaut, tous liens
+  // presents : le classement est un confort de lecture, pas un filtre.
+  (function () {
+    function classer(pays) {
+      if (!pays) return;
+      var grilles = document.querySelectorAll('.grid');
+      for (var g = 0; g < grilles.length; g++) {
+        var grille = grilles[g];
+        var cartes = [].slice.call(grille.children);
+        var sien = [], partout = [], ailleurs = [];
+        for (var i = 0; i < cartes.length; i++) {
+          var tag = cartes[i].getAttribute('data-geo');
+          if (!tag) partout.push(cartes[i]);
+          else if ((' ' + tag + ' ').indexOf(' ' + pays + ' ') > -1) sien.push(cartes[i]);
+          else ailleurs.push(cartes[i]);
+        }
+        if (!sien.length) continue;   // rien pour son pays : on garde l'ordre de la langue
+        var ordre = sien.concat(partout, ailleurs);
+        for (var j = 0; j < ordre.length; j++) grille.appendChild(ordre[j]);
+      }
+    }
+    try {
+      fetch('/geo', { credentials: 'omit' })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) { if (d) classer(d.country); })
+        .catch(function () {});
+    } catch (e) {}
+  })();
+</script>
 </body>
 </html>

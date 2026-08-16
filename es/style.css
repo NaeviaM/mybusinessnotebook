@@ -4,7 +4,9 @@
    Renomme la marque librement (cherche "Le Carnet du Commerçant").
    =========================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap');
+/* Polices chargees dans le <head> de chaque page (preconnect + link),
+   pas ici : un @import ajoute deux allers-retours reseau avant que le texte
+   ne s'affiche dans la bonne police. */
 
 :root {
   /* Palette éditoriale BLEU + ROUGE (grand journal / magazine).
