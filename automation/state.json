@@ -1,13 +1,13 @@
 {
-  "run": 23,
+  "run": 24,
   "next_market_index": 2,
   "next_type": "advice",
   "recent_markets": [
-    "Philippines/en",
     "Venezuela/es",
+    "Philippines/en",
     "USA/en"
   ],
-  "last_type": "comparison",
+  "last_type": "advice",
   "priority_topics": [],
   "published": [
     "staff-scheduling-small-business",
@@ -35,6 +35,7 @@
     "pharmacy-pos-system-southeast-asia",
     "dual-currency-pos-zimbabwe",
     "tpv-multimoneda-venezuela",
-    "square-toast-clover-loyverse-comparison"
+    "square-toast-clover-loyverse-comparison",
+    "balanza-y-facturacion-abasto-venezuela"
   ]
 }
