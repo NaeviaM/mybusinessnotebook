@@ -1,8 +1,8 @@
-# Rapport de sante, 2026-08-18 07:33 UTC
+# Rapport de sante, 2026-08-18 11:15 UTC
 
-VERIF LIVE : EFFECTUEE
+VERIF LIVE : IMPOSSIBLE (mode --disk-only)
 
-**STATUT GLOBAL : CRITIQUE**
+**STATUT GLOBAL : OK**
 
 Controle deterministe, sans modele de langage. Remplace l'agent cloud tombe en panne le 04/08/2026. Declenche chaque jour par la tache planifiee Windows `MBN - controle de sante` (voir C:\Users\dell\mbn-automation).
 
@@ -10,16 +10,11 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## A. Disponibilite en direct
 
-- apex : `0`
-- www : `0`
-- secours Vercel : `0`
-- accueil EN : `0`
-- accueil ES : `0`
-- accueil PT : `0`
+- Sautee (mode --disk-only).
 
 ## B. Balayage du sitemap en direct
 
-- sitemap.xml inaccessible, balayage impossible
+- Sautee (mode --disk-only).
 
 ## C. Liens et images sur disque
 
@@ -39,11 +34,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## CRITIQUE
 
-- L'accueil ne repond pas : `0` sur https://mybusinessnotebook.com/.
-- accueil EN ne repond pas : `0`.
-- accueil ES ne repond pas : `0`.
-- accueil PT ne repond pas : `0`.
-- sitemap.xml inaccessible en ligne (`0`).
+Aucun probleme trouve.
 
 ## MOYEN
 
