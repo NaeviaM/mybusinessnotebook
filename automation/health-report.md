@@ -1,4 +1,4 @@
-# Rapport de sante, 2026-08-18 11:15 UTC
+# Rapport de sante, 2026-08-18 22:18 UTC
 
 VERIF LIVE : IMPOSSIBLE (mode --disk-only)
 
@@ -18,11 +18,11 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## C. Liens et images sur disque
 
-- 106 pages controlees, 0 probleme(s)
+- 107 pages controlees, 0 probleme(s)
 
 ## D. Coherence du sitemap
 
-- 106 entrees, 106 pages sur disque, 0 manquante(s), 0 orpheline(s)
+- 107 entrees, 107 pages sur disque, 0 manquante(s), 0 orpheline(s)
 
 ## E. Balises d'en-tete
 
