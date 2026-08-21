@@ -340,15 +340,28 @@ def section_h():
     # Meme photo sur plusieurs articles : pas une panne, mais le brief demande
     # d'eviter les doublons, et deux articles voisins illustres pareil se voient
     # sur l'accueil. Comparaison exacte : on ne signale que les vrais jumeaux.
+    #
+    # Restreint aux images REELLEMENT affichees quelque part. Le dossier img/ sert
+    # aussi de reserve de photos libres dans laquelle le publieur pioche en copiant
+    # le fichier : une photo de reserve est donc le jumeau normal de l'article qui
+    # l'a prise, et la signaler ferait un faux positif a chaque publication.
+    citees = set()
+    for d in LANGS.values():
+        for page in pages(d):
+            citees.update(re.findall(r"img/([A-Za-z0-9._-]+?)(?:-sm)?\.(?:jpg|jpeg|png|webp)",
+                                     page.read_text(encoding="utf-8")))
     par_empreinte = {}
     for base, h in refs.items():
-        par_empreinte.setdefault(h, []).append(base)
+        if base in citees:
+            par_empreinte.setdefault(h, []).append(base)
     partages = sorted([sorted(v) for v in par_empreinte.values() if len(v) > 1])
     for groupe in partages:
         cosmetique.append(f"Meme photo sur {len(groupe)} articles : "
                           + ", ".join(f"`{b}`" for b in groupe))
 
-    return [f"- {len(familles)} familles d'images, {ecarts} variante(s) desynchronisee(s), "
+    affichees = citees & set(familles)
+    return [f"- {len(familles)} familles d'images dont {len(affichees)} affichees, "
+            f"{ecarts} variante(s) desynchronisee(s), "
             f"{len(partages)} photo(s) partagee(s) par plusieurs articles"]
 
 
