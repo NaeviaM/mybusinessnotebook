@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+# URLs de commutation de langue : elles ne font que rediriger, rien a indexer.
+Disallow: /*?lang=
+# Point d'acces JSON interne (pays du visiteur), sans contenu.
+Disallow: /geo
 
 Sitemap: https://mybusinessnotebook.com/sitemap.xml

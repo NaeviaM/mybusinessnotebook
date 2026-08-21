@@ -212,7 +212,8 @@ th.col-featured { background: var(--green); color: #fff; }
 .pros, .cons { padding: 1.1rem; border-radius: var(--radius); font-size: .92rem; border: 1px solid var(--line); }
 .pros { background: var(--green-soft); border-color: #cfe0d8; }
 .cons { background: #f7ece9; border-color: #ecd4cf; }
-.pros h4, .cons h4 { font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; }
+.pros h3, .cons h3 { font-family: var(--sans); font-weight: 700; margin: 0 0 .5rem; }
+.pros h3, .cons h3, .pros h4, .cons h4 { font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; }
 .pros ul, .cons ul { margin: 0; }
 
 .callout {
@@ -536,3 +537,7 @@ body::before{
 .tool-card:hover h3 { color: var(--green-deep); }
 .tool-card p { font-size: .9rem; color: var(--ink-soft); margin: 0; }
 @media (max-width: 560px) { .tool-card { padding: 1rem 1.05rem; } }
+
+/* Renvoi vers la meme zone geographique dans une autre langue. */
+.xlang{font-size:.86rem;color:#6b6659;margin:.1rem 0 1rem;border-left:3px solid #e6e1d6;padding-left:.7rem}
+.xlang a{color:#1b43c0}

@@ -1,6 +1,6 @@
-# Rapport de sante, 2026-08-20 09:42 UTC
+# Rapport de sante, 2026-08-21 01:25 UTC
 
-VERIF LIVE : EFFECTUEE
+VERIF LIVE : IMPOSSIBLE (mode --disk-only)
 
 **STATUT GLOBAL : OK**
 
@@ -10,24 +10,19 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## A. Disponibilite en direct
 
-- apex : `200`
-- www : `200`
-- secours Vercel : `200`
-- accueil EN : `200`
-- accueil ES : `200`
-- accueil PT : `200`
+- Sautee (mode --disk-only).
 
 ## B. Balayage du sitemap en direct
 
-- 107 URLs testees, 0 en echec
+- Sautee (mode --disk-only).
 
 ## C. Liens et images sur disque
 
-- 107 pages controlees, 0 probleme(s)
+- 109 pages controlees, 0 probleme(s)
 
 ## D. Coherence du sitemap
 
-- 107 entrees, 107 pages sur disque, 0 manquante(s), 0 orpheline(s)
+- 109 entrees, 109 pages sur disque, 0 manquante(s), 0 orpheline(s)
 
 ## E. Balises d'en-tete
 
@@ -35,7 +30,11 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## F. Cosmetique
 
-- 0 tuile(s) emoji, 0 article(s) sans bloc « a lire aussi »
+- 0 tuile(s) emoji, 1 article(s) sans bloc « a lire aussi »
+
+## G. Standards SEO
+
+- 0 ecart(s) aux standards SEO
 
 ## CRITIQUE
 
@@ -47,4 +46,4 @@ Aucun probleme trouve.
 
 ## COSMETIQUE
 
-Aucun probleme trouve.
+- `sw\mfumo-wa-pos-kenya.html` sans bloc « a lire aussi »

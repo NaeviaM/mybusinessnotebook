@@ -1,6 +1,6 @@
 # My Business Notebook
 
-> Independent buyer's guides, comparisons and free tools for shop, restaurant, bar and salon owners: choosing a POS system, understanding real payment costs, managing stock and customer credit, and meeting local invoicing rules. Published in French, English, Spanish and Portuguese.
+> Buyer's guides, comparisons and free tools for shop, restaurant, bar and salon owners: choosing a POS system, understanding real payment costs, managing stock and customer credit, and meeting local invoicing rules. Published in French, English, Spanish and Portuguese.
 
 My Business Notebook covers small independent businesses in Europe, West and East Africa, Latin America and Southeast Asia. Each guide is written for one market and states the local rules that apply there (NF525 in France, FNE in Cote d'Ivoire, eTIMS in Kenya, BIR in the Philippines, CFDI in Mexico, NFC-e in Brazil, AT in Portugal, Veri*factu in Spain).
 
@@ -101,6 +101,11 @@ My Business Notebook covers small independent businesses in Europe, West and Eas
 - [Software de Faturação Certificado pela AT: Guia 2026 para Escolher (e POS para Restauração)](https://mybusinessnotebook.com/pt/software-faturacao-certificada-portugal.html): Software de faturação certificado pela AT é obrigatório em Portugal. Guia 2026: certificação, ATCUD, SAF-T, código QR e comunicação de séries, e como escolher o melhor POS para o seu comércio ou restaurante.
 - [Stone, PagBank ou Mercado Pago: Qual Maquininha e Sistema de Caixa Escolher em 2026?](https://mybusinessnotebook.com/pt/comparativo-stone-pagbank-mercado-pago.html): Comparativo honesto entre Stone, PagBank e Mercado Pago: taxas, emissão de NFC-e, PDV embutido e o risco de ficar preso a uma única maquininha. Veja como separar pagamento e sistema de caixa em 2026.
 - [SumUp, Moloni ou Vendus: Qual PDV Escolher para o seu Restaurante em Portugal (2026)?](https://mybusinessnotebook.com/pt/pdv-para-restauracao-portugal.html): Comparativo entre SumUp, Moloni e Vendus para restaurantes e cafés em Portugal: mapa de mesas, faturação certificada pela AT, modo offline e custos reais em 2026.
+
+## Swahili guides (Kenya)
+
+- [My Business Notebook, Jarida kwa wamiliki wa maduka na migahawa](https://mybusinessnotebook.com/sw/): Miongozo na ulinganisho kwa wamiliki wa maduka, migahawa na baa.
+- [Mfumo wa POS Kenya 2026: Jinsi ya Kuchagua POS Inayotii eTIMS](https://mybusinessnotebook.com/sw/mfumo-wa-pos-kenya.html): Mwongozo kwa wamiliki wa maduka na migahawa kuhusu kuchagua mfumo wa POS unaotii eTIMS ya KRA.
 
 ## Free tools (no signup, no data collected)
 
