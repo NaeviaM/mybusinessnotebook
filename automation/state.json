@@ -1,15 +1,16 @@
 {
-  "run": 25,
-  "next_market_index": 3,
-  "next_type": "comparison",
+  "run": 26,
+  "next_market_index": 4,
+  "next_type": "advice",
   "recent_markets": [
-    "Philippines/en",
     "USA/en",
-    "Nigeria/en"
+    "Nigeria/en",
+    "France/fr"
   ],
-  "last_type": "advice",
+  "last_type": "comparison",
   "priority_topics": [],
   "published": [
+    "comparatif-caisse-boulangerie",
     "fake-alert-scams-pos-nigeria",
     "staff-scheduling-small-business",
     "comparatif-sumup-zettle-tiller-addition",

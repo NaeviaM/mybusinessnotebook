@@ -1,8 +1,8 @@
-# Rapport de sante, 2026-08-21 12:48 UTC
+# Rapport de sante, 2026-08-21 13:58 UTC
 
-VERIF LIVE : EFFECTUEE
+VERIF LIVE : IMPOSSIBLE (mode --disk-only)
 
-**STATUT GLOBAL : DEGRADE**
+**STATUT GLOBAL : OK**
 
 Controle deterministe, sans modele de langage. Remplace l'agent cloud tombe en panne le 04/08/2026. Declenche chaque jour par la tache planifiee Windows `MBN - controle de sante` (voir C:\Users\dell\mbn-automation).
 
@@ -10,19 +10,19 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## A. Disponibilite en direct
 
-- Machine hors ligne, verification impossible (aucune conclusion sur le site).
+- Sautee (mode --disk-only).
 
 ## B. Balayage du sitemap en direct
 
-- Reseau indisponible, balayage impossible (aucune conclusion sur le site).
+- Sautee (mode --disk-only).
 
 ## C. Liens et images sur disque
 
-- 109 pages controlees, 0 probleme(s)
+- 110 pages controlees, 0 probleme(s)
 
 ## D. Coherence du sitemap
 
-- 109 entrees, 109 pages sur disque, 0 manquante(s), 0 orpheline(s)
+- 110 entrees, 110 pages sur disque, 0 manquante(s), 0 orpheline(s)
 
 ## E. Balises d'en-tete
 
@@ -42,8 +42,7 @@ Aucun probleme trouve.
 
 ## MOYEN
 
-- Machine sans acces reseau : la disponibilite du site n'a PAS pu etre verifiee. Ce n'est pas une panne du site.
-- sitemap.xml non joignable depuis cette machine (reseau local).
+Aucun probleme trouve.
 
 ## COSMETIQUE
 
