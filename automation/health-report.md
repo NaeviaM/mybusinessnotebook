@@ -1,4 +1,4 @@
-# Rapport de sante, 2026-08-21 17:35 UTC
+# Rapport de sante, 2026-08-21 18:22 UTC
 
 VERIF LIVE : EFFECTUEE
 
@@ -42,6 +42,10 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 - 0 ecart(s) aux standards SEO
 
+## H. Coherence des visuels
+
+- 35 familles d'images, 0 variante(s) desynchronisee(s), 4 photo(s) partagee(s) par plusieurs articles
+
 ## CRITIQUE
 
 Aucun probleme trouve.
@@ -53,3 +57,7 @@ Aucun probleme trouve.
 ## COSMETIQUE
 
 - `sw\mfumo-wa-pos-kenya.html` sans bloc « a lire aussi »
+- Meme photo sur 2 articles : `bien-gerer-ses-stocks-petit-commerce`, `logiciel-caisse-quincaillerie`
+- Meme photo sur 3 articles : `calculateur-frais-encaissement`, `logiciel-caisse-boutique-cote-ivoire`, `paiement-mobile-money-commerce`
+- Meme photo sur 2 articles : `comparatif-caisse-boulangerie`, `reduire-demarque-vol-commerce`
+- Meme photo sur 2 articles : `facturation-electronique-2026-commercant`, `logiciel-caisse-tabac-presse`

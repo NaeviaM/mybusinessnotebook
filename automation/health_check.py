@@ -8,6 +8,9 @@ Aucun modele de langage n'est necessaire : tous les controles sont deterministes
 Avantage sur l'ancien agent : GitHub Actions a un vrai acces reseau sortant, donc
 la verification EN DIRECT est enfin possible (le bac a sable cloud la bloquait).
 
+Une seule dependance, optionnelle : Pillow, pour la section H (coherence des
+visuels). Si elle manque, la section est sautee et signalee, rien ne casse.
+
 Ecrit automation/health-report.md, ajoute une ligne a automation/health-history.log,
 et sort en code 1 si un probleme CRITIQUE est trouve.
 """
@@ -253,6 +256,102 @@ def section_g():
     return [f"- {ecarts} ecart(s) aux standards SEO"]
 
 
+# ------------------------------------------------------- H. coherence des visuels
+# Ajoutee le 21/08/2026, apres le cas `logiciel-caisse-boutique-cote-ivoire` : la
+# photo d'en-tete avait ete remplacee (un cafe occidental, prix en dollars, ne
+# collait pas a un article ivoirien) mais la vignette -sm.webp etait restee sur
+# l'ancienne image pendant neuf jours. Personne ne l'a vu parce que la vignette
+# n'est appelee que depuis l'accueil, jamais depuis l'article : en relisant la page
+# corrigee, tout paraissait juste. Les sections C et E ne pouvaient pas l'attraper,
+# elles verifient qu'un fichier existe et qu'une balise est la, pas ce que l'image
+# montre.
+#
+# On compare donc le CONTENU des variantes d'un meme article, via une empreinte
+# perceptuelle (dHash 64 bits, insensible au redimensionnement et a la
+# recompression). Mesure sur les 35 familles du site au moment de l'ajout :
+# variantes d'une meme photo, ecart 0 ou 1 ; photos differentes, 18 au minimum ;
+# le cas ivoirien etait a 37. Le seuil de 10 laisse une marge large des deux cotes.
+SEUIL_VARIANTE = 10
+
+
+def _empreinte(chemin):
+    """dHash 8x8 : 64 bits qui decrivent la forme de l'image, pas ses octets.
+
+    Chaque bit dit si un pixel est plus clair que son voisin de droite. Deux
+    encodages d'une meme photo donnent la meme empreinte ; deux photos
+    differentes divergent tres vite.
+    """
+    from PIL import Image
+    im = Image.open(chemin).convert("L").resize((9, 8), Image.LANCZOS)
+    px = im.tobytes()
+    bits = 0
+    for r in range(8):
+        ligne = px[r * 9:(r + 1) * 9]
+        for c in range(8):
+            bits = (bits << 1) | (1 if ligne[c] > ligne[c + 1] else 0)
+    return bits
+
+
+def _ecart(a, b):
+    """Distance de Hamming entre deux empreintes : 0 = identiques, 64 = opposees."""
+    return bin(a ^ b).count("1")
+
+
+def section_h():
+    dossier = ROOT / "img"
+    if not dossier.is_dir():
+        return ["- Aucun dossier `img/`."]
+    try:
+        import PIL  # noqa: F401
+    except ImportError:
+        # Jamais bloquant : ce script est le garde-fou qui autorise la publication.
+        # Il ne doit pas tomber parce qu'une dependance optionnelle manque.
+        cosmetique.append("Coherence des visuels non controlee : Pillow absent (`pip install Pillow`)")
+        return ["- Sautee : Pillow n'est pas installe."]
+
+    familles = {}
+    for p in sorted(dossier.iterdir()):
+        if not p.is_file():
+            continue
+        m = re.match(r"^(.+?)(-sm)?\.(jpg|jpeg|png|webp)$", p.name, re.I)
+        if m:
+            familles.setdefault(m.group(1), {})[p.name] = p
+
+    ecarts, refs = 0, {}
+    for base, variantes in sorted(familles.items()):
+        try:
+            empreintes = {nom: _empreinte(p) for nom, p in variantes.items()}
+        except Exception as e:
+            moyen.append(f"Image illisible dans la famille `{base}` : {e}")
+            ecarts += 1
+            continue
+        # La grande image fait foi : c'est celle qu'on remplace a la main, la
+        # vignette n'est qu'un derive qu'on oublie de regenerer.
+        principale = next((n for n in (f"{base}.jpg", f"{base}.jpeg", f"{base}.webp")
+                           if n in empreintes), sorted(empreintes)[0])
+        refs[base] = empreintes[principale]
+        for nom in sorted(empreintes):
+            d = _ecart(empreintes[principale], empreintes[nom])
+            if d > SEUIL_VARIANTE:
+                moyen.append(f"`img/{nom}` ne montre pas la meme photo que `img/{principale}` "
+                             f"(ecart {d}) : variante oubliee lors d'un remplacement")
+                ecarts += 1
+
+    # Meme photo sur plusieurs articles : pas une panne, mais le brief demande
+    # d'eviter les doublons, et deux articles voisins illustres pareil se voient
+    # sur l'accueil. Comparaison exacte : on ne signale que les vrais jumeaux.
+    par_empreinte = {}
+    for base, h in refs.items():
+        par_empreinte.setdefault(h, []).append(base)
+    partages = sorted([sorted(v) for v in par_empreinte.values() if len(v) > 1])
+    for groupe in partages:
+        cosmetique.append(f"Meme photo sur {len(groupe)} articles : "
+                          + ", ".join(f"`{b}`" for b in groupe))
+
+    return [f"- {len(familles)} familles d'images, {ecarts} variante(s) desynchronisee(s), "
+            f"{len(partages)} photo(s) partagee(s) par plusieurs articles"]
+
+
 def main():
     # --disk-only : saute les deux sections qui sortent sur le reseau. Sert au
     # publieur local, qui doit pouvoir valider un article meme si la machine est
@@ -267,6 +366,7 @@ def main():
         b, _ = section_b()
     c, d, e, f = section_c(), section_d(), section_e(), section_f()
     g = section_g()
+    h = section_h()
 
     statut = "CRITIQUE" if critique else ("DEGRADE" if moyen else "OK")
 
@@ -292,6 +392,7 @@ def main():
         f"## E. Balises d'en-tete\n\n" + "\n".join(e) + "\n\n"
         f"## F. Cosmetique\n\n" + "\n".join(f) + "\n\n"
         f"## G. Standards SEO\n\n" + "\n".join(g) + "\n\n"
+        f"## H. Coherence des visuels\n\n" + "\n".join(h) + "\n\n"
         + bloc("CRITIQUE", critique) + "\n" + bloc("MOYEN", moyen) + "\n" + bloc("COSMETIQUE", cosmetique)
     )
 
