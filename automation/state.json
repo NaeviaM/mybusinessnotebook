@@ -1,15 +1,16 @@
 {
-  "run": 26,
-  "next_market_index": 4,
-  "next_type": "advice",
+  "run": 27,
+  "next_market_index": 5,
+  "next_type": "comparison",
   "recent_markets": [
-    "USA/en",
     "Nigeria/en",
-    "France/fr"
+    "France/fr",
+    "Kenya/en"
   ],
-  "last_type": "comparison",
+  "last_type": "advice",
   "priority_topics": [],
   "published": [
+    "mpesa-scam-protection-kenya-shops",
     "comparatif-caisse-boulangerie",
     "fake-alert-scams-pos-nigeria",
     "staff-scheduling-small-business",
