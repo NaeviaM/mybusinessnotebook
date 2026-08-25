@@ -1,8 +1,8 @@
-# Rapport de sante, 2026-08-24 10:43 UTC
+# Rapport de sante, 2026-08-25 09:48 UTC
 
 VERIF LIVE : EFFECTUEE
 
-**STATUT GLOBAL : OK**
+**STATUT GLOBAL : CRITIQUE**
 
 Controle deterministe, sans modele de langage. Remplace l'agent cloud tombe en panne le 04/08/2026. Declenche chaque jour par la tache planifiee Windows `MBN - controle de sante` (voir C:\Users\dell\mbn-automation).
 
@@ -24,11 +24,11 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## C. Liens et images sur disque
 
-- 111 pages controlees, 0 probleme(s)
+- 112 pages controlees, 2 probleme(s)
 
 ## D. Coherence du sitemap
 
-- 111 entrees, 111 pages sur disque, 0 manquante(s), 0 orpheline(s)
+- 112 entrees, 112 pages sur disque, 0 manquante(s), 0 orpheline(s)
 
 ## E. Balises d'en-tete
 
@@ -48,7 +48,8 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## CRITIQUE
 
-Aucun probleme trouve.
+- Lien ou image casse dans `es\index.html` : `img/pagar-suscripciones-en-linea-venezuela-sin-tarjeta-sm.webp`
+- Lien ou image casse dans `es\pagar-suscripciones-en-linea-venezuela-sin-tarjeta.html` : `img/pagar-suscripciones-en-linea-venezuela-sin-tarjeta.webp`
 
 ## MOYEN
 
