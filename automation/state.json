@@ -1,15 +1,17 @@
 {
-  "run": 27,
-  "next_market_index": 5,
-  "next_type": "comparison",
+  "run": 28,
+  "next_market_index": 6,
+  "next_type": "advice",
   "recent_markets": [
-    "Nigeria/en",
     "France/fr",
-    "Kenya/en"
+    "Kenya/en",
+    "Mexico/es"
   ],
-  "last_type": "advice",
+  "last_type": "comparison",
   "priority_topics": [],
   "published": [
+    "clip-mercado-pago-sumup-mexico",
+    "pagar-suscripciones-en-linea-venezuela-sin-tarjeta",
     "mpesa-scam-protection-kenya-shops",
     "comparatif-caisse-boulangerie",
     "fake-alert-scams-pos-nigeria",
