@@ -1,15 +1,16 @@
 {
-  "run": 28,
-  "next_market_index": 6,
-  "next_type": "advice",
+  "run": 29,
+  "next_market_index": 7,
+  "next_type": "comparison",
   "recent_markets": [
-    "France/fr",
     "Kenya/en",
-    "Mexico/es"
+    "Mexico/es",
+    "DR Congo/fr"
   ],
-  "last_type": "comparison",
+  "last_type": "advice",
   "priority_topics": [],
   "published": [
+    "gerer-caisse-dollar-franc-congolais-kinshasa",
     "clip-mercado-pago-sumup-mexico",
     "pagar-suscripciones-en-linea-venezuela-sin-tarjeta",
     "mpesa-scam-protection-kenya-shops",

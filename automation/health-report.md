@@ -1,6 +1,6 @@
-# Rapport de sante, 2026-08-30 11:27 UTC
+# Rapport de sante, 2026-08-30 11:44 UTC
 
-VERIF LIVE : EFFECTUEE
+VERIF LIVE : IMPOSSIBLE (mode --disk-only)
 
 **STATUT GLOBAL : OK**
 
@@ -10,25 +10,19 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## A. Disponibilite en direct
 
-- apex : `200`
-- www : `200`
-- secours Vercel : `200`
-- accueil EN : `200`
-- accueil ES : `200`
-- accueil PT : `200`
-- accueil SW : `200`
+- Sautee (mode --disk-only).
 
 ## B. Balayage du sitemap en direct
 
-- 113 URLs testees, 0 en echec
+- Sautee (mode --disk-only).
 
 ## C. Liens et images sur disque
 
-- 113 pages controlees, 0 probleme(s)
+- 114 pages controlees, 0 probleme(s)
 
 ## D. Coherence du sitemap
 
-- 113 entrees, 113 pages sur disque, 0 manquante(s), 0 orpheline(s)
+- 114 entrees, 114 pages sur disque, 0 manquante(s), 0 orpheline(s)
 
 ## E. Balises d'en-tete
 
@@ -44,7 +38,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## H. Coherence des visuels
 
-- 35 familles d'images dont 30 affichees, 0 variante(s) desynchronisee(s), 0 photo(s) partagee(s) par plusieurs articles
+- 36 familles d'images dont 31 affichees, 0 variante(s) desynchronisee(s), 0 photo(s) partagee(s) par plusieurs articles
 
 ## CRITIQUE
 
