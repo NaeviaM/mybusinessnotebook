@@ -297,10 +297,41 @@ def _ecart(a, b):
     return bin(a ^ b).count("1")
 
 
+def _hero(page):
+    """Slug de la photo d'en-tete annoncee par la page (og:image)."""
+    html = page.read_text(encoding="utf-8", errors="ignore")
+    m = (re.search(r'property="og:image"\s+content="([^"]+)"', html)
+         or re.search(r'content="([^"]+)"\s+property="og:image"', html))
+    if not m:
+        return None
+    return re.sub(r"\.(jpg|jpeg|png|webp)$", "", m.group(1).rsplit("/", 1)[-1], flags=re.I)
+
+
+def _alternates(page):
+    """Noms de fichier des traductions declarees par la page (hreflang)."""
+    html = page.read_text(encoding="utf-8", errors="ignore")
+    return {u.rstrip("/").rsplit("/", 1)[-1] or "index.html"
+            for u in re.findall(r'rel="alternate"[^>]*href="([^"]+)"', html)}
+
+
 def section_h():
-    dossier = ROOT / "img"
-    if not dossier.is_dir():
-        return ["- Aucun dossier `img/`."]
+    """Coherence des visuels, sur TOUTES les langues.
+
+    Trois controles :
+      1. variantes d'une meme famille (jpg / webp / -sm) desynchronisees ;
+      2. photo empruntee a la reserve : le fichier porte le slug de l'article
+         mais montre pixel pour pixel une photo de reserve destinee a un autre
+         sujet. C'est ainsi qu'un guide sur le dollar a Kinshasa s'est retrouve
+         illustre par une quincaillerie occidentale : le publieur copie un
+         fichier de reserve sous le nom du nouvel article, et l'ancien controle,
+         qui ne comparait que les noms, n'y voyait rien ;
+      3. meme photo sur des articles differents. Deux traductions d'un meme
+         article ont normalement la meme photo : on ne les signale donc que si
+         elles ne se declarent pas mutuellement en hreflang.
+
+    Le 30/08/2026 cette section ne regardait que `img/` a la racine : les 83
+    photos de en/, es/, pt/ et sw/ n'etaient controlees par personne.
+    """
     try:
         import PIL  # noqa: F401
     except ImportError:
@@ -309,60 +340,95 @@ def section_h():
         cosmetique.append("Coherence des visuels non controlee : Pillow absent (`pip install Pillow`)")
         return ["- Sautee : Pillow n'est pas installe."]
 
-    familles = {}
-    for p in sorted(dossier.iterdir()):
-        if not p.is_file():
+    # 1) toutes les familles, toutes langues confondues. Cle = "en/img/mon-slug".
+    familles, ecarts = {}, 0
+    for lang, d in LANGS.items():
+        dossier = d / "img"
+        if not dossier.is_dir():
             continue
-        m = re.match(r"^(.+?)(-sm)?\.(jpg|jpeg|png|webp)$", p.name, re.I)
-        if m:
-            familles.setdefault(m.group(1), {})[p.name] = p
-
-    ecarts, refs = 0, {}
-    for base, variantes in sorted(familles.items()):
-        try:
-            empreintes = {nom: _empreinte(p) for nom, p in variantes.items()}
-        except Exception as e:
-            moyen.append(f"Image illisible dans la famille `{base}` : {e}")
-            ecarts += 1
-            continue
-        # La grande image fait foi : c'est celle qu'on remplace a la main, la
-        # vignette n'est qu'un derive qu'on oublie de regenerer.
-        principale = next((n for n in (f"{base}.jpg", f"{base}.jpeg", f"{base}.webp")
-                           if n in empreintes), sorted(empreintes)[0])
-        refs[base] = empreintes[principale]
-        for nom in sorted(empreintes):
-            d = _ecart(empreintes[principale], empreintes[nom])
-            if d > SEUIL_VARIANTE:
-                moyen.append(f"`img/{nom}` ne montre pas la meme photo que `img/{principale}` "
-                             f"(ecart {d}) : variante oubliee lors d'un remplacement")
+        par_base = {}
+        for p in sorted(dossier.iterdir()):
+            if not p.is_file():
+                continue
+            m = re.match(r"^(.+?)(-sm)?\.(jpg|jpeg|png|webp)$", p.name, re.I)
+            if m:
+                par_base.setdefault(m.group(1), {})[p.name] = p
+        for base, variantes in sorted(par_base.items()):
+            try:
+                empreintes = {nom: _empreinte(p) for nom, p in variantes.items()}
+            except Exception as e:
+                moyen.append(f"Image illisible dans la famille `{base}` : {e}")
                 ecarts += 1
+                continue
+            # La grande image fait foi : c'est celle qu'on remplace a la main, la
+            # vignette n'est qu'un derive qu'on oublie de regenerer.
+            principale = next((n for n in (f"{base}.jpg", f"{base}.jpeg", f"{base}.webp")
+                               if n in empreintes), sorted(empreintes)[0])
+            rel = "img" if lang == "fr" else f"{lang}/img"
+            for nom in sorted(empreintes):
+                d2 = _ecart(empreintes[principale], empreintes[nom])
+                if d2 > SEUIL_VARIANTE:
+                    moyen.append(f"`{rel}/{nom}` ne montre pas la meme photo que `{rel}/{principale}` "
+                                 f"(ecart {d2}) : variante oubliee lors d'un remplacement")
+                    ecarts += 1
+            familles[f"{rel}/{base}"] = {"lang": lang, "base": base,
+                                         "empreinte": empreintes[principale]}
 
-    # Meme photo sur plusieurs articles : pas une panne, mais le brief demande
-    # d'eviter les doublons, et deux articles voisins illustres pareil se voient
-    # sur l'accueil. Comparaison exacte : on ne signale que les vrais jumeaux.
-    #
-    # Restreint aux images REELLEMENT affichees quelque part. Le dossier img/ sert
-    # aussi de reserve de photos libres dans laquelle le publieur pioche en copiant
-    # le fichier : une photo de reserve est donc le jumeau normal de l'article qui
-    # l'a prise, et la signaler ferait un faux positif a chaque publication.
-    citees = set()
-    for d in LANGS.values():
+    # 2) quelle page affiche quelle famille
+    heros = {}
+    for lang, d in LANGS.items():
+        rel_img = "img" if lang == "fr" else f"{lang}/img"
         for page in pages(d):
-            citees.update(re.findall(r"img/([A-Za-z0-9._-]+?)(?:-sm)?\.(?:jpg|jpeg|png|webp)",
-                                     page.read_text(encoding="utf-8")))
-    par_empreinte = {}
-    for base, h in refs.items():
-        if base in citees:
-            par_empreinte.setdefault(h, []).append(base)
-    partages = sorted([sorted(v) for v in par_empreinte.values() if len(v) > 1])
-    for groupe in partages:
-        cosmetique.append(f"Meme photo sur {len(groupe)} articles : "
-                          + ", ".join(f"`{b}`" for b in groupe))
+            base = _hero(page)
+            if not base:
+                continue
+            cle = f"{rel_img}/{base}"
+            if cle in familles:
+                nom = page.name if lang == "fr" else f"{lang}/{page.name}"
+                heros[nom] = {"famille": cle, "empreinte": familles[cle]["empreinte"],
+                              "alternates": _alternates(page)}
 
-    affichees = citees & set(familles)
-    return [f"- {len(familles)} familles d'images dont {len(affichees)} affichees, "
-            f"{ecarts} variante(s) desynchronisee(s), "
-            f"{len(partages)} photo(s) partagee(s) par plusieurs articles"]
+    utilisees = {v["famille"] for v in heros.values()}
+    reserve = {k: v for k, v in familles.items() if k not in utilisees}
+
+    # 3) photo empruntee a la reserve
+    empruntes = []
+    for nom, info in sorted(heros.items()):
+        for k, v in sorted(reserve.items()):
+            if _ecart(info["empreinte"], v["empreinte"]) <= SEUIL_VARIANTE:
+                empruntes.append((nom, info["famille"], k))
+                critique.append(
+                    f"`{nom}` affiche `{info['famille']}`, qui est la photo de reserve "
+                    f"`{k}` copiee sous un autre nom : l'illustration ne correspond pas au sujet")
+                break
+
+    # 4) meme photo sur des articles differents
+    groupes, vus = [], set()
+    noms = sorted(heros)
+    for i, a in enumerate(noms):
+        if a in vus:
+            continue
+        groupe = [a]
+        for b in noms[i + 1:]:
+            if b in vus:
+                continue
+            if _ecart(heros[a]["empreinte"], heros[b]["empreinte"]) <= SEUIL_VARIANTE:
+                groupe.append(b)
+        if len(groupe) > 1:
+            vus.update(groupe)
+            # Deux traductions d'un meme article partagent legitimement la photo.
+            fichiers = {n.rsplit("/", 1)[-1] for n in groupe}
+            traductions = all(
+                fichiers - {n.rsplit("/", 1)[-1]} <= heros[n]["alternates"] for n in groupe)
+            if not traductions:
+                groupes.append(groupe)
+                moyen.append("Meme photo sur des articles qui ne sont pas traductions "
+                             "l'un de l'autre : " + ", ".join(f"`{n}`" for n in groupe))
+
+    return [f"- {len(familles)} familles d'images sur {len(LANGS)} langues, "
+            f"{len(utilisees)} affichees, {len(reserve)} en reserve",
+            f"- {ecarts} variante(s) desynchronisee(s), {len(empruntes)} photo(s) empruntee(s) "
+            f"a la reserve, {len(groupes)} groupe(s) d'articles differents illustres pareil"]
 
 
 def main():
