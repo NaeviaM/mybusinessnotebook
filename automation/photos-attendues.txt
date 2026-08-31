@@ -16,3 +16,4 @@ img/caisse-plusieurs-portefeuilles-mobile-money
 en/img/frozen-merchant-funds
 es/img/dinero-retenido-cuenta-bloqueada
 pt/img/dinheiro-retido-conta-bloqueada
+en/img/best-pos-system-kenya-duka-2026

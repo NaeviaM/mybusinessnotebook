@@ -1,8 +1,8 @@
-# Rapport de sante, 2026-08-31 12:07 UTC
+# Rapport de sante, 2026-08-31 21:06 UTC
 
 VERIF LIVE : EFFECTUEE
 
-**STATUT GLOBAL : CRITIQUE**
+**STATUT GLOBAL : DEGRADE**
 
 Controle deterministe, sans modele de langage. Remplace l'agent cloud tombe en panne le 04/08/2026. Declenche chaque jour par la tache planifiee Windows `MBN - controle de sante` (voir C:\Users\dell\mbn-automation).
 
@@ -10,16 +10,22 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## A. Disponibilite en direct
 
-- Machine hors ligne, verification impossible (aucune conclusion sur le site).
+- apex : `200`
+- www : `200`
+- secours Vercel : `200`
+- accueil EN : `200`
+- accueil ES : `200`
+- accueil PT : `200`
+- accueil SW : `200`
 
 ## B. Balayage du sitemap en direct
 
-- Reseau indisponible, balayage impossible (aucune conclusion sur le site).
+- 122 URLs testees, 0 en echec
 
 ## C. Liens et images sur disque
 
 - 122 pages controlees, 0 probleme(s)
-- 5 photo(s) commandee(s), en attente de generation
+- 6 photo(s) commandee(s), en attente de generation
 
 ## D. Coherence du sitemap
 
@@ -39,17 +45,16 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## H. Coherence des visuels
 
-- 122 familles d'images sur 5 langues, 107 affichees, 15 en reserve
-- 0 variante(s) desynchronisee(s), 1 photo(s) empruntee(s) a la reserve, 14 groupe(s) d'articles differents illustres pareil
+- 121 familles d'images sur 5 langues, 106 affichees, 15 en reserve
+- 0 variante(s) desynchronisee(s), 0 photo(s) empruntee(s) a la reserve, 14 groupe(s) d'articles differents illustres pareil
 
 ## CRITIQUE
 
-- `en/best-pos-system-kenya-duka-2026.html` affiche `en/img/best-pos-system-kenya-duka-2026`, qui est la photo de reserve `en/img/best-pos-system-nigeria-2026` copiee sous un autre nom : l'illustration ne correspond pas au sujet
+Aucun probleme trouve.
 
 ## MOYEN
 
-- Machine sans acces reseau : la disponibilite du site n'a PAS pu etre verifiee. Ce n'est pas une panne du site.
-- sitemap.xml non joignable depuis cette machine (reseau local).
+- Photo commandee mais pas encore generee : `en/img/best-pos-system-kenya-duka-2026` (prompt ecrit dans PROMPTS-IMAGES.md)
 - Photo commandee mais pas encore generee : `en/img/frozen-merchant-funds` (prompt ecrit dans PROMPTS-IMAGES.md)
 - Photo commandee mais pas encore generee : `es/img/dinero-retenido-cuenta-bloqueada` (prompt ecrit dans PROMPTS-IMAGES.md)
 - Photo commandee mais pas encore generee : `img/caisse-plusieurs-portefeuilles-mobile-money` (prompt ecrit dans PROMPTS-IMAGES.md)
