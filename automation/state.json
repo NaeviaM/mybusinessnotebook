@@ -1,16 +1,21 @@
 {
-  "run": 30,
+  "run": 31,
   "next_market_index": 7,
   "next_type": "comparison",
   "recent_markets": [
-    "USA/en",
     "UK/en",
-    "Senegal/fr",
-    "Kenya/en"
+    "Mexique-Espagne/es",
+    "Bresil-Portugal/pt",
+    "Afrique de l Ouest/fr"
   ],
   "last_type": "advice",
   "priority_topics": [],
   "published": [
+    "facture-normalisee-coupure-reseau",
+    "caisse-plusieurs-portefeuilles-mobile-money",
+    "frozen-merchant-funds",
+    "dinero-retenido-cuenta-bloqueada",
+    "dinheiro-retido-conta-bloqueada",
     "vol-gerant-boutique-detecter-avant-inventaire",
     "pos-data-export-before-switching",
     "pos-outage-what-to-do",

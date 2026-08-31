@@ -1,4 +1,4 @@
-# Rapport de sante, 2026-08-31 01:41 UTC
+# Rapport de sante, 2026-08-31 02:25 UTC
 
 VERIF LIVE : IMPOSSIBLE (mode --disk-only)
 
@@ -18,11 +18,12 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## C. Liens et images sur disque
 
-- 117 pages controlees, 0 probleme(s)
+- 122 pages controlees, 0 probleme(s)
+- 5 photo(s) commandee(s), en attente de generation
 
 ## D. Coherence du sitemap
 
-- 117 entrees, 117 pages sur disque, 0 manquante(s), 0 orpheline(s)
+- 122 entrees, 122 pages sur disque, 0 manquante(s), 0 orpheline(s)
 
 ## E. Balises d'en-tete
 
@@ -47,6 +48,11 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## MOYEN
 
+- Photo commandee mais pas encore generee : `en/img/frozen-merchant-funds` (prompt ecrit dans PROMPTS-IMAGES.md)
+- Photo commandee mais pas encore generee : `es/img/dinero-retenido-cuenta-bloqueada` (prompt ecrit dans PROMPTS-IMAGES.md)
+- Photo commandee mais pas encore generee : `img/caisse-plusieurs-portefeuilles-mobile-money` (prompt ecrit dans PROMPTS-IMAGES.md)
+- Photo commandee mais pas encore generee : `img/facture-normalisee-coupure-reseau` (prompt ecrit dans PROMPTS-IMAGES.md)
+- Photo commandee mais pas encore generee : `pt/img/dinheiro-retido-conta-bloqueada` (prompt ecrit dans PROMPTS-IMAGES.md)
 - Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `caisse-enregistreuse-restaurant.html`, `index.html`
 - Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `calculateur-cout-caisse.html`, `en/cash-flow-management-small-business.html`, `es/alta-sat-resico-pequenos-negocios.html`, `pt/software-faturacao-certificada-portugal.html`
 - Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `comment-choisir-caisse-enregistreuse.html`, `en/convenience-store-pos-system.html`, `en/index.html`

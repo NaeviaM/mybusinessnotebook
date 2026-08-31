@@ -107,8 +107,30 @@ def section_b():
 
 
 # ------------------------------------------------ C. liens internes et images (disque)
+def photos_attendues():
+    """Slugs dont la photo est commandee (prompt ecrit) mais pas encore generee.
+
+    Le circuit est fixe : la redaction ecrit le prompt dans PROMPTS-IMAGES.md,
+    l'utilisateur genere l'image et la depose, elle est ensuite redimensionnee
+    et posee au bon slug. Entre les deux, l'article est complet et la page
+    s'affiche avec le degrade de secours : ce n'est pas un lien casse, c'est une
+    photo en attente. La distinguer evite de noyer les vrais liens casses.
+    """
+    f = ROOT / "automation" / "photos-attendues.txt"
+    if not f.is_file():
+        return set()
+    slugs = set()
+    for ligne in f.read_text(encoding="utf-8").splitlines():
+        ligne = ligne.split("#")[0].strip()
+        if ligne:
+            slugs.add(ligne)
+    return slugs
+
+
 def section_c():
     casses = 0
+    attendues = photos_attendues()
+    en_attente = set()
     externe = re.compile(r"^(?:https?:|//|#|\?|mailto:|tel:|data:)")
     for lg, d in LANGS.items():
         for p in pages(d):
@@ -122,6 +144,11 @@ def section_c():
                 # dossier de la langue : le resoudre depuis `d` inventait des liens casses.
                 cible = (ROOT / t.lstrip("/")) if t.startswith("/") else (d / t)
                 if not cible.exists():
+                    slug = re.sub(r"(-sm)?\.(webp|jpg|jpeg|png|svg)$", "",
+                                  cible.resolve().relative_to(ROOT.resolve()).as_posix())
+                    if slug in attendues:
+                        en_attente.add(slug)
+                        continue
                     critique.append(f"Lien ou image casse dans `{p.relative_to(ROOT)}` : `{t}`")
                     casses += 1
             # le piege connu : une URL absolue d'article qui oublie le .html renvoie 404.
@@ -132,7 +159,13 @@ def section_c():
                 if "." not in u.rsplit("/", 1)[-1]:
                     critique.append(f"URL absolue sans `.html` dans `{p.relative_to(ROOT)}` : `/{u}`")
                     casses += 1
-    return [f"- {sum(len(pages(d)) for d in LANGS.values())} pages controlees, {casses} probleme(s)"]
+    for slug in sorted(en_attente):
+        moyen.append(f"Photo commandee mais pas encore generee : `{slug}` "
+                     f"(prompt ecrit dans PROMPTS-IMAGES.md)")
+    lignes = [f"- {sum(len(pages(d)) for d in LANGS.values())} pages controlees, {casses} probleme(s)"]
+    if en_attente:
+        lignes.append(f"- {len(en_attente)} photo(s) commandee(s), en attente de generation")
+    return lignes
 
 
 # ------------------------------------------------------------- D. coherence du sitemap

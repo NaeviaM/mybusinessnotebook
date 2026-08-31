@@ -1,0 +1,18 @@
+# Photos commandées, prompt écrit, pas encore générées.
+#
+# Circuit : le prompt est rédigé dans PROMPTS-IMAGES.md, l'utilisateur génère
+# l'image et la dépose dans C:\Users\dell\Downloads\prompt images, puis elle est
+# redimensionnée (jpg 1600 q85 + webp 1400 + webp-sm 700) et posée au bon slug.
+#
+# Tant qu'un slug figure ici, le contrôle de santé signale l'image manquante en
+# MOYEN et non en CRITIQUE : l'article est complet, la page s'affiche avec le
+# dégradé de secours, il ne manque que la photo. Retirer la ligne dès que la
+# photo est posée.
+#
+# Un slug par ligne, chemin relatif sans extension.
+
+img/facture-normalisee-coupure-reseau
+img/caisse-plusieurs-portefeuilles-mobile-money
+en/img/frozen-merchant-funds
+es/img/dinero-retenido-cuenta-bloqueada
+pt/img/dinheiro-retido-conta-bloqueada
