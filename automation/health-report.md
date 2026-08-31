@@ -1,6 +1,6 @@
-# Rapport de sante, 2026-08-31 02:25 UTC
+# Rapport de sante, 2026-08-31 12:07 UTC
 
-VERIF LIVE : IMPOSSIBLE (mode --disk-only)
+VERIF LIVE : EFFECTUEE
 
 **STATUT GLOBAL : CRITIQUE**
 
@@ -10,11 +10,11 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## A. Disponibilite en direct
 
-- Sautee (mode --disk-only).
+- Machine hors ligne, verification impossible (aucune conclusion sur le site).
 
 ## B. Balayage du sitemap en direct
 
-- Sautee (mode --disk-only).
+- Reseau indisponible, balayage impossible (aucune conclusion sur le site).
 
 ## C. Liens et images sur disque
 
@@ -48,6 +48,8 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## MOYEN
 
+- Machine sans acces reseau : la disponibilite du site n'a PAS pu etre verifiee. Ce n'est pas une panne du site.
+- sitemap.xml non joignable depuis cette machine (reseau local).
 - Photo commandee mais pas encore generee : `en/img/frozen-merchant-funds` (prompt ecrit dans PROMPTS-IMAGES.md)
 - Photo commandee mais pas encore generee : `es/img/dinero-retenido-cuenta-bloqueada` (prompt ecrit dans PROMPTS-IMAGES.md)
 - Photo commandee mais pas encore generee : `img/caisse-plusieurs-portefeuilles-mobile-money` (prompt ecrit dans PROMPTS-IMAGES.md)
