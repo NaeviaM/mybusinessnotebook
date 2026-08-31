@@ -5,4 +5,7 @@ Disallow: /*?lang=
 # Point d'acces JSON interne (pays du visiteur), sans contenu.
 Disallow: /geo
 
+# Resume du site pour les assistants et moteurs de reponse.
+# llms.txt: https://mybusinessnotebook.com/llms.txt
+
 Sitemap: https://mybusinessnotebook.com/sitemap.xml

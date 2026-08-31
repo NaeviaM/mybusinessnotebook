@@ -220,11 +220,10 @@
       <div style="margin-top:.3rem">Guias e comparações para lojas e restaurantes.</div>
       <div class="lang-switch" style="margin-top:.8rem">
         <span style="color:#6b6659;font-size:.74rem">Idioma ·</span>
-        <a href="../?lang=fr" rel="nofollow">FR</a>
-        <a href="../en/?lang=en" rel="nofollow">EN</a>
-        <a href="../es/?lang=es" rel="nofollow">ES</a>
+        <a href="../index.html" hreflang="fr">FR</a>
+        <a href="../en/" hreflang="en">EN</a>
+        <a href="../es/" hreflang="es">ES</a>
         <a href="?lang=pt" rel="nofollow" aria-current="true">PT</a>
-        <a href="../sw/" hreflang="sw">SW</a>
       </div>
     </div>
     <p class="disclosure">© 2026 My Business Notebook. Conteúdo informativo. Alguns artigos recomendam ferramentas que valorizamos; verifique sempre preços, funções e conformidade fiscal nos sites oficiais antes de decidir.</p>
@@ -284,9 +283,41 @@
       }
     }
     try {
+
+    // Bandeau de langue. Remplace la redirection 307 par pays, retiree du
+    // middleware le 31/08/2026 : rediriger l'internaute et pas le robot etait
+    // du cloaking. Ici, tout le monde recoit la meme page ; on se contente de
+    // proposer un lien. Le robot ne joue pas ce script et n'en voit rien.
+    var LANGUE_PAR_PAYS = {
+      FR:'fr',BE:'fr',CH:'fr',LU:'fr',MC:'fr',CI:'fr',SN:'fr',CD:'fr',CG:'fr',CM:'fr',
+      ML:'fr',BF:'fr',NE:'fr',TG:'fr',BJ:'fr',GA:'fr',MG:'fr',TD:'fr',GN:'fr',RW:'fr',BI:'fr',DJ:'fr',
+      ES:'es',MX:'es',AR:'es',CO:'es',CL:'es',PE:'es',VE:'es',EC:'es',GT:'es',CU:'es',BO:'es',
+      DO:'es',HN:'es',PY:'es',SV:'es',NI:'es',CR:'es',PA:'es',UY:'es',
+      BR:'pt',PT:'pt',AO:'pt',MZ:'pt',CV:'pt',GW:'pt',
+      US:'en',GB:'en',AU:'en',NZ:'en',IE:'en',CA:'en',PH:'en',KE:'en',NG:'en',GH:'en',
+      ZA:'en',IN:'en',SG:'en',MY:'en',TZ:'en',UG:'en',ZM:'en',ZW:'en'
+    };
+    var NOM_LANGUE = { fr:'français', en:'English', es:'español', pt:'português' };
+    var ACCUEIL = { fr:'/', en:'/en/', es:'/es/', pt:'/pt/' };
+    function proposerLangue(pays) {
+      var cible = LANGUE_PAR_PAYS[pays];
+      if (!cible || cible === 'pt') return;
+      if (document.cookie.indexOf('site_lang=') > -1) return;
+      var b = document.createElement('div');
+      b.setAttribute('role', 'note');
+      b.style.cssText = 'padding:.6rem 1rem;text-align:center;font-size:.85rem;background:#eef2ff;border-bottom:1px solid #d5ddf7';
+      var t = document.createTextNode('Este guia também está disponível em {L}.'.replace('{L}', NOM_LANGUE[cible]) + ' ');
+      var a = document.createElement('a');
+      a.href = ACCUEIL[cible];
+      a.textContent = 'Ler em {L}'.replace('{L}', NOM_LANGUE[cible]) + ' →';
+      a.style.cssText = 'font-weight:600;color:#1b43c0';
+      b.appendChild(t); b.appendChild(a);
+      document.body.insertBefore(b, document.body.firstChild);
+    }
+
       fetch('/geo', { credentials: 'omit' })
         .then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (d) { if (d) classer(d.country); })
+        .then(function (d) { if (d) { classer(d.country); proposerLangue(d.country); } })
         .catch(function () {});
     } catch (e) {}
   })();

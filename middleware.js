@@ -1,6 +1,14 @@
 // Vercel Edge Middleware.
-// - Langue AUTOMATIQUE selon le pays (IP) du visiteur, uniquement sur l'accueil.
-//   FR est servi à la racine "/"; EN/ES/PT dans /en /es /pt.
+// - AUCUNE redirection automatique par pays. Elle a existé jusqu'au 31/08/2026,
+//   avec une liste d'agents pour en exempter les robots. C'était du cloaking au
+//   sens littéral des règles anti-spam de Google : un visiteur américain sur "/"
+//   partait en 307 vers /en/, Googlebot recevait la même URL en 200. Et l'agent
+//   Google-InspectionTool, qui ne contient ni "bot" ni "crawler" dans son nom,
+//   tombait du mauvais côté du test : le test en direct de la Search Console ne
+//   voyait donc pas ce que voit l'index. La bonne pratique documentée par Google
+//   pour un site multilingue est hreflang + un bandeau côté client, pas une
+//   redirection : c'est ce que font désormais les accueils, via /geo.
+// - FR est servi à la racine "/"; EN/ES/PT dans /en /es /pt.
 // - Bouton de langue : ?lang=xx fonctionne DÉSORMAIS sur TOUTES les pages
 //   (accueil, /index.html, /en//es//pt/, et les articles), mémorisé en cookie 1 an.
 //   La plupart des articles n'existent que dans une langue : changer de langue
@@ -13,35 +21,20 @@ export const config = {
   matcher: '/((?!.*\\.(?:css|js|mjs|png|jpe?g|webp|gif|svg|ico|xml|txt|json|webmanifest|woff2?|map)).*)',
 };
 
-const LANG_BY_COUNTRY = {
-  // Français (servi à la racine)
-  FR:'fr', BE:'fr', CH:'fr', LU:'fr', MC:'fr',
-  CI:'fr', SN:'fr', CD:'fr', CG:'fr', CM:'fr', ML:'fr', BF:'fr', NE:'fr', TG:'fr',
-  BJ:'fr', GA:'fr', MG:'fr', TD:'fr', GN:'fr', RW:'fr', BI:'fr', DJ:'fr',
-  // Español
-  ES:'es', MX:'es', AR:'es', CO:'es', CL:'es', PE:'es', VE:'es', EC:'es', GT:'es',
-  CU:'es', BO:'es', DO:'es', HN:'es', PY:'es', SV:'es', NI:'es', CR:'es', PA:'es', UY:'es',
-  // Português
-  BR:'pt', PT:'pt', AO:'pt', MZ:'pt', CV:'pt', GW:'pt',
-  // English (par défaut)
-  US:'en', GB:'en', AU:'en', NZ:'en', IE:'en', CA:'en', PH:'en', KE:'en', NG:'en',
-  GH:'en', ZA:'en', IN:'en', SG:'en', MY:'en', TZ:'en', UG:'en', ZM:'en', ZW:'en'
-};
-
-// Robots d'indexation et d'aperçu. Ils doivent recevoir la page telle quelle,
-// jamais une redirection par pays : Googlebot explore depuis des IP américaines,
-// donc l'accueil FR servi à "/" lui était invisible (307 vers /en/).
-const BOT_UA = /bot|crawler|spider|slurp|bingpreview|facebookexternalhit|whatsapp|telegram|discord|embedly|lighthouse|pagespeed|gptbot|oai-searchbot|chatgpt-user|perplexity|claudebot|anthropic|google-extended|applebot|duckduckbot|yandex|baiduspider|ia_archiver|semrush|ahrefs/i;
-
-function isBot(request) {
-  return BOT_UA.test(request.headers.get('user-agent') || '');
-}
-
 const LANGS = ['fr', 'en', 'es', 'pt'];
 const home = (lang) => (lang === 'fr' ? '/' : '/' + lang + '/');
 
 export default function middleware(request) {
   const url0 = new URL(request.url);
+
+  // 0) Un seul hôte indexable. L'hôte de secours Vercel servait encore en 200
+  //    les cinq accueils (les chemins sans extension échappent à la règle de
+  //    redirection de vercel.json, car ils passent d'abord par ce middleware),
+  //    et son robots.txt, lui, était redirigé, donc illisible.
+  if (url0.hostname !== 'mybusinessnotebook.com') {
+    url0.hostname = 'mybusinessnotebook.com';
+    return Response.redirect(url0.toString(), 308);
+  }
 
   // 0 bis) Point d'accès qui renvoie le pays du visiteur, déduit de son adresse
   //    IP par Vercel. La page d'accueil l'interroge en JavaScript pour remonter
@@ -69,10 +62,6 @@ export default function middleware(request) {
     });
   }
 
-  // 0) Un robot ne doit jamais être redirigé : il doit pouvoir indexer
-  //    chaque URL avec le contenu que sa balise canonique annonce.
-  if (isBot(request)) return;
-
   const url = url0;
   const path = url.pathname;
   const override = (url.searchParams.get('lang') || '').toLowerCase();
@@ -89,18 +78,10 @@ export default function middleware(request) {
     });
   }
 
-  // 2) Sans choix manuel : on n'auto-oriente QUE la page d'accueil.
-  //    On ne touche jamais aux articles ni aux accueils de langue (évite de
-  //    casser les URLs et toute boucle de redirection).
-  if (path !== '/' && path !== '/index.html') return;
-
-  const cookie = request.headers.get('cookie') || '';
-  const cookieLang = (/(?:^|;\s*)site_lang=([a-z]{2})/.exec(cookie) || [])[1];
-  const country = (request.headers.get('x-vercel-ip-country') || '').toUpperCase();
-
-  let lang = cookieLang || LANG_BY_COUNTRY[country] || 'en';
-  if (!LANGS.includes(lang)) lang = 'en';
-
-  if (lang === 'fr') return; // FR est servi à la racine, rien à faire.
-  return new Response(null, { status: 307, headers: { Location: home(lang) } });
+  // 2) Sans choix manuel, on ne redirige plus personne. L'accueil de chaque
+  //    langue reste à son URL, le hreflang dit à Google qu'elles sont
+  //    équivalentes, et l'accueil propose lui-même la bonne langue dans un
+  //    bandeau discret alimenté par /geo. Même URL, même réponse, pour tout le
+  //    monde : c'est la seule façon de rester hors du cloaking.
+  return;
 }
