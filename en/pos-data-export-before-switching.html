@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<title>Get Your Data Out Before You Switch POS</title>
+<meta name="description" content="The real cost of changing POS is not the subscription, it is your history. What to export, the two answers that should worry you, and how to test it before you sign.">
+<link rel="canonical" href="https://mybusinessnotebook.com/en/pos-data-export-before-switching.html">
+<link rel="alternate" hreflang="en" href="https://mybusinessnotebook.com/en/pos-data-export-before-switching.html">
+<link rel="alternate" hreflang="x-default" href="https://mybusinessnotebook.com/en/pos-data-export-before-switching.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Get Your Data Out Before You Switch POS">
+<meta property="og:site_name" content="My Business Notebook">
+<meta property="og:url" content="https://mybusinessnotebook.com/en/pos-data-export-before-switching.html">
+<meta property="og:description" content="Sales history, customer list, stock, prices and barcodes: what to export before you leave a POS, the two vendor answers that should worry you, and how to test the export before you sign anything.">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://mybusinessnotebook.com/en/img/pos-data-export-before-switching.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Get Your Data Out Before You Switch POS">
+<meta name="twitter:description" content="Sales history, customer list, stock, prices and barcodes: what to export before you leave a POS, the two vendor answers that should worry you, and how to test the export before you sign anything.">
+<meta name="twitter:image" content="https://mybusinessnotebook.com/en/img/pos-data-export-before-switching.jpg">
+<link rel="preload" as="image" href="img/pos-data-export-before-switching.webp" imagesrcset="img/pos-data-export-before-switching-sm.webp 700w, img/pos-data-export-before-switching.webp 1400w" imagesizes="(max-width: 760px) 100vw, 760px" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Get Your Data Out Before You Switch POS","description":"What to export before leaving a POS system: sales history, customers, stock, prices and barcodes. The two vendor answers that should worry you, how to test an export before signing, and the encoding trap that makes a file useless.","inLanguage":"en","datePublished":"2026-08-31","dateModified":"2026-08-31","author":{"@type":"Organization","name":"My Business Notebook","url":"https://mybusinessnotebook.com/en/"},"publisher":{"@type":"Organization","name":"My Business Notebook","logo":{"@type":"ImageObject","url":"https://mybusinessnotebook.com/logo.svg"}},"image":"https://mybusinessnotebook.com/en/img/pos-data-export-before-switching.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://mybusinessnotebook.com/en/pos-data-export-before-switching.html"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What should I export before leaving a POS system?", "acceptedAnswer": {"@type": "Answer", "text": "Five things, before you give notice: your customer list with balances, your product file with names, prices, barcodes, tax rates and suppliers, current stock levels with cost prices, transaction-level sales history rather than daily summaries, and any employee or timekeeping records the system holds. Cost prices and barcodes are the two most commonly forgotten and the two most painful to rebuild."}}, {"@type": "Question", "name": "My vendor says they will export the data for me. Is that good enough?", "acceptedAnswer": {"@type": "Answer", "text": "No. It means the export is a favour rather than a feature, and favours depend on goodwill that tends to evaporate the week you announce you are leaving. It also means you cannot take routine backups or check the format in advance. What you want is a self-service export, per data type, in CSV, that you can run yourself whenever you like."}}, {"@type": "Question", "name": "Isn't exporting reports to Excel the same thing as exporting my data?", "acceptedAnswer": {"@type": "Answer", "text": "Usually not. A report is a summary shaped for reading: totals by day, product names without barcodes, customer names without balances. A data export is rows. The quick way to tell them apart is to take your exported report and try to work out what a named customer owes you, or which barcode goes with which price. If you cannot, it is a report."}}, {"@type": "Question", "name": "Why do accents and special characters break in my CSV export?", "acceptedAnswer": {"@type": "Answer", "text": "It is a character encoding mismatch, and it is common enough that retailers complain about it publicly. The file is usually fine and the spreadsheet is guessing wrong. Open the CSV in a plain text editor to check, and in Excel use Data then From Text/CSV and select UTF-8 rather than double-clicking the file. Always check one record you know contains an accent, while you can still re-run the export."}}, {"@type": "Question", "name": "How long can I access my data after I cancel?", "acceptedAnswer": {"@type": "Answer", "text": "That varies by provider and it is rarely volunteered, so ask before you sign and get the answer in writing in the same email thread as the price. Assume the worst in the meantime: export everything you need, twice, on two different days, and confirm the files open correctly before you start any cancellation conversation."}}, {"@type": "Question", "name": "What if the new system cannot import my file?", "acceptedAnswer": {"@type": "Answer", "text": "It happens, and it is expensive: one retailer described a new system being unable to import two thousand product references, leaving the team to enter everything by hand. Ask the incoming vendor exactly which file format they accept and whether they will run a test import on your real exported file before you commit. A vendor who will show you the result of that test is telling you something real; one who only offers to have their team handle it is not."}}]}</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mybusinessnotebook.com/en/"},{"@type":"ListItem","position":2,"name":"Get Your Data Out Before You Switch POS","item":"https://mybusinessnotebook.com/en/pos-data-export-before-switching.html"}]}</script>
+<!-- Mesure d'audience Vercel : sans cookie, sans donnee personnelle, donc sans banniere de consentement.
+     A activer une seule fois dans le tableau de bord Vercel : Project > Analytics > Enable. -->
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#1b43c0"/><rect x="8.5" y="7" width="15" height="18" rx="1.6" fill="#fff"/><rect x="8.5" y="7" width="3.2" height="18" rx="1.2" fill="#122e86"/><rect x="14" y="11" width="7" height="1.7" rx=".85" fill="#151a24"/><rect x="14" y="15" width="7" height="1.7" rx=".85" fill="#151a24"/><rect x="14" y="19" width="5" height="1.7" rx=".85" fill="#151a24"/><path d="M18.4 5 h3.4 v6.4 l-1.7 -1.5 -1.7 1.5 Z" fill="#e11d2a"/></svg>
+      </span>
+      <span>My Business <span class="accent">Notebook</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="best-free-pos-system-2026.html">The comparison</a>
+      <a href="index.html#types">By type</a>
+      <a href="index.html#latest">Latest</a>
+      <a href="best-pos-system-small-business.html">Guides</a>
+    </nav>
+  </div>
+</header>
+
+<div class="ticker">
+  <div class="wrap-wide tk-inner">
+    <span class="tk-label"><span class="tk-lead">Latest · </span><span id="tk-date" class="tk-date-full">today</span><span id="tk-date-short" class="tk-date-short"></span></span>
+    <div class="tk-track">
+      <div class="tk-move" id="tk-move">
+        <a href="best-free-pos-system-2026.html">Best free POS systems in 2026</a><span class="sep">◆</span>
+        <a href="hidden-pos-fees.html">The hidden fees a "free" POS won't tell you</a><span class="sep">◆</span>
+        <a href="pos-contract-lock-in.html">POS contracts &amp; lock-in: what to check</a><span class="sep">◆</span>
+        <a href="best-pos-system-small-business.html">Best POS system for small business</a><span class="sep">◆</span>
+        <a href="bir-accredited-pos-philippines.html">BIR-accredited POS in the Philippines</a><span class="sep">◆</span>
+        <a href="candy-store-pos-system.html">Candy store POS system</a><span class="sep">◆</span>
+        <a href="sari-sari-store-stock-shrinkage.html">Sari-sari store stock shrinkage</a><span class="sep">◆</span>
+      </div>
+    </div>
+  </div>
+</div>
+<main>
+<article class="container">
+  <div class="breadcrumb"><a href="index.html">Home</a> › Switching systems</div>
+
+  <span class="pill">Switching · Practical guide</span>
+  <h1>Get Your Data Out Before You Switch POS</h1>
+  <p class="article-meta">By the My Business Notebook desk · Updated August 31, 2026 · 10 min read · Practical guide</p>
+
+  <p class="lead">A salon owner on a UK trade forum wrote the single most useful sentence anyone has written about choosing a till. Asked what to check before committing to a booking and sales system, the answer was: "one important question to ask is can you easily get your data out of the system… when you ask the question two wrong answers are 1) We will get it out for you. 2) Run reports and export them to excel". Both answers sound helpful. Both mean you do not control your own history. This guide is about what to export, when, and how to test it while you still have a choice.</p>
+
+  <figure class="hero-img"><img src="img/pos-data-export-before-switching.webp" srcset="img/pos-data-export-before-switching-sm.webp 700w, img/pos-data-export-before-switching.webp 1400w" sizes="(max-width: 760px) 100vw, 760px" alt="Barbershop counter with a tablet till and an open appointment book, where the shop's client list lives in two places at once" width="1400" height="781" fetchpriority="high" decoding="async"></figure>
+
+  <div class="callout">
+    <strong>Scope note.</strong> Export capabilities differ by product and change with each version, so nothing here is a claim about what any named vendor does today. Treat it as a checklist to run against your own system, and test rather than trust. Data protection duties around a customer list are yours, whichever system holds it.
+  </div>
+
+  <div class="toc">
+    <strong>What's inside</strong>
+    <a href="#why">Why the subscription is the cheap part</a>
+    <a href="#answers">The two answers that should worry you</a>
+    <a href="#what">The five things to export, in order of pain</a>
+    <a href="#encoding">The encoding trap that makes a good export useless</a>
+    <a href="#import">The other end of the same problem: the import that fails</a>
+    <a href="#test">A twenty-minute test to run before you sign</a>
+    <a href="#pick">What to look for in a till, with this in mind</a>
+    <a href="#leaving">If you have already decided to leave</a>
+    <a href="#faq">Frequently asked questions</a>
+    <a href="#sources">Sources</a>
+  </div>
+
+  <h2 id="why">Why the subscription is the cheap part</h2>
+  <p>Owners compare monthly prices because monthly prices are easy to compare. The expensive part shows up later. A family hardware store weighing up a replacement for an ageing system put the real number on it: "The real cost of upgrading is going to be trying to import 30 years of sales records, thousands of customers information, and tens of thousands of individual sales items (prices, inventory, upc numbers, etc) into the new system. And that's not exactly the kind of thing we can do piecemeal over time."</p>
+  <p class="mbn-inline-links"><strong>Related reading:</strong> <a href="pos-contract-lock-in.html">POS contract lock-in</a>, <a href="hidden-pos-fees.html">hidden POS fees</a>, and <a href="pos-outage-what-to-do.html">what to do when your POS goes down mid-service</a>.</p>
+  <p>That is the honest shape of switching costs: not the £29 a month, but the fortnight of evenings, the missing barcodes, and the customer balances nobody can reconstruct. And it is worth noticing what someone in the payments trade replied to him in the same thread — that if your system cannot let you export your sales, customers, stock and prices, that is not an inconvenience, it is a reason to leave.</p>
+
+  <h2 id="answers">The two answers that should worry you</h2>
+  <p>Ask a vendor, before signing: <em>can I export my own data, myself, whenever I want, without asking you?</em> Then listen carefully, because the two most common reassuring answers are both refusals in disguise.</p>
+  <p><strong>"We'll get it out for you."</strong> This means the export is a favour, not a feature. Favours depend on goodwill, and goodwill is exactly what disappears the week you tell them you are leaving. It also usually means there is no self-service export at all, so you cannot practise, cannot check the format, and cannot take a backup on an ordinary Tuesday.</p>
+  <p><strong>"Just run the reports and export them to Excel."</strong> This sounds like a yes. It is not. A report is a summary shaped for reading, not a data file shaped for loading into something else: totals by day rather than individual transactions, product names without barcodes, customer names without their balances or contact details. You can prove this to yourself in five minutes — export a report, then try to work out from it what a named customer owes you, or which barcode belongs to which price.</p>
+  <p>The answer you want is dull and specific: a self-service export, per data type, in CSV, containing rows rather than totals, that you can run yourself as often as you like.</p>
+
+  <h2 id="what">The five things to export, in order of pain</h2>
+  <p>If you export nothing else, export these, and export them <em>before</em> you give notice, not after.</p>
+  <ol>
+    <li><strong>Your customer list, with balances.</strong> The hardest thing to rebuild and the most commercially valuable. Names, contact details, and — if you run tabs or credit — what each person currently owes. A list of names without balances is half a list.</li>
+    <li><strong>Your product file: names, prices, barcodes, tax rates, suppliers.</strong> The barcodes matter most, because retyping them is the slowest job in the world and mistyping one creates a pricing error that survives for years.</li>
+    <li><strong>Current stock levels, with cost prices.</strong> Sale prices are on your shelf edges; cost prices usually exist only in the system, and without them your margins go dark on day one of the new system.</li>
+    <li><strong>Transaction-level sales history</strong>, not daily summaries. This is what lets you compare next December against last December, defend a tax position, or answer a chargeback.</li>
+    <li><strong>Employee records and any timekeeping data</strong>, if the system holds them. It is the most commonly forgotten export and the one people need most urgently at year end.</li>
+  </ol>
+
+  <h2 id="encoding">The encoding trap that makes a good export useless</h2>
+  <p>There is a small, deeply annoying failure that turns a perfectly good export into a file you cannot use, and it is almost never mentioned: character encoding. A retail manager described exactly it on a review site — "When I export some reports to Excel, the French words with special characters are not showing up correctly".</p>
+  <p>If your products, customers or addresses contain accents, ñ, ç, Portuguese tildes, or any non-English alphabet, a CSV can arrive with mangled characters that no import will fix cleanly. Two habits prevent it:</p>
+  <ul>
+    <li><strong>Open the CSV in a plain text editor first, not in Excel.</strong> If it reads correctly there and badly in Excel, the file is fine and the spreadsheet is guessing wrong. Use Excel's <em>Data → From Text/CSV</em> and pick UTF-8 rather than double-clicking the file.</li>
+    <li><strong>Check one accented record on purpose.</strong> Search the export for a customer or product you know has an accent and look at it. That one check catches the problem while you can still re-run the export.</li>
+  </ul>
+
+  <h2 id="import">The other end of the same problem: the import that fails</h2>
+  <p>Getting the file out is only half of it. A grocery and wine retailer described the mirror image after choosing a well-known system: "They were unable to import our 2k SKUs, so we entered everything manually." Two thousand products, retyped, by people who had a shop to run.</p>
+  <p>So the question to the <em>incoming</em> vendor is the counterpart of the one you asked the outgoing one: <em>what exact file format do you accept, will you import my file as it is, and can we test it with my real data before I commit?</em> A vendor who will run a trial import on your actual export, and show you the result, is telling you something real about the switch. One who says "our team will handle it" during the sales conversation has just given you the first wrong answer from the previous section.</p>
+
+  <h2 id="test">A twenty-minute test to run before you sign</h2>
+  <p>Do this during the trial, on a laptop, with nobody watching.</p>
+  <ul>
+    <li><strong>Find the export yourself</strong>, without asking support. If you cannot find it in twenty minutes, that is your answer.</li>
+    <li><strong>Export each of the five data types</strong> above and open them. Are they rows or totals? Are the barcodes there? Are the cost prices there? Are the customer balances there?</li>
+    <li><strong>Check an accented record</strong> in each file.</li>
+    <li><strong>Time it.</strong> An export that takes forty minutes and a support ticket is not a monthly backup habit you will ever keep.</li>
+    <li><strong>Ask what happens on the day you cancel</strong> — specifically, for how long you can still log in and export after the subscription ends. Get the answer in writing, in the same email thread as the price.</li>
+  </ul>
+  <p>Then, whatever you choose, put a recurring monthly reminder in your phone to run those exports and save them somewhere you control. It takes ten minutes and it is the only thing that makes both a switch and a lockout survivable.</p>
+
+  <h2 id="pick">What to look for in a till, with this in mind</h2>
+  <div class="card winner">
+    <span class="rank">⭐ Worth a look</span>
+    <h3 style="margin-top:.3rem">digabloPos</h3>
+    <div class="trust-badges">
+      <span class="trust-badge">✓ Free forever</span>
+      <span class="trust-badge">✓ No forced commission</span>
+      <span class="trust-badge">✓ No lock-in contract</span>
+    </div>
+    <p style="margin-top:1rem">The reason a free, no-contract system matters in an article about leaving is not the price. It is that <strong>a system you can leave has to be worth staying with</strong>. digabloPos has no forced payment commission and no engagement period to buy your way out of, so the decision to stay is re-made every month rather than enforced for forty-eight of them. Sales are recorded transaction by transaction with the payment method and the employee attached, which is the level of detail that is worth exporting in the first place.</p>
+    <p style="margin-top:.6rem"><strong>Be clear-eyed about the limit.</strong> Export formats and report depth vary by plan and change over time, so do not take our word for it: run the twenty-minute test above on digabloPos exactly as you would on any other candidate, and check what the current plan includes. The base plan is <strong>free forever</strong> for 2 employees with 30 days of history, and unlimited report history is a paid module — which is directly relevant here, because history you cannot see is history you cannot export.</p>
+    <div class="pros-cons">
+      <div class="pros"><h3>👍 Strengths</h3><ul>
+        <li><strong>No engagement period</strong>, so leaving is a decision rather than a negotiation</li>
+        <li><strong>No forced payment commission</strong>, and no hardware lease attached to the software</li>
+        <li><strong>Transaction-level records</strong> with payment method and employee on each sale</li>
+        <li><strong>Free forever</strong> base plan, so you can test the export before committing anything</li>
+      </ul></div>
+      <div class="cons"><h3>👎 Notes</h3><ul>
+        <li>Free plan keeps 30 days of history; unlimited history is a paid module</li>
+        <li>Check the current export formats yourself rather than assuming</li>
+        <li>Migrating a large legacy catalogue is still work, whichever system you move to</li>
+      </ul></div>
+    </div>
+    <p style="margin-top:1rem"><a class="btn-ghost" href="https://digablopos.fr/en?s=mybusinessnotebook" target="_blank" rel="noopener sponsored nofollow">Visit digabloPos →</a></p>
+  </div>
+
+  <div class="cta-box">
+    <h3>Run the export test on a free register</h3>
+    <p>Set one up, add a handful of products with barcodes and one customer with an accent in their name, then try to get all of it back out as a file. That is the whole test.</p>
+    <a class="btn" href="https://digablopos.fr/en?s=mybusinessnotebook" target="_blank" rel="noopener sponsored nofollow">Create my free register</a>
+  </div>
+
+  <h2 id="leaving">If you have already decided to leave</h2>
+  <p>Order matters, and most people get it backwards by telling the vendor first.</p>
+  <ol>
+    <li><strong>Export everything, twice, on two different days</strong>, and open the files to confirm they are readable. Do this before any cancellation conversation.</li>
+    <li><strong>Reconcile your customer balances on paper</strong> with the exported list, so any tab or credit account is agreed before the system goes away.</li>
+    <li><strong>Check what is contractually separate.</strong> Software, card processing and hardware are often three agreements with three end dates. Cancelling one does not end the others.</li>
+    <li><strong>Only then give notice</strong>, in writing, and keep the thread.</li>
+    <li><strong>Run both systems side by side for a few days</strong> if you possibly can. The gap between "the data imported" and "the shop works" is where the surprises live.</li>
+  </ol>
+
+  <h2 id="faq">Frequently asked questions</h2>
+  <div class="faq">
+    <details><summary>What should I export before leaving a POS system?</summary><p>Five things, before you give notice: your customer list with balances, your product file with names, prices, barcodes, tax rates and suppliers, current stock levels with cost prices, transaction-level sales history rather than daily summaries, and any employee or timekeeping records the system holds. Cost prices and barcodes are the two most commonly forgotten and the two most painful to rebuild.</p></details>
+    <details><summary>My vendor says they will export the data for me. Is that good enough?</summary><p>No. It means the export is a favour rather than a feature, and favours depend on goodwill that tends to evaporate the week you announce you are leaving. It also means you cannot take routine backups or check the format in advance. What you want is a self-service export, per data type, in CSV, that you can run yourself whenever you like.</p></details>
+    <details><summary>Isn't exporting reports to Excel the same thing as exporting my data?</summary><p>Usually not. A report is a summary shaped for reading: totals by day, product names without barcodes, customer names without balances. A data export is rows. The quick way to tell them apart is to take your exported report and try to work out what a named customer owes you, or which barcode goes with which price. If you cannot, it is a report.</p></details>
+    <details><summary>Why do accents and special characters break in my CSV export?</summary><p>It is a character encoding mismatch, and it is common enough that retailers complain about it publicly. The file is usually fine and the spreadsheet is guessing wrong. Open the CSV in a plain text editor to check, and in Excel use Data then From Text/CSV and select UTF-8 rather than double-clicking the file. Always check one record you know contains an accent, while you can still re-run the export.</p></details>
+    <details><summary>How long can I access my data after I cancel?</summary><p>That varies by provider and it is rarely volunteered, so ask before you sign and get the answer in writing in the same email thread as the price. Assume the worst in the meantime: export everything you need, twice, on two different days, and confirm the files open correctly before you start any cancellation conversation.</p></details>
+    <details><summary>What if the new system cannot import my file?</summary><p>It happens, and it is expensive: one retailer described a new system being unable to import two thousand product references, leaving the team to enter everything by hand. Ask the incoming vendor exactly which file format they accept and whether they will run a test import on your real exported file before you commit. A vendor who will show you the result of that test is telling you something real; one who only offers to have their team handle it is not.</p></details>
+  </div>
+
+  <h2 id="sources">Sources</h2>
+  <p>The merchant accounts quoted here come from public forum threads and review pages. Read them in context rather than taking our word for it.</p>
+  <ul>
+      <li><a href="https://www.salongeek.com/threads/going-over-to-computer-bookings-help.240946/" target="_blank" rel="noopener">SalonGeek, moving from paper to software</a>: the salon owner's question about getting data out, and the two answers that should worry you.</li>
+      <li><a href="https://www.reddit.com/r/smallbusiness/comments/1g9qo32/need_new_pos_software_preferably_one_that_doesnt/" target="_blank" rel="noopener">r/smallbusiness, replacing an ageing POS</a>: the hardware store weighing thirty years of records, and the reply on what a blocked export tells you.</li>
+      <li><a href="https://www.reddit.com/r/smallbusiness/comments/14kulgn/lightspeed_pos_a_disappointing_experience_with/" target="_blank" rel="noopener">r/smallbusiness, a retailer's migration experience</a>: two thousand product references entered by hand after a failed import.</li>
+      <li><a href="https://www.capterra.com/p/150632/Loyverse-POS/reviews/" target="_blank" rel="noopener">Capterra, Loyverse POS reviews</a>: the report of accented characters breaking on export to Excel.</li>
+  </ul>
+
+<section class="related-block">
+  <h2>Read next</h2>
+  <div class="grid">
+      <a class="post-card" href="pos-contract-lock-in.html"><span class="pc-media" style="background-image:url('img/pos-contract-lock-in-sm.webp')"></span><span class="pc-body"><span class="tag">Read next</span><h3>POS contracts &amp; lock-in: what to check before you sign</h3><p>The clauses that decide whether leaving is a decision or a negotiation.</p></span></a>
+      <a class="post-card" href="pos-outage-what-to-do.html"><span class="pc-media" style="background-image:url('img/pos-outage-what-to-do-sm.webp')"></span><span class="pc-body"><span class="tag">Read next</span><h3>Your POS is down mid-service: what actually works</h3><p>Provider outage or your wifi, what offline mode really covers, and what to reconcile after.</p></span></a>
+      <a class="post-card" href="hidden-pos-fees.html"><span class="pc-media" style="background-image:url('img/hidden-pos-fees-sm.webp')"></span><span class="pc-body"><span class="tag">Read next</span><h3>Hidden POS fees in 2026: what a "free" POS really costs</h3><p>Processing markup, monthly creep, gateway and PCI charges: the bill behind the quote.</p></span></a>
+  </div>
+</section>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+      <div class="lang-switch" style="margin:0 0 .9rem;justify-content:center">
+        <span style="color:#6b6659;font-size:.74rem">Language:</span>
+        <a href="?lang=fr" rel="nofollow">FR</a>
+        <a href="?lang=en" rel="nofollow" aria-current="true">EN</a>
+        <a href="?lang=es" rel="nofollow">ES</a>
+        <a href="?lang=pt" rel="nofollow">PT</a>
+      </div>
+    <div>© 2026 My Business Notebook, Buying guides for merchants.</div>
+    <p class="disclosure">Transparency: this guide is informational and general in nature. It isn't legal, tax or accounting advice. Export capabilities and vendor terms change over time, verify current details directly with any vendor mentioned before relying on them. Some links point to tools we recommend.</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    try{
+      var d = new Date();
+      var s = d.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
+      var el = document.getElementById('tk-date'); if(el){ el.textContent = s; }
+      var elS = document.getElementById('tk-date-short'); if(elS){ elS.textContent = d.toLocaleDateString('en-US', { month:'short', day:'numeric' }); }
+      var mv = document.getElementById('tk-move'); if(mv){ mv.innerHTML += mv.innerHTML; }
+    }catch(e){}
+  })();
+</script>
+
+</body>
+</html>

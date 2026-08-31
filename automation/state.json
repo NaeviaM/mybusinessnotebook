@@ -1,15 +1,19 @@
 {
-  "run": 29,
+  "run": 30,
   "next_market_index": 7,
   "next_type": "comparison",
   "recent_markets": [
-    "Kenya/en",
-    "Mexico/es",
-    "DR Congo/fr"
+    "USA/en",
+    "UK/en",
+    "Senegal/fr",
+    "Kenya/en"
   ],
   "last_type": "advice",
   "priority_topics": [],
   "published": [
+    "vol-gerant-boutique-detecter-avant-inventaire",
+    "pos-data-export-before-switching",
+    "pos-outage-what-to-do",
     "gerer-caisse-dollar-franc-congolais-kinshasa",
     "clip-mercado-pago-sumup-mexico",
     "pagar-suscripciones-en-linea-venezuela-sin-tarjeta",
