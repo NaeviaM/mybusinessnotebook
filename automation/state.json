@@ -1,14 +1,13 @@
 {
-  "run": 31,
-  "next_market_index": 7,
-  "next_type": "comparison",
+  "run": 32,
+  "next_market_index": 0,
+  "next_type": "advice",
   "recent_markets": [
-    "UK/en",
-    "Mexique-Espagne/es",
     "Bresil-Portugal/pt",
-    "Afrique de l Ouest/fr"
+    "Afrique de l Ouest/fr",
+    "Philippines/en"
   ],
-  "last_type": "advice",
+  "last_type": "comparison",
   "priority_topics": [],
   "published": [
     "facture-normalisee-coupure-reseau",
@@ -51,6 +50,7 @@
     "dual-currency-pos-zimbabwe",
     "tpv-multimoneda-venezuela",
     "square-toast-clover-loyverse-comparison",
-    "balanza-y-facturacion-abasto-venezuela"
+    "balanza-y-facturacion-abasto-venezuela",
+    "loyverse-vs-peddlr-pos-philippines"
   ]
 }
