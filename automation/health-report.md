@@ -1,4 +1,4 @@
-# Rapport de sante, 2026-09-01 09:36 UTC
+# Rapport de sante, 2026-09-01 11:18 UTC
 
 VERIF LIVE : EFFECTUEE
 
@@ -24,12 +24,12 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## C. Liens et images sur disque
 
-- 123 pages controlees, 0 probleme(s)
-- 7 photo(s) commandee(s), en attente de generation
+- 124 pages controlees, 0 probleme(s)
+- 8 photo(s) commandee(s), en attente de generation
 
 ## D. Coherence du sitemap
 
-- 123 entrees, 123 pages sur disque, 0 manquante(s), 0 orpheline(s)
+- 124 entrees, 124 pages sur disque, 0 manquante(s), 0 orpheline(s)
 
 ## E. Balises d'en-tete
 
@@ -59,6 +59,7 @@ Aucun probleme trouve.
 - Photo commandee mais pas encore generee : `en/img/loyverse-vs-peddlr-pos-philippines` (prompt ecrit dans PROMPTS-IMAGES.md)
 - Photo commandee mais pas encore generee : `es/img/dinero-retenido-cuenta-bloqueada` (prompt ecrit dans PROMPTS-IMAGES.md)
 - Photo commandee mais pas encore generee : `img/caisse-plusieurs-portefeuilles-mobile-money` (prompt ecrit dans PROMPTS-IMAGES.md)
+- Photo commandee mais pas encore generee : `img/digablopos-ou-sumup` (prompt ecrit dans PROMPTS-IMAGES.md)
 - Photo commandee mais pas encore generee : `img/facture-normalisee-coupure-reseau` (prompt ecrit dans PROMPTS-IMAGES.md)
 - Photo commandee mais pas encore generee : `pt/img/dinheiro-retido-conta-bloqueada` (prompt ecrit dans PROMPTS-IMAGES.md)
 - Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `caisse-enregistreuse-restaurant.html`, `index.html`
