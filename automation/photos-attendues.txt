@@ -11,5 +11,3 @@
 #
 # Un slug par ligne, chemin relatif sans extension.
 
-img/digablopos-ou-sumup
-en/img/digablopos-vs-square
