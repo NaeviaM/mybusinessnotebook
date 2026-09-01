@@ -1,4 +1,4 @@
-# Rapport de sante, 2026-09-01 11:18 UTC
+# Rapport de sante, 2026-09-01 11:36 UTC
 
 VERIF LIVE : EFFECTUEE
 
@@ -20,16 +20,16 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## B. Balayage du sitemap en direct
 
-- 123 URLs testees, 0 en echec
+- 124 URLs testees, 0 en echec
 
 ## C. Liens et images sur disque
 
-- 124 pages controlees, 0 probleme(s)
-- 8 photo(s) commandee(s), en attente de generation
+- 125 pages controlees, 0 probleme(s)
+- 2 photo(s) commandee(s), en attente de generation
 
 ## D. Coherence du sitemap
 
-- 124 entrees, 124 pages sur disque, 0 manquante(s), 0 orpheline(s)
+- 125 entrees, 125 pages sur disque, 0 manquante(s), 0 orpheline(s)
 
 ## E. Balises d'en-tete
 
@@ -45,7 +45,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## H. Coherence des visuels
 
-- 121 familles d'images sur 5 langues, 106 affichees, 15 en reserve
+- 128 familles d'images sur 5 langues, 113 affichees, 15 en reserve
 - 0 variante(s) desynchronisee(s), 0 photo(s) empruntee(s) a la reserve, 14 groupe(s) d'articles differents illustres pareil
 
 ## CRITIQUE
@@ -54,14 +54,8 @@ Aucun probleme trouve.
 
 ## MOYEN
 
-- Photo commandee mais pas encore generee : `en/img/best-pos-system-kenya-duka-2026` (prompt ecrit dans PROMPTS-IMAGES.md)
-- Photo commandee mais pas encore generee : `en/img/frozen-merchant-funds` (prompt ecrit dans PROMPTS-IMAGES.md)
-- Photo commandee mais pas encore generee : `en/img/loyverse-vs-peddlr-pos-philippines` (prompt ecrit dans PROMPTS-IMAGES.md)
-- Photo commandee mais pas encore generee : `es/img/dinero-retenido-cuenta-bloqueada` (prompt ecrit dans PROMPTS-IMAGES.md)
-- Photo commandee mais pas encore generee : `img/caisse-plusieurs-portefeuilles-mobile-money` (prompt ecrit dans PROMPTS-IMAGES.md)
+- Photo commandee mais pas encore generee : `en/img/digablopos-vs-square` (prompt ecrit dans PROMPTS-IMAGES.md)
 - Photo commandee mais pas encore generee : `img/digablopos-ou-sumup` (prompt ecrit dans PROMPTS-IMAGES.md)
-- Photo commandee mais pas encore generee : `img/facture-normalisee-coupure-reseau` (prompt ecrit dans PROMPTS-IMAGES.md)
-- Photo commandee mais pas encore generee : `pt/img/dinheiro-retido-conta-bloqueada` (prompt ecrit dans PROMPTS-IMAGES.md)
 - Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `caisse-enregistreuse-restaurant.html`, `index.html`
 - Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `calculateur-cout-caisse.html`, `en/cash-flow-management-small-business.html`, `es/alta-sat-resico-pequenos-negocios.html`, `pt/software-faturacao-certificada-portugal.html`
 - Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `comment-choisir-caisse-enregistreuse.html`, `en/convenience-store-pos-system.html`, `en/index.html`
