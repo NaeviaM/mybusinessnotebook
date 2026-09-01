@@ -18,3 +18,6 @@ skills-lock.json
 
 # le PAT n a pas le scope workflow, ce dossier casse le push
 .github/
+
+# Python : le controle de sante laisse son cache derriere lui
+__pycache__/
