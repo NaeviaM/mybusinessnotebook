@@ -16,6 +16,7 @@ et sort en code 1 si un probleme CRITIQUE est trouve.
 """
 import re
 import sys
+import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
@@ -464,6 +465,215 @@ def section_h():
             f"a la reserve, {len(groupes)} groupe(s) d'articles differents illustres pareil"]
 
 
+# ------------------------------------------------------- I. ancres internes
+def section_i():
+    """Ancres internes, ajoutee le 04/09/2026.
+
+    `en/best-free-pos-system-2026.html` avait au sommaire une entree « The 2026
+    ranking » qui pointait sur #ranking, alors qu'aucun element de la page ne
+    portait cet identifiant : le titre avait saute a la traduction. On cliquait,
+    rien ne bougeait. Aucune section ne pouvait l'attraper : la C verifie que les
+    fichiers cibles existent, pas que les ancres tombent quelque part.
+
+    On controle aussi les identifiants en double, qui cassent la meme chose d'une
+    autre facon : le navigateur ne saute que sur le premier.
+    """
+    casses = doubles = 0
+    for lg, d in LANGS.items():
+        for p in pages(d):
+            nom = p.relative_to(ROOT)
+            s = p.read_text(encoding="utf-8")
+            vus, deja = set(), set()
+            for i in re.findall(r'\sid="([^"]+)"', s):
+                if i in vus and i not in deja:
+                    moyen.append(f"`{nom}` : l'identifiant `#{i}` est utilise deux fois")
+                    deja.add(i)
+                    doubles += 1
+                vus.add(i)
+            for a in dict.fromkeys(re.findall(r'href="#([^"]+)"', s)):
+                if a not in vus:
+                    moyen.append(f"`{nom}` : le lien `#{a}` du sommaire ne mene nulle part")
+                    casses += 1
+    return [f"- {casses} ancre(s) cassee(s), {doubles} identifiant(s) en double"]
+
+
+# ----------------------------------------------------------------- J. hreflang
+def _url_de(lg, p):
+    """URL publique d'une page, telle qu'elle doit apparaitre en hreflang."""
+    prefixe = "" if lg == "fr" else f"{lg}/"
+    return BASE + "/" + prefixe + ("" if p.name == "index.html" else p.name)
+
+
+def section_j():
+    """Reciprocite hreflang, ajoutee le 04/09/2026.
+
+    Le site vit en cinq langues. Google n'accepte une grappe de traductions que
+    si elle est complete : chaque page doit se declarer elle-meme et declarer ses
+    soeurs, et chaque soeur doit lui repondre. Une declaration a sens unique est
+    ignoree en silence, et les deux pages se retrouvent a se cannibaliser dans
+    les resultats. Rien ne se voit a l'oeil, d'ou ce controle.
+    """
+    declare, connues = {}, {}
+    for lg, d in LANGS.items():
+        for p in pages(d):
+            u = _url_de(lg, p).rstrip("/") or BASE
+            connues[u] = p.relative_to(ROOT).as_posix()
+    for lg, d in LANGS.items():
+        for p in pages(d):
+            s = p.read_text(encoding="utf-8")
+            liens = {}
+            for balise in re.findall(r'<link[^>]*rel="alternate"[^>]*>', s):
+                h = re.search(r'hreflang="([^"]+)"', balise)
+                href = re.search(r'href="([^"]+)"', balise)
+                if h and href:
+                    liens[h.group(1)] = href.group(1).rstrip("/") or BASE
+            declare[p.relative_to(ROOT).as_posix()] = (_url_de(lg, p).rstrip("/") or BASE, liens)
+
+    ecarts = 0
+    for nom, (moi, liens) in sorted(declare.items()):
+        if not liens:
+            continue
+        if moi not in liens.values():
+            moyen.append(f"`{nom}` : grappe hreflang sans auto-reference")
+            ecarts += 1
+        for code, u in sorted(liens.items()):
+            if code == "x-default":
+                continue
+            cible = connues.get(u)
+            if cible is None:
+                moyen.append(f"`{nom}` : hreflang `{code}` vers une page qui n'existe pas, {u}")
+                ecarts += 1
+                continue
+            if cible == nom:
+                continue
+            if moi not in declare.get(cible, (None, {}))[1].values():
+                moyen.append(f"`{nom}` declare `{cible}` en hreflang, qui ne le declare pas en retour")
+                ecarts += 1
+    return [f"- {len(declare)} pages, {ecarts} ecart(s) hreflang"]
+
+
+# --------------------------------------------------------- K. liens de sources
+# Domaines qui refusent les robots (403 systematique) mais repondent normalement
+# dans un navigateur. Les compter comme casses ferait crier le rapport pour rien.
+ANTI_ROBOT = ("trustpilot.com", "capterra.com", "reclameaqui.com.br", "portaldaqueixa.com",
+              "help.loyverse.com", "reclamos.cl", "bportugal.pt", "gob.mx", "une.cd",
+              "linkedin.com", "facebook.com", "instagram.com")
+JOURS_ENTRE_DEUX_PASSAGES = 7
+NAVIGATEUR = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+              "(KHTML, like Gecko) Chrome/126 Safari/537.36")
+
+
+def _memes_cibles(a, b):
+    """Deux URLs designent-elles la meme page ? Tolere le www, le / final et les
+    segments de langue ajoutes par redirection (help.sumup.com -> /en-GB)."""
+    if re.fullmatch(r"https?://[^/]+/?", a):
+        return True               # une racine qui part sur /accueil ou /home, c'est normal
+
+    def net(u):
+        u = re.sub(r"^https?://", "", u).split("?")[0].replace("www.", "").rstrip("/")
+        bouts = u.split("/")
+        while len(bouts) > 1 and re.fullmatch(r"[a-z]{2}(-[a-zA-Z]{2})?", bouts[-1]):
+            bouts.pop()
+        return "/".join(bouts)
+    return net(a) == net(b)
+
+
+def _tester_lien(url):
+    """(url, code, url finale). Code 0 si la requete n'aboutit pas.
+
+    GET et pas HEAD, malgre le cout : au premier passage, gob.mx et une.cd
+    repondaient 404 a un HEAD et 200 a un GET, et aip.ci redirigeait le HEAD vers
+    l'image de l'article. Trois sources vivantes declarees mortes ou deplacees.
+    125 liens une fois par semaine, la depense est negligeable.
+    """
+    req = urllib.request.Request(url, headers={
+        "User-Agent": NAVIGATEUR,
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "fr-FR,fr;q=0.9,en;q=0.8",
+        "Accept-Encoding": "gzip, deflate, br",   # le corps n'est jamais lu, seul le code compte
+        "Upgrade-Insecure-Requests": "1", "Connection": "close"})
+    code, final = 0, ""
+    for essai in (1, 2):
+        try:
+            with urllib.request.urlopen(req, timeout=25) as r:
+                return url, r.status, r.geturl()
+        except urllib.error.HTTPError as e:
+            code = e.code
+            if e.code < 500:
+                return url, e.code, ""      # un 404 ne guerit pas en insistant
+        except Exception:
+            code = 0
+        if essai == 1:
+            time.sleep(2)
+    return url, code, final
+
+
+def section_k(force=False):
+    """Sante des liens de sources, ajoutee le 04/09/2026.
+
+    Le site tire son autorite de ses sources officielles. Trois facons de les
+    perdre, et une seule se voit avec un verificateur de liens ordinaire :
+
+      1. le lien meurt (404, domaine parti) ;
+      2. l'adresse officielle demenage sans redirection utile ;
+      3. le pire, le lien repond 200 mais ne dit plus la meme chose. Square a
+         reaffecte le numero d'article 3796 : l'URL citee comme source des frais
+         par transaction redirigeait vers un article sur la vie privee. Aucun
+         code d'erreur, une source qui ment.
+
+    D'ou le controle des redirections en plus des codes d'erreur. Passage
+    hebdomadaire : une centaine de requetes sortantes, inutile tous les jours.
+    """
+    import concurrent.futures
+    import json as _json
+    memo = ROOT / "automation" / "liens-externes.json"
+    aujourdhui = datetime.now(timezone.utc).date()
+    if not force and memo.is_file():
+        try:
+            precedent = _json.loads(memo.read_text(encoding="utf-8")).get("derniere_verification")
+            if precedent and (aujourdhui - datetime.strptime(precedent, "%Y-%m-%d").date()).days < JOURS_ENTRE_DEUX_PASSAGES:
+                return [f"- Sautee : deja passee le {precedent} (une fois par semaine, "
+                        f"`--liens` pour forcer)."]
+        except Exception:
+            pass
+
+    liens = {}
+    for lg, d in LANGS.items():
+        for p in pages(d):
+            for u in re.findall(r'href="(https?://[^"]+)"', p.read_text(encoding="utf-8")):
+                if "mybusinessnotebook.com" in u:
+                    continue
+                liens.setdefault(u, set()).add(p.relative_to(ROOT).as_posix())
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=12) as ex:
+        resultats = list(ex.map(_tester_lien, sorted(liens)))
+
+    morts = bloques = deplaces = douteux = 0
+    for url, code, final in resultats:
+        ou = ", ".join(f"`{x}`" for x in sorted(liens[url])[:3])
+        anti = any(dom in url for dom in ANTI_ROBOT)
+        if code == 200:
+            if final and not _memes_cibles(url, final):
+                cosmetique.append(f"Source deplacee : {url} arrive sur {final} ({ou})")
+                deplaces += 1
+        elif anti or code in (401, 403, 429):
+            bloques += 1
+        elif code in (404, 410):
+            moyen.append(f"Source morte (`{code}`) : {url} ({ou})")
+            morts += 1
+        else:
+            cosmetique.append(f"Source sans reponse (`{code or 'silence'}`) au moment du "
+                              f"controle, a revoir au prochain passage : {url} ({ou})")
+            douteux += 1
+
+    memo.write_text(_json.dumps({"derniere_verification": aujourdhui.strftime("%Y-%m-%d"),
+                                 "liens_testes": len(resultats), "morts": morts,
+                                 "deplaces": deplaces}, indent=2) + "\n", encoding="utf-8")
+    return [f"- {len(resultats)} liens de sources testes, {morts} mort(s), "
+            f"{deplaces} deplace(s), {douteux} sans reponse, "
+            f"{bloques} non testable(s) (anti-robot)"]
+
+
 def main():
     # --disk-only : saute les deux sections qui sortent sur le reseau. Sert au
     # publieur local, qui doit pouvoir valider un article meme si la machine est
@@ -479,6 +689,9 @@ def main():
     c, d, e, f = section_c(), section_d(), section_e(), section_f()
     g = section_g()
     h = section_h()
+    i, j = section_i(), section_j()
+    k = (["- Sautee (mode --disk-only)."] if disk_only
+         else section_k("--liens" in sys.argv))
 
     statut = "CRITIQUE" if critique else ("DEGRADE" if moyen else "OK")
 
@@ -505,6 +718,9 @@ def main():
         f"## F. Cosmetique\n\n" + "\n".join(f) + "\n\n"
         f"## G. Standards SEO\n\n" + "\n".join(g) + "\n\n"
         f"## H. Coherence des visuels\n\n" + "\n".join(h) + "\n\n"
+        f"## I. Ancres internes\n\n" + "\n".join(i) + "\n\n"
+        f"## J. Reciprocite hreflang\n\n" + "\n".join(j) + "\n\n"
+        f"## K. Liens de sources\n\n" + "\n".join(k) + "\n\n"
         + bloc("CRITIQUE", critique) + "\n" + bloc("MOYEN", moyen) + "\n" + bloc("COSMETIQUE", cosmetique)
     )
 

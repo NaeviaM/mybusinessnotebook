@@ -1,4 +1,4 @@
-# Rapport de sante, 2026-09-04 19:44 UTC
+# Rapport de sante, 2026-09-04 21:14 UTC
 
 VERIF LIVE : EFFECTUEE
 
@@ -47,6 +47,18 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 - 124 familles d'images sur 5 langues, 122 affichees, 2 en reserve
 - 0 variante(s) desynchronisee(s), 0 photo(s) empruntee(s) a la reserve, 7 groupe(s) d'articles differents illustres pareil
 
+## I. Ancres internes
+
+- 0 ancre(s) cassee(s), 0 identifiant(s) en double
+
+## J. Reciprocite hreflang
+
+- 125 pages, 0 ecart(s) hreflang
+
+## K. Liens de sources
+
+- 125 liens de sources testes, 0 mort(s), 0 deplace(s), 1 sans reponse, 15 non testable(s) (anti-robot)
+
 ## CRITIQUE
 
 Aucun probleme trouve.
@@ -63,4 +75,4 @@ Aucun probleme trouve.
 
 ## COSMETIQUE
 
-Aucun probleme trouve.
+- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://www.rbz.co.zw/ (`en/dual-currency-pos-zimbabwe.html`)
