@@ -1,4 +1,4 @@
-# Rapport de sante, 2026-09-03 10:20 UTC
+# Rapport de sante, 2026-09-04 19:44 UTC
 
 VERIF LIVE : EFFECTUEE
 
@@ -10,11 +10,17 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## A. Disponibilite en direct
 
-- Machine hors ligne, verification impossible (aucune conclusion sur le site).
+- apex : `200`
+- www : `200`
+- secours Vercel : `200`
+- accueil EN : `200`
+- accueil ES : `200`
+- accueil PT : `200`
+- accueil SW : `200`
 
 ## B. Balayage du sitemap en direct
 
-- Reseau indisponible, balayage impossible (aucune conclusion sur le site).
+- 125 URLs testees, 0 en echec
 
 ## C. Liens et images sur disque
 
@@ -30,7 +36,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## F. Cosmetique
 
-- 0 tuile(s) emoji, 1 article(s) sans bloc « a lire aussi »
+- 0 tuile(s) emoji, 0 article(s) sans bloc « a lire aussi »
 
 ## G. Standards SEO
 
@@ -47,8 +53,6 @@ Aucun probleme trouve.
 
 ## MOYEN
 
-- Machine sans acces reseau : la disponibilite du site n'a PAS pu etre verifiee. Ce n'est pas une panne du site.
-- sitemap.xml non joignable depuis cette machine (reseau local).
 - Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `calculateur-cout-caisse.html`, `en/cash-flow-management-small-business.html`, `es/alta-sat-resico-pequenos-negocios.html`, `pt/software-faturacao-certificada-portugal.html`
 - Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `en/best-pos-system-small-business.html`, `logiciel-caisse-epicerie.html`
 - Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `en/etims-compliant-pos-kenya.html`, `sw/index.html`, `sw/mfumo-wa-pos-kenya.html`
@@ -59,4 +63,4 @@ Aucun probleme trouve.
 
 ## COSMETIQUE
 
-- `sw\mfumo-wa-pos-kenya.html` sans bloc « a lire aussi »
+Aucun probleme trouve.
