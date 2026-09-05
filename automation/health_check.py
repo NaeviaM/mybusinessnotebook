@@ -674,6 +674,151 @@ def section_k(force=False):
             f"{bloques} non testable(s) (anti-robot)"]
 
 
+# ------------------------------------------------------- L. indexation (Search Console)
+def liens_entrants():
+    """Pour chaque page du site, l'ensemble des pages qui pointent vers elle.
+
+    Sert a distinguer deux situations que le rapport confondait : une page que
+    Google ignore alors qu'elle est bien maillee (c'est son jugement, pas notre
+    defaut) et une page vers laquelle rien ne pointe (la, c'est notre defaut, et
+    Google ne peut meme pas la trouver autrement que par le sitemap)."""
+    entrants = {}
+    for lg, d in LANGS.items():
+        prefixe = "" if lg == "fr" else f"{lg}/"
+        for p in pages(d):
+            entrants.setdefault(prefixe + p.name, set())
+    for lg, d in LANGS.items():
+        prefixe = "" if lg == "fr" else f"{lg}/"
+        for p in pages(d):
+            source = prefixe + p.name
+            s = p.read_text(encoding="utf-8")
+            for t in re.findall(r'href="([^"]+)"', s):
+                if re.match(r"^(?:https?:|//|#|\?|mailto:|tel:|data:)", t):
+                    continue
+                # Un accueil de langue s'ecrit "en/", "../sw/" ou "/es/", jamais
+                # "en/index.html". Les compter comme des liens vers rien sous-estimait
+                # les cinq accueils : le premier jet de cette fonction ne voyait qu'un
+                # seul lien entrant vers sw/index.html, alors que les quatre autres
+                # accueils y renvoient tous.
+                if t.endswith("/"):
+                    t += "index.html"
+                if not t.endswith(".html"):
+                    continue
+                cible = t.lstrip("/") if t.startswith("/") else (prefixe + t)
+                # "../en/x.html" depuis une sous-langue, et "./x.html"
+                cible = re.sub(r"[^/]+/\.\./", "", cible).replace("./", "")
+                if cible in entrants and cible != source:
+                    entrants[cible].add(source)
+    return entrants
+
+
+def section_l():
+    """Ce que Google retient vraiment du site, oppose a ce qu'il y a sur le disque.
+
+    Ajoutee le 06/09/2026. Les onze autres sections mesurent la structure et la
+    trouvaient parfaite : 125 pages, zero lien casse, sitemap coherent. La Search
+    Console, elle, n'en indexait que 40. Un rapport qui ne sait pas dire ca passe
+    a cote du seul chiffre qui decide de l'audience.
+
+    Lit automation/gsc-index.json, produit par gsc_import.py depuis les exports
+    telecharges a la main. Aucune dependance ajoutee ici : ce n'est que du JSON.
+    """
+    f = ROOT / "automation" / "gsc-index.json"
+    if not f.is_file():
+        return ["- Aucun resume Search Console. Telecharger les deux exports dans "
+                "`automation/gsc/` puis lancer `python automation/gsc_import.py`."]
+
+    import json as _json
+    g = _json.loads(f.read_text(encoding="utf-8"))
+    lignes = []
+
+    # Un export vieux de plus de trois semaines decrit un site qui n'existe plus.
+    genere = g.get("genere_le", "")
+    if genere:
+        age = (datetime.now(timezone.utc).date() - datetime.strptime(genere, "%Y-%m-%d").date()).days
+        if age > 21:
+            cosmetique.append(f"Resume Search Console vieux de {age} jours : retelecharger "
+                              f"les exports et relancer `python automation/gsc_import.py`.")
+
+    idx = g.get("indexation") or {}
+    if idx:
+        total = idx["dans_index"] + idx["hors_index"]
+        part = round(100 * idx["dans_index"] / total) if total else 0
+        lignes.append(f"- au {idx['le']} : **{idx['dans_index']} pages dans l'index**, "
+                      f"{idx['hors_index']} hors index ({part} % indexe)")
+    for motif, n in sorted((g.get("motifs_hors_index") or {}).items(), key=lambda x: -x[1])[:4]:
+        lignes.append(f"  - {motif} : {n}")
+
+    t = g.get("total") or {}
+    if t:
+        lignes.append(f"- 3 mois : {t['clics']} clics, {t['impressions']} impressions, "
+                      f"CTR {t['ctr'] * 100:.2f} %")
+
+    vues = set(g.get("pages_vues_en_recherche") or {})
+    sur_disque = set()
+    for lg, d in LANGS.items():
+        prefixe = "" if lg == "fr" else f"{lg}/"
+        for p in pages(d):
+            sur_disque.add(prefixe + p.name)
+
+    entrants = liens_entrants()
+    # Une page jamais vue en recherche depuis trois mois : soit hors index, soit
+    # invisible. Les deux se soignent pareil, en la maillant depuis une page qui,
+    # elle, est vue.
+    orphelines = sorted(sur_disque - vues)
+    muettes = [m for m in orphelines if not entrants.get(m)]
+    faibles = sorted((m for m in orphelines if 0 < len(entrants.get(m, ())) <= 2),
+                     key=lambda m: len(entrants[m]))
+
+    lignes.append(f"- {len(orphelines)} page(s) jamais vue(s) en recherche sur "
+                  f"{len(sur_disque)}, dont {len(muettes)} sans aucun lien entrant")
+    for m in muettes:
+        moyen.append(f"Page sans aucun lien entrant, invisible autrement que par le "
+                     f"sitemap : `{m}`")
+    if faibles:
+        apercu = ", ".join(f"`{m}` ({len(entrants[m])})" for m in faibles[:6])
+        lignes.append(f"- a mailler en priorite (jamais vues, 1 a 2 liens entrants) : {apercu}")
+
+    proches = g.get("requetes_proches_page_1") or []
+    if proches:
+        apercu = ", ".join(f"« {q['requete']} » ({q['impressions']} imp, pos {q['position']})"
+                           for q in proches[:4])
+        lignes.append(f"- {len(proches)} requete(s) en position 11 a 20, a un cran de la "
+                      f"page 1 : {apercu}")
+    return lignes
+
+
+# --------------------------------------------------- dette acceptee, connue et datee
+def trier_la_dette():
+    """Sort de MOYEN ce qui est deja identifie, explique et assume.
+
+    Pourquoi. Le statut global passait a DEGRADE des le premier MOYEN. Les sept
+    groupes de photos partagees, connus depuis le 02/09 et en attente d'images a
+    generer, l'ont donc maintenu en orange onze jours d'affilee. Un voyant allume
+    en permanence pour un motif connu n'avertit plus de rien, et le jour ou un
+    vrai probleme neuf arrive il se noie dedans.
+
+    Une entree de dette est un texte EXACT. Un probleme voisin mais different ne
+    correspond pas, reste en MOYEN, et rallume le voyant : c'est tout l'interet.
+    """
+    f = ROOT / "automation" / "dette-connue.json"
+    if not f.is_file():
+        return [], []
+    import json as _json
+    entrees = _json.loads(f.read_text(encoding="utf-8")).get("entrees", [])
+    par_motif = {e["motif"]: e for e in entrees}
+    dette, restant = [], []
+    for m in moyen:
+        e = par_motif.get(m)
+        if e:
+            dette.append(f"{m}\n  - _accepte le {e['depuis']} : {e['raison']}_")
+        else:
+            restant.append(m)
+    vus = {m for m in moyen if m in par_motif}
+    perimees = [e["motif"] for e in entrees if e["motif"] not in vus]
+    return dette, perimees
+
+
 def main():
     # --disk-only : saute les deux sections qui sortent sur le reseau. Sert au
     # publieur local, qui doit pouvoir valider un article meme si la machine est
@@ -692,8 +837,15 @@ def main():
     i, j = section_i(), section_j()
     k = (["- Sautee (mode --disk-only)."] if disk_only
          else section_k("--liens" in sys.argv))
+    l = section_l()
 
-    statut = "CRITIQUE" if critique else ("DEGRADE" if moyen else "OK")
+    # La dette assumee ne compte pas dans le statut : voir trier_la_dette.
+    dette, dette_perimee = trier_la_dette()
+    moyen_reel = [m for m in moyen if not any(d.startswith(m) for d in dette)]
+    for motif in dette_perimee:
+        cosmetique.append(f"Dette reglee, a retirer de `automation/dette-connue.json` : {motif}")
+
+    statut = "CRITIQUE" if critique else ("DEGRADE" if moyen_reel else "OK")
 
     def bloc(titre, items):
         if not items:
@@ -709,7 +861,9 @@ def main():
         f"tombe en panne le 04/08/2026. Declenche chaque jour par la tache planifiee "
         f"Windows `MBN - controle de sante` (voir C:\\Users\\dell\\mbn-automation).\n\n"
         f"NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas "
-        f"un article encore non deploye. La section D, elle, controle le disque.\n\n"
+        f"un article encore non deploye. La section D, elle, controle le disque. "
+        f"La section L ne mesure rien d'elle-meme : elle relit le dernier export "
+        f"Search Console, il faut donc le rafraichir a la main.\n\n"
         f"## A. Disponibilite en direct\n\n" + "\n".join(a) + "\n\n"
         f"## B. Balayage du sitemap en direct\n\n" + "\n".join(b) + "\n\n"
         f"## C. Liens et images sur disque\n\n" + "\n".join(c) + "\n\n"
@@ -721,14 +875,18 @@ def main():
         f"## I. Ancres internes\n\n" + "\n".join(i) + "\n\n"
         f"## J. Reciprocite hreflang\n\n" + "\n".join(j) + "\n\n"
         f"## K. Liens de sources\n\n" + "\n".join(k) + "\n\n"
-        + bloc("CRITIQUE", critique) + "\n" + bloc("MOYEN", moyen) + "\n" + bloc("COSMETIQUE", cosmetique)
+        f"## L. Indexation (Search Console)\n\n" + "\n".join(l) + "\n\n"
+        + bloc("CRITIQUE", critique) + "\n" + bloc("MOYEN", moyen_reel) + "\n"
+        + bloc("DETTE CONNUE (n'affecte pas le statut)", dette) + "\n"
+        + bloc("COSMETIQUE", cosmetique)
     )
 
     (ROOT / "automation" / "health-report.md").write_text(rapport, encoding="utf-8")
     with (ROOT / "automation" / "health-history.log").open("a", encoding="utf-8") as h:
         h.write(f"{maintenant:%Y-%m-%d} | {statut} | {len(critique)} problemes critiques | 0 corriges\n")
 
-    print(f"STATUT {statut} | critiques {len(critique)} | moyens {len(moyen)} | cosmetiques {len(cosmetique)}")
+    print(f"STATUT {statut} | critiques {len(critique)} | moyens {len(moyen_reel)} "
+          f"| dette {len(dette)} | cosmetiques {len(cosmetique)}")
     for x in critique[:10]:
         print("  CRITIQUE:", x)
     return 1 if critique else 0

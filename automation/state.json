@@ -2,11 +2,7 @@
   "run": 32,
   "next_market_index": 0,
   "next_type": "advice",
-  "recent_markets": [
-    "Bresil-Portugal/pt",
-    "Afrique de l Ouest/fr",
-    "Philippines/en"
-  ],
+  "recent_markets": [],
   "last_type": "comparison",
   "priority_topics": [],
   "published": [
@@ -52,5 +48,28 @@
     "square-toast-clover-loyverse-comparison",
     "balanza-y-facturacion-abasto-venezuela",
     "loyverse-vs-peddlr-pos-philippines"
-  ]
+  ],
+  "pause_publication_jusquau": "2026-09-20",
+  "pause_raison": "Search Console du 04/09/2026 : 40 pages dans l'index contre 89 hors index, dont 68 « Detectee, actuellement non indexee ». Google trouve les URLs et refuse d'y depenser du crawl ; publier davantage dilue ce qui reste. Deux semaines sans nouvelle page pour laisser l'existant se faire explorer.",
+  "rotation": {
+    "lignes": 17,
+    "reponderee_le": "2026-09-06",
+    "sur": "3 mois de Search Console, 02/07 au 02/09/2026",
+    "poids": {
+      "Philippines": 3,
+      "Cote d'Ivoire": 2,
+      "Kenya": 2,
+      "Bresil": 2,
+      "Mexique": 2,
+      "Senegal": 1,
+      "Nigeria": 1,
+      "RD Congo": 1,
+      "France": 1,
+      "Espagne": 1,
+      "USA": 1,
+      "Portugal": 0,
+      "Royaume-Uni": 0
+    },
+    "table": "voir brief-publisher.md, elle y fait foi"
+  }
 }

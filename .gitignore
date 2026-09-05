@@ -21,3 +21,8 @@ skills-lock.json
 
 # Python : le controle de sante laisse son cache derriere lui
 __pycache__/
+
+# Exports Search Console bruts. Seul le resume derive, automation/gsc-index.json,
+# est versionne : il pese quelques kilo-octets et se relit dans une revue de code,
+# la ou un classeur Excel ne se relit pas.
+automation/gsc/*.xlsx

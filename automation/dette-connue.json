@@ -1,0 +1,47 @@
+{
+  "_lisez_moi": "Problemes MOYEN deja identifies, expliques et assumes. Ils restent listes dans le rapport mais ne font plus basculer le statut global. Le texte de 'motif' doit correspondre EXACTEMENT a la ligne produite par le controle : un probleme voisin mais different ne correspondra pas, restera en MOYEN, et rallumera le voyant.",
+  "entrees": [
+    {
+      "motif": "Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `calculateur-cout-caisse.html`, `en/cash-flow-management-small-business.html`, `es/alta-sat-resico-pequenos-negocios.html`, `pt/software-faturacao-certificada-portugal.html`",
+      "depuis": "2026-09-06",
+      "raison": "dedoublonnage du 02/09 : les 13 emplacements servis par la reserve sont faits, ces 7 groupes attendent une image generee, prompts A1 a A10 dans PROMPTS-IMAGES.md",
+      "leve_par": "poser la photo generee au slug indique par le prompt"
+    },
+    {
+      "motif": "Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `en/best-pos-system-small-business.html`, `logiciel-caisse-epicerie.html`",
+      "depuis": "2026-09-06",
+      "raison": "dedoublonnage du 02/09 : les 13 emplacements servis par la reserve sont faits, ces 7 groupes attendent une image generee, prompts A1 a A10 dans PROMPTS-IMAGES.md",
+      "leve_par": "poser la photo generee au slug indique par le prompt"
+    },
+    {
+      "motif": "Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `en/etims-compliant-pos-kenya.html`, `sw/index.html`, `sw/mfumo-wa-pos-kenya.html`",
+      "depuis": "2026-09-06",
+      "raison": "dedoublonnage du 02/09 : les 13 emplacements servis par la reserve sont faits, ces 7 groupes attendent une image generee, prompts A1 a A10 dans PROMPTS-IMAGES.md",
+      "leve_par": "poser la photo generee au slug indique par le prompt"
+    },
+    {
+      "motif": "Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `en/hidden-pos-fees.html`, `en/pos-total-cost-calculator.html`",
+      "depuis": "2026-09-06",
+      "raison": "dedoublonnage du 02/09 : les 13 emplacements servis par la reserve sont faits, ces 7 groupes attendent une image generee, prompts A1 a A10 dans PROMPTS-IMAGES.md",
+      "leve_par": "poser la photo generee au slug indique par le prompt"
+    },
+    {
+      "motif": "Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `es/tpv-para-fruteria.html`, `logiciel-caisse-primeur.html`, `pt/pdv-para-mercadinho.html`",
+      "depuis": "2026-09-06",
+      "raison": "dedoublonnage du 02/09 : les 13 emplacements servis par la reserve sont faits, ces 7 groupes attendent une image generee, prompts A1 a A10 dans PROMPTS-IMAGES.md",
+      "leve_par": "poser la photo generee au slug indique par le prompt"
+    },
+    {
+      "motif": "Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `es/tpv-para-vinoteca.html`, `logiciel-caisse-bar.html`, `pt/pdv-para-adega.html`",
+      "depuis": "2026-09-06",
+      "raison": "dedoublonnage du 02/09 : les 13 emplacements servis par la reserve sont faits, ces 7 groupes attendent une image generee, prompts A1 a A10 dans PROMPTS-IMAGES.md",
+      "leve_par": "poser la photo generee au slug indique par le prompt"
+    },
+    {
+      "motif": "Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `pt/calculadora-custo-pdv.html`, `pt/sistema-pdv-nfce-brasil.html`",
+      "depuis": "2026-09-06",
+      "raison": "dedoublonnage du 02/09 : les 13 emplacements servis par la reserve sont faits, ces 7 groupes attendent une image generee, prompts A1 a A10 dans PROMPTS-IMAGES.md",
+      "leve_par": "poser la photo generee au slug indique par le prompt"
+    }
+  ]
+}
