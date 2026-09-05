@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/en/pharmacy-pos-system-southeast-asia.html",
+      "destination": "/en/pharmacy-pos-system-philippines.html",
+      "permanent": true
+    },
+    {
       "source": "/index.html",
       "destination": "/",
       "permanent": true

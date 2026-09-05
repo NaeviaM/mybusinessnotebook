@@ -4,7 +4,17 @@
   "next_type": "advice",
   "recent_markets": [],
   "last_type": "comparison",
-  "priority_topics": [],
+  "priority_topics": [
+    {
+      "market": "Philippines",
+      "market_index": 0,
+      "lang": "en",
+      "type": "advice",
+      "topic": "Managing utang in a sari-sari store: who to trust, how much, how to collect without a fight",
+      "pourquoi": "La demande est reelle et se formule en tagalog (« paano singilin ang utang », « paano hindi malugi »), et les seuls resultats qui repondent sont les blogs produits de Peddlr et de Lista. Il n'existe aucun guide neutre. Le site a deja la preuve que cette forme marche : sari-sari-store-stock-shrinkage.html est en position 7,1 avec 7,1 % de CTR, le meilleur rapport du site.",
+      "constraint": "CONSEIL PUR, PAS UN COMPARATIF. en/loyverse-vs-peddlr-pos-philippines.html traite deja l'utang comme un face a face Loyverse/Peddlr sur 2529 mots : ne pas le refaire, ne pas comparer de logiciels ici, ne pas reprendre ses H2. Cet article-ci parle de la METHODE : a qui accorder, quel plafond, quand relancer, comment relancer sans casser la relation avec un suki, quand arreter. Le POS n'arrive qu'a la fin, en un bloc. Y renvoyer par un lien contextuel, et l'inverse aussi. Construire les H2 et la FAQ sur les formulations tagalog reellement collectees."
+    }
+  ],
   "published": [
     "facture-normalisee-coupure-reseau",
     "caisse-plusieurs-portefeuilles-mobile-money",
@@ -42,7 +52,7 @@
     "sari-sari-store-stock-shrinkage",
     "logiciel-caisse-boutique-cote-ivoire",
     "logiciel-caisse-pharmacie-afrique-ouest",
-    "pharmacy-pos-system-southeast-asia",
+    "pharmacy-pos-system-philippines",
     "dual-currency-pos-zimbabwe",
     "tpv-multimoneda-venezuela",
     "square-toast-clover-loyverse-comparison",
