@@ -63,22 +63,31 @@
   "pause_raison": "Search Console du 04/09/2026 : 40 pages dans l'index contre 89 hors index, dont 68 « Detectee, actuellement non indexee ». Google trouve les URLs et refuse d'y depenser du crawl ; publier davantage dilue ce qui reste. Deux semaines sans nouvelle page pour laisser l'existant se faire explorer.",
   "rotation": {
     "lignes": 17,
-    "reponderee_le": "2026-09-06",
-    "sur": "3 mois de Search Console, 02/07 au 02/09/2026",
+    "reponderee_le": "2026-09-06 (2e passe, sur les clics)",
+    "regle": "les creneaux suivent les clics, pas les impressions",
+    "sur": "3 mois de Search Console, 02/07 au 02/09/2026 : 21 clics, 15614 impressions",
+    "rendement_par_marche": {
+      "RD Congo": "4 clics / 11 imp = 36,4 % CTR, pos 1,6 (echantillon minuscule, pic du 03/07)",
+      "Cote d'Ivoire": "1 clic / 21 imp = 4,8 % CTR, pos 9,7",
+      "Philippines": "10 clics / 1541 imp = 0,65 % CTR, pos 33 (seul marche avec clics ET volume)",
+      "Royaume-Uni": "1 clic / 1668 imp = 0,06 % CTR, pos 51",
+      "Etats-Unis": "5 clics / 8835 imp = 0,06 % CTR, pos 50",
+      "tous les autres": "0 clic"
+    },
     "poids": {
-      "Philippines": 3,
-      "Cote d'Ivoire": 2,
-      "Kenya": 2,
+      "Philippines": 4,
+      "Cote d'Ivoire": 3,
+      "RD Congo": 3,
+      "Kenya": 3,
       "Bresil": 2,
-      "Mexique": 2,
       "Senegal": 1,
-      "Nigeria": 1,
-      "RD Congo": 1,
-      "France": 1,
-      "Espagne": 1,
-      "USA": 1,
+      "Mexique": 1,
+      "France": 0,
+      "Espagne": 0,
+      "USA": 0,
+      "Royaume-Uni": 0,
       "Portugal": 0,
-      "Royaume-Uni": 0
+      "Nigeria": 0
     },
     "table": "voir brief-publisher.md, elle y fait foi"
   }
