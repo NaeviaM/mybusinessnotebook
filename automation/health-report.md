@@ -1,6 +1,6 @@
-# Rapport de sante, 2026-09-07 10:21 UTC
+# Rapport de sante, 2026-09-07 20:10 UTC
 
-VERIF LIVE : EFFECTUEE
+VERIF LIVE : IMPOSSIBLE (mode --disk-only)
 
 **STATUT GLOBAL : OK**
 
@@ -10,17 +10,11 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## A. Disponibilite en direct
 
-- apex : `200`
-- www : `200`
-- secours Vercel : `200`
-- accueil EN : `200`
-- accueil ES : `200`
-- accueil PT : `200`
-- accueil SW : `200`
+- Sautee (mode --disk-only).
 
 ## B. Balayage du sitemap en direct
 
-- 125 URLs testees, 0 en echec
+- Sautee (mode --disk-only).
 
 ## C. Liens et images sur disque
 
@@ -45,7 +39,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 ## H. Coherence des visuels
 
 - 124 familles d'images sur 5 langues, 122 affichees, 2 en reserve
-- 0 variante(s) desynchronisee(s), 0 photo(s) empruntee(s) a la reserve, 7 groupe(s) d'articles differents illustres pareil
+- 0 variante(s) desynchronisee(s), 0 photo(s) empruntee(s) a la reserve, 8 groupe(s) d'articles differents illustres pareil
 
 ## I. Ancres internes
 
@@ -57,7 +51,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## K. Liens de sources
 
-- Sautee : deja passee le 2026-09-04 (une fois par semaine, `--liens` pour forcer).
+- Sautee (mode --disk-only).
 
 ## L. Indexation (Search Console)
 
@@ -84,6 +78,8 @@ Aucun probleme trouve.
   - _accepte le 2026-09-06 : dedoublonnage du 02/09 : les 13 emplacements servis par la reserve sont faits, ces 7 groupes attendent une image generee, prompts A1 a A10 dans PROMPTS-IMAGES.md_
 - Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `en/best-pos-system-small-business.html`, `logiciel-caisse-epicerie.html`
   - _accepte le 2026-09-06 : dedoublonnage du 02/09 : les 13 emplacements servis par la reserve sont faits, ces 7 groupes attendent une image generee, prompts A1 a A10 dans PROMPTS-IMAGES.md_
+- Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `en/candy-store-pos-system.html`, `es/tpv-para-chocolateria.html`, `logiciel-caisse-chocolaterie.html`, `pt/pdv-para-doceria.html`
+  - _accepte le 2026-09-07 : consequence assumee de la separation des grappes du 07/09 : ces quatre pages partageaient une photo parce qu'elles formaient une seule famille de traductions. La page anglaise bonbons et la doceria bresilienne sont desormais une grappe a part, la chocolaterie FR et ES en sont une autre, et la photo de vitrine a pralines n'appartient plus qu'a la seconde. Prompt A11 dans PROMPTS-IMAGES.md pour la photo de confiserie en vrac qui manque aux deux premieres._
 - Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `en/etims-compliant-pos-kenya.html`, `sw/index.html`, `sw/mfumo-wa-pos-kenya.html`
   - _accepte le 2026-09-06 : dedoublonnage du 02/09 : les 13 emplacements servis par la reserve sont faits, ces 7 groupes attendent une image generee, prompts A1 a A10 dans PROMPTS-IMAGES.md_
 - Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `en/hidden-pos-fees.html`, `en/pos-total-cost-calculator.html`

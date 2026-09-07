@@ -42,6 +42,12 @@
       "depuis": "2026-09-06",
       "raison": "dedoublonnage du 02/09 : les 13 emplacements servis par la reserve sont faits, ces 7 groupes attendent une image generee, prompts A1 a A10 dans PROMPTS-IMAGES.md",
       "leve_par": "poser la photo generee au slug indique par le prompt"
+    },
+    {
+      "motif": "Meme photo sur des articles qui ne sont pas traductions l'un de l'autre : `en/candy-store-pos-system.html`, `es/tpv-para-chocolateria.html`, `logiciel-caisse-chocolaterie.html`, `pt/pdv-para-doceria.html`",
+      "depuis": "2026-09-07",
+      "raison": "consequence assumee de la separation des grappes du 07/09 : ces quatre pages partageaient une photo parce qu'elles formaient une seule famille de traductions. La page anglaise bonbons et la doceria bresilienne sont desormais une grappe a part, la chocolaterie FR et ES en sont une autre, et la photo de vitrine a pralines n'appartient plus qu'a la seconde. Prompt A11 dans PROMPTS-IMAGES.md pour la photo de confiserie en vrac qui manque aux deux premieres.",
+      "leve_par": "poser la photo A11 sur en/img/candy-store-pos-system et pt/img/pdv-para-doceria"
     }
   ]
 }
