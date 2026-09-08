@@ -1,6 +1,6 @@
-# Rapport de sante, 2026-09-07 20:10 UTC
+# Rapport de sante, 2026-09-08 07:31 UTC
 
-VERIF LIVE : IMPOSSIBLE (mode --disk-only)
+VERIF LIVE : EFFECTUEE
 
 **STATUT GLOBAL : OK**
 
@@ -10,11 +10,17 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## A. Disponibilite en direct
 
-- Sautee (mode --disk-only).
+- apex : `200`
+- www : `200`
+- secours Vercel : `200`
+- accueil EN : `200`
+- accueil ES : `200`
+- accueil PT : `200`
+- accueil SW : `200`
 
 ## B. Balayage du sitemap en direct
 
-- Sautee (mode --disk-only).
+- 125 URLs testees, 0 en echec
 
 ## C. Liens et images sur disque
 
@@ -51,7 +57,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## K. Liens de sources
 
-- Sautee (mode --disk-only).
+- Sautee : deja passee le 2026-09-04 (une fois par semaine, `--liens` pour forcer).
 
 ## L. Indexation (Search Console)
 
