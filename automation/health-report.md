@@ -1,8 +1,8 @@
-# Rapport de sante, 2026-09-10 09:37 UTC
+# Rapport de sante, 2026-09-11 10:10 UTC
 
 VERIF LIVE : EFFECTUEE
 
-**STATUT GLOBAL : DEGRADE**
+**STATUT GLOBAL : OK**
 
 Controle deterministe, sans modele de langage. Remplace l'agent cloud tombe en panne le 04/08/2026. Declenche chaque jour par la tache planifiee Windows `MBN - controle de sante` (voir C:\Users\dell\mbn-automation).
 
@@ -10,11 +10,17 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## A. Disponibilite en direct
 
-- Machine hors ligne, verification impossible (aucune conclusion sur le site).
+- apex : `200`
+- www : `200`
+- secours Vercel : `200`
+- accueil EN : `200`
+- accueil ES : `200`
+- accueil PT : `200`
+- accueil SW : `200`
 
 ## B. Balayage du sitemap en direct
 
-- Reseau indisponible, balayage impossible (aucune conclusion sur le site).
+- 125 URLs testees, 0 en echec
 
 ## C. Liens et images sur disque
 
@@ -51,7 +57,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## K. Liens de sources
 
-- Sautee : deja passee le 2026-09-04 (une fois par semaine, `--liens` pour forcer).
+- 125 liens de sources testes, 0 mort(s), 1 deplace(s), 1 sans reponse, 17 non testable(s) (anti-robot)
 
 ## L. Indexation (Search Console)
 
@@ -70,8 +76,7 @@ Aucun probleme trouve.
 
 ## MOYEN
 
-- Machine sans acces reseau : la disponibilite du site n'a PAS pu etre verifiee. Ce n'est pas une panne du site.
-- sitemap.xml non joignable depuis cette machine (reseau local).
+Aucun probleme trouve.
 
 ## DETTE CONNUE (n'affecte pas le statut)
 
@@ -94,4 +99,5 @@ Aucun probleme trouve.
 
 ## COSMETIQUE
 
-Aucun probleme trouve.
+- Source deplacee : https://cfinance.news/index.php/fr/fintech/mobile-money/1420-paiements-instantanes-le-mobile-money-une-nouvelle-caisse-de-confiance-des-commercantes-burkinabe-2 arrive sur https://cfinance.news/article/paiements-instantanes-le-mobile-money-une-nouvelle-caisse-de-confiance-des-commercantes-burkinabe-2/ (`caisse-plusieurs-portefeuilles-mobile-money.html`)
+- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://www.rbz.co.zw/ (`en/dual-currency-pos-zimbabwe.html`)
