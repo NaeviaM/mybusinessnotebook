@@ -1,4 +1,4 @@
-# Rapport de sante, 2026-09-11 10:10 UTC
+# Rapport de sante, 2026-09-12 15:36 UTC
 
 VERIF LIVE : EFFECTUEE
 
@@ -57,7 +57,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## K. Liens de sources
 
-- 125 liens de sources testes, 0 mort(s), 1 deplace(s), 1 sans reponse, 17 non testable(s) (anti-robot)
+- Sautee : deja passee le 2026-09-11 (une fois par semaine, `--liens` pour forcer).
 
 ## L. Indexation (Search Console)
 
@@ -99,5 +99,4 @@ Aucun probleme trouve.
 
 ## COSMETIQUE
 
-- Source deplacee : https://cfinance.news/index.php/fr/fintech/mobile-money/1420-paiements-instantanes-le-mobile-money-une-nouvelle-caisse-de-confiance-des-commercantes-burkinabe-2 arrive sur https://cfinance.news/article/paiements-instantanes-le-mobile-money-une-nouvelle-caisse-de-confiance-des-commercantes-burkinabe-2/ (`caisse-plusieurs-portefeuilles-mobile-money.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://www.rbz.co.zw/ (`en/dual-currency-pos-zimbabwe.html`)
+Aucun probleme trouve.
