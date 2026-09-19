@@ -1,8 +1,8 @@
-# Rapport de sante, 2026-09-18 13:36 UTC
+# Rapport de sante, 2026-09-19 08:06 UTC
 
 VERIF LIVE : EFFECTUEE
 
-**STATUT GLOBAL : DEGRADE**
+**STATUT GLOBAL : OK**
 
 Controle deterministe, sans modele de langage. Remplace l'agent cloud tombe en panne le 04/08/2026. Declenche chaque jour par la tache planifiee Windows `MBN - controle de sante` (voir C:\Users\dell\mbn-automation).
 
@@ -10,11 +10,17 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## A. Disponibilite en direct
 
-- Machine hors ligne, verification impossible (aucune conclusion sur le site).
+- apex : `200`
+- www : `200`
+- secours Vercel : `200`
+- accueil EN : `200`
+- accueil ES : `200`
+- accueil PT : `200`
+- accueil SW : `200`
 
 ## B. Balayage du sitemap en direct
 
-- Reseau indisponible, balayage impossible (aucune conclusion sur le site).
+- 125 URLs testees, 0 en echec
 
 ## C. Liens et images sur disque
 
@@ -51,7 +57,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## K. Liens de sources
 
-- 125 liens de sources testes, 0 mort(s), 0 deplace(s), 102 sans reponse, 23 non testable(s) (anti-robot)
+- Sautee : deja passee le 2026-09-18 (une fois par semaine, `--liens` pour forcer).
 
 ## L. Indexation (Search Console)
 
@@ -70,8 +76,7 @@ Aucun probleme trouve.
 
 ## MOYEN
 
-- Machine sans acces reseau : la disponibilite du site n'a PAS pu etre verifiee. Ce n'est pas une panne du site.
-- sitemap.xml non joignable depuis cette machine (reseau local).
+Aucun probleme trouve.
 
 ## DETTE CONNUE (n'affecte pas le statut)
 
@@ -94,44 +99,4 @@ Aucun probleme trouve.
 
 ## COSMETIQUE
 
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://apps.shopify.com/shopify-pos/reviews (`en/frozen-merchant-funds.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://bofip.impots.gouv.fr/bofip/11435-PGP.html/identifiant=ACTU-2018-00102 (`digablopos-ou-sumup.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://candyusa.com/news/consumers-are-making-seasons-bright-with-chocolate-and-candy/ (`en/chocolate-shop-pos-system.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://cfinance.news/index.php/fr/fintech/mobile-money/1420-paiements-instantanes-le-mobile-money-une-nouvelle-caisse-de-confiance-des-commercantes-burkinabe-2 (`caisse-plusieurs-portefeuilles-mobile-money.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://clientebancario.bde.es/pcb/es/menu-horizontal/podemosayudarte/consultasreclama/comorealizarrecl/ (`es/dinero-retenido-cuenta-bloqueada.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://clip.mx (`es/clip-mercado-pago-sumup-mexico.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://digablopos.fr/en?s=mybusinessnotebook (`en/bar-pos-system.html`, `en/best-free-pos-system-2026.html`, `en/best-pos-system-kenya-duka-2026.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://digablopos.fr/es?s=mybusinessnotebook (`es/balanza-y-facturacion-abasto-venezuela.html`, `es/calculadora-comisiones-cobro.html`, `es/calculadora-coste-tpv.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://digablopos.fr/fr?s=mybusinessnotebook (`caisse-enregistreuse-restaurant.html`, `caisse-plusieurs-portefeuilles-mobile-money.html`, `calculateur-cout-caisse.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://digablopos.fr/pt?s=mybusinessnotebook (`pt/calculadora-custo-pdv.html`, `pt/calculadora-taxas-recebimento.html`, `pt/comparativo-stone-pagbank-mercado-pago.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://fr.tradingview.com/news/afp:fb3263c637f39:0/ (`gerer-caisse-dollar-franc-congolais-kinshasa.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://glop.es/ (`es/tpv-para-floristeria.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://help.sumup.com/ (`calculateur-frais-encaissement.html`, `comparatif-logiciels-caisse-gratuits-2026.html`, `comparatif-sumup-zettle-tiller-addition.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://info.portaldasfinancas.gov.pt/ (`pt/pdv-para-restauracao-portugal.html`, `pt/reduzir-taxas-cartao-comercio-portugal.html`, `pt/software-faturacao-certificada-portugal.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://lawphil.net/statutes/repacts/ra1988/ra_6675_1988.html (`en/pharmacy-pos-system-philippines.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://lawphil.net/statutes/repacts/ra2024/ra_11976_2024.html (`en/loyverse-vs-peddlr-pos-philippines.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://loyverse.town/topic/4801-credit-sales/ (`en/loyverse-vs-peddlr-pos-philippines.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://mincomercionacional.gob.ve/ (`es/balanza-y-facturacion-abasto-venezuela.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://nairametrics.com/2020/05/31/just-in-cbn-revises-timelines-for-resolution-of-dispense-errors-refund-complaints/ (`en/fake-alert-scams-pos-nigeria.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://nairobiwire.com/2026/07/safaricom-warns-mpesa-shiriki-pay-fraud.html (`en/mpesa-scam-protection-kenya-shops.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://ordrepharmacien.ci/ (`logiciel-caisse-pharmacie-afrique-ouest.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://pinoynegosyo.net/expired-sari-sari-store-goods-3786.html (`en/sari-sari-store-stock-shrinkage.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://pinoynegosyo.net/sari-sari-store-inventory-5592.html (`en/sari-sari-store-stock-shrinkage.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://play.google.com/store/apps/details?id=com.nequi.negocios&amp;hl=es_CO&amp;gl=CO (`es/dinero-retenido-cuenta-bloqueada.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://play.google.com/store/apps/details?id=io.cloudwalk.infinitepaydash&amp;hl=pt_BR&amp;gl=BR (`pt/dinheiro-retido-conta-bloqueada.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://pressivoire.com/article/chert-de-la-vie-dlestage-cest-la-faillite-programme-pour-les-commerants-dembl-mohamed-prsident-de-lunion-des-commerants-de-cte-divoire (`facture-normalisee-coupure-reseau.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://regardguinee.org/frais-retraits-orange-money-guinee-crise-liquidite/ (`caisse-plusieurs-portefeuilles-mobile-money.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://sede.agenciatributaria.gob.es/ (`es/sistema-tpv-verifactu-espana.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://senegaldirect.com/grand-yoff-il-detourne-la-caisse-de-son-employeur-pour-financer-son-projet-demigration-et-ecope-de-trois-mois-de-prison/ (`vol-gerant-boutique-detecter-avant-inventaire.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://senego.com/abus-de-confiance-a-10-millions-un-commercant-retrouve-ses-marchandises-volees-dans-une-boutique-a-guediawaye_1989562.html (`vol-gerant-boutique-detecter-avant-inventaire.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://squareup.com/help/ (`en/bar-pos-system.html`, `en/best-free-pos-system-2026.html`, `en/best-pos-system-small-business.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://squareup.com/help/us/en/article/5068-what-are-square-s-fees (`en/digablopos-vs-square.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://squareup.com/help/us/en/article/5085-accepted-cards (`es/clip-mercado-pago-sumup-mexico.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://squareup.com/help/us/en/article/7419-scanning-bar-codes-from-label-printing-scales-on-point-of-sale (`en/chocolate-shop-pos-system.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://squareup.com/help/us/en/article/7777-process-card-payments-with-offline-mode (`en/digablopos-vs-square.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://squareup.com/us/en/payments/our-fees (`en/square-toast-clover-loyverse-comparison.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://squareup.com/us/en/pricing (`en/digablopos-vs-square.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://thekenyatimes.com/latest-kenya-times-news/eastleigh-m-pesa-reversal/ (`en/mpesa-scam-protection-kenya-shops.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://ubiipagos.com/ (`es/pagar-suscripciones-en-linea-venezuela-sin-tarjeta.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://www.asambleanacional.gob.ve/ (`es/balanza-y-facturacion-abasto-venezuela.html`)
-- ... et 62 autre(s)
+Aucun probleme trouve.
