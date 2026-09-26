@@ -1,4 +1,4 @@
-# Rapport de sante, 2026-09-25 15:44 UTC
+# Rapport de sante, 2026-09-26 08:42 UTC
 
 VERIF LIVE : EFFECTUEE
 
@@ -57,7 +57,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## K. Liens de sources
 
-- Sautee : deja passee le 2026-09-23 (une fois par semaine, `--liens` pour forcer).
+- 125 liens de sources testes, 0 mort(s), 2 deplace(s), 3 sans reponse, 16 non testable(s) (anti-robot)
 
 ## L. Indexation (Search Console)
 
@@ -99,4 +99,8 @@ Aucun probleme trouve.
 
 ## COSMETIQUE
 
-Aucun probleme trouve.
+- Source deplacee : https://cfinance.news/index.php/fr/fintech/mobile-money/1420-paiements-instantanes-le-mobile-money-une-nouvelle-caisse-de-confiance-des-commercantes-burkinabe-2 arrive sur https://cfinance.news/article/paiements-instantanes-le-mobile-money-une-nouvelle-caisse-de-confiance-des-commercantes-burkinabe-2/ (`caisse-plusieurs-portefeuilles-mobile-money.html`)
+- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://www.dgid.sn/ (`facture-normalisee-coupure-reseau.html`, `logiciel-caisse-boutique-senegal.html`, `logiciel-caisse-facture-normalisee-afrique-ouest.html`)
+- Source deplacee : https://www.ecommercebytes.com/2023/09/08/square-outage-leaves-merchants-unable-to-process-payments/ arrive sur https://ecommercebytes.com/ (`en/pos-outage-what-to-do.html`)
+- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://www.osiris.sn/Code-toxique-faux-agent-telephone.html (`caisse-plusieurs-portefeuilles-mobile-money.html`)
+- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://www.rbz.co.zw/ (`en/dual-currency-pos-zimbabwe.html`)
