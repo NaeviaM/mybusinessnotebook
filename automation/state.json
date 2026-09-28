@@ -59,8 +59,8 @@
     "balanza-y-facturacion-abasto-venezuela",
     "loyverse-vs-peddlr-pos-philippines"
   ],
-  "pause_publication_jusquau": "2026-09-20",
-  "pause_raison": "Search Console du 04/09/2026 : 40 pages dans l'index contre 89 hors index, dont 68 « Detectee, actuellement non indexee ». Google trouve les URLs et refuse d'y depenser du crawl ; publier davantage dilue ce qui reste. Deux semaines sans nouvelle page pour laisser l'existant se faire explorer.",
+  "pause_publication_jusquau": "2026-12-31",
+  "pause_raison": "Pause prolongee le 29/09/2026 a la demande du user : le travail se concentre sur gokaptor. Pour reprendre, retirer pause_publication_jusquau.",
   "rotation": {
     "lignes": 17,
     "reponderee_le": "2026-09-06 (2e passe, sur les clics)",
