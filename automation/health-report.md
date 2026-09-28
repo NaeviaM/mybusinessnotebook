@@ -1,8 +1,8 @@
-# Rapport de sante, 2026-09-27 09:25 UTC
+# Rapport de sante, 2026-09-28 20:25 UTC
 
 VERIF LIVE : EFFECTUEE
 
-**STATUT GLOBAL : OK**
+**STATUT GLOBAL : DEGRADE**
 
 Controle deterministe, sans modele de langage. Remplace l'agent cloud tombe en panne le 04/08/2026. Declenche chaque jour par la tache planifiee Windows `MBN - controle de sante` (voir C:\Users\dell\mbn-automation).
 
@@ -10,17 +10,11 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## A. Disponibilite en direct
 
-- apex : `200`
-- www : `200`
-- secours Vercel : `200`
-- accueil EN : `200`
-- accueil ES : `200`
-- accueil PT : `200`
-- accueil SW : `200`
+- Machine hors ligne, verification impossible (aucune conclusion sur le site).
 
 ## B. Balayage du sitemap en direct
 
-- 125 URLs testees, 0 en echec
+- Reseau indisponible, balayage impossible (aucune conclusion sur le site).
 
 ## C. Liens et images sur disque
 
@@ -57,7 +51,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## K. Liens de sources
 
-- 125 liens de sources testes, 0 mort(s), 2 deplace(s), 2 sans reponse, 16 non testable(s) (anti-robot)
+- Sautee : deja passee le 2026-09-27 (une fois par semaine, `--liens` pour forcer).
 
 ## L. Indexation (Search Console)
 
@@ -76,7 +70,8 @@ Aucun probleme trouve.
 
 ## MOYEN
 
-Aucun probleme trouve.
+- Machine sans acces reseau : la disponibilite du site n'a PAS pu etre verifiee. Ce n'est pas une panne du site.
+- sitemap.xml non joignable depuis cette machine (reseau local).
 
 ## DETTE CONNUE (n'affecte pas le statut)
 
@@ -99,7 +94,4 @@ Aucun probleme trouve.
 
 ## COSMETIQUE
 
-- Source deplacee : https://cfinance.news/index.php/fr/fintech/mobile-money/1420-paiements-instantanes-le-mobile-money-une-nouvelle-caisse-de-confiance-des-commercantes-burkinabe-2 arrive sur https://cfinance.news/article/paiements-instantanes-le-mobile-money-une-nouvelle-caisse-de-confiance-des-commercantes-burkinabe-2/ (`caisse-plusieurs-portefeuilles-mobile-money.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://www.dgid.sn/ (`facture-normalisee-coupure-reseau.html`, `logiciel-caisse-boutique-senegal.html`, `logiciel-caisse-facture-normalisee-afrique-ouest.html`)
-- Source deplacee : https://www.ecommercebytes.com/2023/09/08/square-outage-leaves-merchants-unable-to-process-payments/ arrive sur https://ecommercebytes.com/ (`en/pos-outage-what-to-do.html`)
-- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://www.rbz.co.zw/ (`en/dual-currency-pos-zimbabwe.html`)
+- Resume Search Console vieux de 22 jours : retelecharger les exports et relancer `python automation/gsc_import.py`.
