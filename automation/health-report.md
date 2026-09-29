@@ -1,4 +1,4 @@
-# Rapport de sante, 2026-09-29 08:15 UTC
+# Rapport de sante, 2026-09-29 09:48 UTC
 
 VERIF LIVE : EFFECTUEE
 
@@ -20,15 +20,15 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## B. Balayage du sitemap en direct
 
-- 132 URLs testees, 0 en echec
+- 133 URLs testees, 0 en echec
 
 ## C. Liens et images sur disque
 
-- 133 pages controlees, 0 probleme(s)
+- 146 pages controlees, 0 probleme(s)
 
 ## D. Coherence du sitemap
 
-- 133 entrees, 133 pages sur disque, 0 manquante(s), 0 orpheline(s)
+- 146 entrees, 146 pages sur disque, 0 manquante(s), 0 orpheline(s)
 
 ## E. Balises d'en-tete
 
@@ -44,7 +44,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## H. Coherence des visuels
 
-- 132 familles d'images sur 5 langues, 130 affichees, 2 en reserve
+- 145 familles d'images sur 5 langues, 143 affichees, 2 en reserve
 - 0 variante(s) desynchronisee(s), 0 photo(s) empruntee(s) a la reserve, 8 groupe(s) d'articles differents illustres pareil
 
 ## I. Ancres internes
@@ -53,7 +53,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## J. Reciprocite hreflang
 
-- 133 pages, 0 ecart(s) hreflang
+- 146 pages, 0 ecart(s) hreflang
 
 ## K. Liens de sources
 
@@ -67,7 +67,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
   - Autre page avec balise canonique correcte : 7
   - Explorée, actuellement non indexée : 3
 - 3 mois : 21 clics, 15614 impressions, CTR 0.13 %
-- 93 page(s) jamais vue(s) en recherche sur 133, dont 0 sans aucun lien entrant
+- 106 page(s) jamais vue(s) en recherche sur 146, dont 0 sans aucun lien entrant
 - 10 requete(s) en position 11 a 20, a un cran de la page 1 : « candy store pos system » (225 imp, pos 19.5), « chocolate store pos » (186 imp, pos 18.7), « choco store pos » (178 imp, pos 13.8), « pos options for candy store » (165 imp, pos 19.5)
 
 ## CRITIQUE
