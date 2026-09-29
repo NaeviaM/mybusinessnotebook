@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://mybusinessnotebook.com/attirer-plus-de-clients-commerce.html</loc>
-    <lastmod>2026-08-31</lastmod>
+    <lastmod>2026-09-29</lastmod>
   </url>
   <url>
     <loc>https://mybusinessnotebook.com/bien-gerer-ses-stocks-petit-commerce.html</loc>
@@ -529,5 +529,10 @@
   <url>
     <loc>https://mybusinessnotebook.com/pt/dinheiro-retido-conta-bloqueada.html</loc>
     <lastmod>2026-08-31</lastmod>
+  </url>
+  <url>
+    <loc>https://mybusinessnotebook.com/se-faire-connaitre-ouverture-entreprise.html</loc>
+    <lastmod>2026-09-29</lastmod>
+    <priority>0.8</priority>
   </url>
 </urlset>
