@@ -1,4 +1,4 @@
-# Rapport de sante, 2026-09-29 00:44 UTC
+# Rapport de sante, 2026-09-29 00:56 UTC
 
 VERIF LIVE : EFFECTUEE
 
@@ -20,15 +20,15 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## B. Balayage du sitemap en direct
 
-- 126 URLs testees, 0 en echec
+- 132 URLs testees, 0 en echec
 
 ## C. Liens et images sur disque
 
-- 132 pages controlees, 0 probleme(s)
+- 133 pages controlees, 0 probleme(s)
 
 ## D. Coherence du sitemap
 
-- 132 entrees, 132 pages sur disque, 0 manquante(s), 0 orpheline(s)
+- 133 entrees, 133 pages sur disque, 0 manquante(s), 0 orpheline(s)
 
 ## E. Balises d'en-tete
 
@@ -44,7 +44,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## H. Coherence des visuels
 
-- 131 familles d'images sur 5 langues, 129 affichees, 2 en reserve
+- 132 familles d'images sur 5 langues, 130 affichees, 2 en reserve
 - 0 variante(s) desynchronisee(s), 0 photo(s) empruntee(s) a la reserve, 8 groupe(s) d'articles differents illustres pareil
 
 ## I. Ancres internes
@@ -53,7 +53,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## J. Reciprocite hreflang
 
-- 132 pages, 0 ecart(s) hreflang
+- 133 pages, 0 ecart(s) hreflang
 
 ## K. Liens de sources
 
@@ -67,8 +67,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
   - Autre page avec balise canonique correcte : 7
   - Explorée, actuellement non indexée : 3
 - 3 mois : 21 clics, 15614 impressions, CTR 0.13 %
-- 92 page(s) jamais vue(s) en recherche sur 132, dont 0 sans aucun lien entrant
-- a mailler en priorite (jamais vues, 1 a 2 liens entrants) : `en/how-to-get-your-new-business-noticed.html` (2), `en/sole-trader-how-to-get-customers.html` (2), `es/aparecer-en-google-maps-con-mi-negocio-gratis.html` (2), `independant-complementaire-trouver-clients.html` (2), `pt/abri-atividade-como-conseguir-clientes.html` (2), `trouver-clients-auto-entrepreneur-sans-reseau.html` (2)
+- 93 page(s) jamais vue(s) en recherche sur 133, dont 0 sans aucun lien entrant
 - 10 requete(s) en position 11 a 20, a un cran de la page 1 : « candy store pos system » (225 imp, pos 19.5), « chocolate store pos » (186 imp, pos 18.7), « choco store pos » (178 imp, pos 13.8), « pos options for candy store » (165 imp, pos 19.5)
 
 ## CRITIQUE
