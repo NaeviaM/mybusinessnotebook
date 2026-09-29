@@ -1,8 +1,8 @@
-# Rapport de sante, 2026-09-28 20:25 UTC
+# Rapport de sante, 2026-09-29 00:44 UTC
 
 VERIF LIVE : EFFECTUEE
 
-**STATUT GLOBAL : DEGRADE**
+**STATUT GLOBAL : OK**
 
 Controle deterministe, sans modele de langage. Remplace l'agent cloud tombe en panne le 04/08/2026. Declenche chaque jour par la tache planifiee Windows `MBN - controle de sante` (voir C:\Users\dell\mbn-automation).
 
@@ -10,19 +10,25 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## A. Disponibilite en direct
 
-- Machine hors ligne, verification impossible (aucune conclusion sur le site).
+- apex : `200`
+- www : `200`
+- secours Vercel : `200`
+- accueil EN : `200`
+- accueil ES : `200`
+- accueil PT : `200`
+- accueil SW : `200`
 
 ## B. Balayage du sitemap en direct
 
-- Reseau indisponible, balayage impossible (aucune conclusion sur le site).
+- 126 URLs testees, 0 en echec
 
 ## C. Liens et images sur disque
 
-- 125 pages controlees, 0 probleme(s)
+- 132 pages controlees, 0 probleme(s)
 
 ## D. Coherence du sitemap
 
-- 125 entrees, 125 pages sur disque, 0 manquante(s), 0 orpheline(s)
+- 132 entrees, 132 pages sur disque, 0 manquante(s), 0 orpheline(s)
 
 ## E. Balises d'en-tete
 
@@ -38,7 +44,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## H. Coherence des visuels
 
-- 124 familles d'images sur 5 langues, 122 affichees, 2 en reserve
+- 131 familles d'images sur 5 langues, 129 affichees, 2 en reserve
 - 0 variante(s) desynchronisee(s), 0 photo(s) empruntee(s) a la reserve, 8 groupe(s) d'articles differents illustres pareil
 
 ## I. Ancres internes
@@ -47,7 +53,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## J. Reciprocite hreflang
 
-- 125 pages, 0 ecart(s) hreflang
+- 132 pages, 0 ecart(s) hreflang
 
 ## K. Liens de sources
 
@@ -61,7 +67,8 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
   - Autre page avec balise canonique correcte : 7
   - Explorée, actuellement non indexée : 3
 - 3 mois : 21 clics, 15614 impressions, CTR 0.13 %
-- 85 page(s) jamais vue(s) en recherche sur 125, dont 0 sans aucun lien entrant
+- 92 page(s) jamais vue(s) en recherche sur 132, dont 0 sans aucun lien entrant
+- a mailler en priorite (jamais vues, 1 a 2 liens entrants) : `en/how-to-get-your-new-business-noticed.html` (2), `en/sole-trader-how-to-get-customers.html` (2), `es/aparecer-en-google-maps-con-mi-negocio-gratis.html` (2), `independant-complementaire-trouver-clients.html` (2), `pt/abri-atividade-como-conseguir-clientes.html` (2), `trouver-clients-auto-entrepreneur-sans-reseau.html` (2)
 - 10 requete(s) en position 11 a 20, a un cran de la page 1 : « candy store pos system » (225 imp, pos 19.5), « chocolate store pos » (186 imp, pos 18.7), « choco store pos » (178 imp, pos 13.8), « pos options for candy store » (165 imp, pos 19.5)
 
 ## CRITIQUE
@@ -70,8 +77,7 @@ Aucun probleme trouve.
 
 ## MOYEN
 
-- Machine sans acces reseau : la disponibilite du site n'a PAS pu etre verifiee. Ce n'est pas une panne du site.
-- sitemap.xml non joignable depuis cette machine (reseau local).
+Aucun probleme trouve.
 
 ## DETTE CONNUE (n'affecte pas le statut)
 
@@ -94,4 +100,4 @@ Aucun probleme trouve.
 
 ## COSMETIQUE
 
-- Resume Search Console vieux de 22 jours : retelecharger les exports et relancer `python automation/gsc_import.py`.
+- Resume Search Console vieux de 23 jours : retelecharger les exports et relancer `python automation/gsc_import.py`.
