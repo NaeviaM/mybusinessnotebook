@@ -1,4 +1,4 @@
-# Rapport de sante, 2026-09-29 09:48 UTC
+# Rapport de sante, 2026-09-30 07:30 UTC
 
 VERIF LIVE : EFFECTUEE
 
@@ -20,7 +20,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## B. Balayage du sitemap en direct
 
-- 133 URLs testees, 0 en echec
+- 146 URLs testees, 0 en echec
 
 ## C. Liens et images sur disque
 
@@ -99,4 +99,4 @@ Aucun probleme trouve.
 
 ## COSMETIQUE
 
-- Resume Search Console vieux de 23 jours : retelecharger les exports et relancer `python automation/gsc_import.py`.
+- Resume Search Console vieux de 24 jours : retelecharger les exports et relancer `python automation/gsc_import.py`.
