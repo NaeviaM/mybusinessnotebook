@@ -1,4 +1,4 @@
-# Rapport de sante, 2026-10-07 11:13 UTC
+# Rapport de sante, 2026-10-08 10:06 UTC
 
 VERIF LIVE : EFFECTUEE
 
@@ -99,4 +99,4 @@ Aucun probleme trouve.
 
 ## COSMETIQUE
 
-- Resume Search Console vieux de 31 jours : retelecharger les exports et relancer `python automation/gsc_import.py`.
+- Resume Search Console vieux de 32 jours : retelecharger les exports et relancer `python automation/gsc_import.py`.
