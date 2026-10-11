@@ -1,8 +1,8 @@
-# Rapport de sante, 2026-10-10 11:00 UTC
+# Rapport de sante, 2026-10-11 07:55 UTC
 
 VERIF LIVE : EFFECTUEE
 
-**STATUT GLOBAL : OK**
+**STATUT GLOBAL : DEGRADE**
 
 Controle deterministe, sans modele de langage. Remplace l'agent cloud tombe en panne le 04/08/2026. Declenche chaque jour par la tache planifiee Windows `MBN - controle de sante` (voir C:\Users\dell\mbn-automation).
 
@@ -57,7 +57,7 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## K. Liens de sources
 
-- Sautee : deja passee le 2026-10-04 (une fois par semaine, `--liens` pour forcer).
+- 262 liens de sources testes, 2 mort(s), 8 deplace(s), 12 sans reponse, 20 non testable(s) (anti-robot)
 
 ## L. Indexation (Search Console)
 
@@ -76,7 +76,8 @@ Aucun probleme trouve.
 
 ## MOYEN
 
-Aucun probleme trouve.
+- Source morte (`404`) : https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business (`en/how-to-get-your-new-business-noticed.html`, `en/how-to-market-a-small-business-locally.html`)
+- Source morte (`404`) : https://www.ftc.gov/business-guidance/resources/consumer-reviews-testimonials-rule-questions-answers (`en/get-business-on-google-maps-free.html`, `en/how-to-market-a-small-business-locally.html`)
 
 ## DETTE CONNUE (n'affecte pas le statut)
 
@@ -99,4 +100,24 @@ Aucun probleme trouve.
 
 ## COSMETIQUE
 
-- Resume Search Console vieux de 34 jours : retelecharger les exports et relancer `python automation/gsc_import.py`.
+- Source deplacee : https://asic.gov.au/for-business/registering-a-business-name/ arrive sur https://www.asic.gov.au/for-business-and-companies/business-names/register-a-business-name (`en/got-your-abn-get-first-customers.html`)
+- Source deplacee : https://cfinance.news/index.php/fr/fintech/mobile-money/1420-paiements-instantanes-le-mobile-money-une-nouvelle-caisse-de-confiance-des-commercantes-burkinabe-2 arrive sur https://cfinance.news/article/paiements-instantanes-le-mobile-money-une-nouvelle-caisse-de-confiance-des-commercantes-burkinabe-2/ (`caisse-plusieurs-portefeuilles-mobile-money.html`)
+- Source sans reponse (`400`) au moment du controle, a revoir au prochain passage : https://faq.whatsapp.com/1791149784551042/?locale=pt_PT (`pt/divulgar-negocio-google-instagram-whatsapp.html`)
+- Source sans reponse (`400`) au moment du controle, a revoir au prochain passage : https://faq.whatsapp.com/2565868990219715/?locale=pt_PT (`pt/divulgar-negocio-google-instagram-whatsapp.html`)
+- Source sans reponse (`400`) au moment du controle, a revoir au prochain passage : https://faq.whatsapp.com/405903568419894/?locale=pt_PT (`pt/divulgar-negocio-google-instagram-whatsapp.html`)
+- Source sans reponse (`400`) au moment du controle, a revoir au prochain passage : https://faq.whatsapp.com/502291734918768/?locale=pt_PT (`pt/divulgar-negocio-google-instagram-whatsapp.html`)
+- Source sans reponse (`400`) au moment du controle, a revoir au prochain passage : https://faq.whatsapp.com/577829787429875/?locale=pt_PT (`pt/divulgar-negocio-google-instagram-whatsapp.html`)
+- Source sans reponse (`400`) au moment du controle, a revoir au prochain passage : https://faq.whatsapp.com/641572844337957/?locale=pt_PT (`pt/divulgar-negocio-google-instagram-whatsapp.html`)
+- Source sans reponse (`400`) au moment du controle, a revoir au prochain passage : https://faq.whatsapp.com/647574060315065/?locale=pt_PT (`pt/divulgar-negocio-google-instagram-whatsapp.html`)
+- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://www.abr.gov.au/business-super-funds-charities/applying-abn (`en/got-your-abn-get-first-customers.html`)
+- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://www.acma.gov.au/avoid-sending-spam (`en/got-your-abn-get-first-customers.html`)
+- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/gst-hst-businesses/when-register-charge.html (`en/sole-proprietorship-canada-first-customers.html`)
+- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/registering-your-business/you-need-a-business-number-a-program-account.html (`en/sole-proprietorship-canada-first-customers.html`)
+- Source deplacee : https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique arrive sur https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique-sms-mms-et-automate-dappel (`se-faire-connaitre-ouverture-entreprise.html`, `trouver-clients-auto-entrepreneur-sans-reseau.html`, `trouver-des-clients-avec-ia.html`)
+- Source sans reponse (`silence`) au moment du controle, a revoir au prochain passage : https://www.dgid.sn/ (`facture-normalisee-coupure-reseau.html`, `logiciel-caisse-boutique-senegal.html`, `logiciel-caisse-facture-normalisee-afrique-ouest.html`)
+- Source deplacee : https://www.ecommercebytes.com/2023/09/08/square-outage-leaves-merchants-unable-to-process-payments/ arrive sur https://ecommercebytes.com/ (`en/pos-outage-what-to-do.html`)
+- Source deplacee : https://www.gov.uk/government/publications/fake-reviews-cma208 arrive sur https://www.gov.uk/government/publications/fake-reviews (`en/advertise-business-locally-free-uk.html`)
+- Source deplacee : https://www.gov.uk/register-for-self-assessment/self-employed arrive sur https://www.gov.uk/register-for-self-assessment (`en/sole-trader-how-to-get-customers.html`)
+- Source deplacee : https://www.gov.uk/set-up-sole-trader arrive sur https://www.gov.uk/become-sole-trader (`en/sole-trader-how-to-get-customers.html`)
+- Source deplacee : https://www.sba.gov/business-guide/manage-your-business/marketing-sales arrive sur https://www.sba.gov/counseling/manage-your-business/#marketing-and-sales (`en/how-to-get-your-new-business-noticed.html`, `en/how-to-market-a-small-business-locally.html`)
+- Resume Search Console vieux de 35 jours : retelecharger les exports et relancer `python automation/gsc_import.py`.
