@@ -1,8 +1,8 @@
-# Rapport de sante, 2026-10-15 11:00 UTC
+# Rapport de sante, 2026-10-16 10:05 UTC
 
 VERIF LIVE : EFFECTUEE
 
-**STATUT GLOBAL : DEGRADE**
+**STATUT GLOBAL : OK**
 
 Controle deterministe, sans modele de langage. Remplace l'agent cloud tombe en panne le 04/08/2026. Declenche chaque jour par la tache planifiee Windows `MBN - controle de sante` (voir C:\Users\dell\mbn-automation).
 
@@ -10,11 +10,17 @@ NB : la section B interroge le sitemap EN LIGNE, elle ne voit donc pas un articl
 
 ## A. Disponibilite en direct
 
-- Machine hors ligne, verification impossible (aucune conclusion sur le site).
+- apex : `200`
+- www : `200`
+- secours Vercel : `200`
+- accueil EN : `200`
+- accueil ES : `200`
+- accueil PT : `200`
+- accueil SW : `200`
 
 ## B. Balayage du sitemap en direct
 
-- Reseau indisponible, balayage impossible (aucune conclusion sur le site).
+- 146 URLs testees, 0 en echec
 
 ## C. Liens et images sur disque
 
@@ -70,8 +76,7 @@ Aucun probleme trouve.
 
 ## MOYEN
 
-- Machine sans acces reseau : la disponibilite du site n'a PAS pu etre verifiee. Ce n'est pas une panne du site.
-- sitemap.xml non joignable depuis cette machine (reseau local).
+Aucun probleme trouve.
 
 ## DETTE CONNUE (n'affecte pas le statut)
 
@@ -94,4 +99,4 @@ Aucun probleme trouve.
 
 ## COSMETIQUE
 
-- Resume Search Console vieux de 39 jours : retelecharger les exports et relancer `python automation/gsc_import.py`.
+- Resume Search Console vieux de 40 jours : retelecharger les exports et relancer `python automation/gsc_import.py`.
